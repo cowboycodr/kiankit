@@ -1,17 +1,14 @@
-import { clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-import { cubicOut } from "svelte/easing";
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import { cubicOut } from 'svelte/easing';
 
 export function cn(...inputs) {
 	return twMerge(clsx(inputs));
 }
 
-export const flyAndScale = (
-	node,
-	params = { y: -8, x: 0, start: 0.95, duration: 150 }
-) => {
+export const flyAndScale = (node, params = { y: -8, x: 0, start: 0.95, duration: 150 }) => {
 	const style = getComputedStyle(node);
-	const transform = style.transform === "none" ? "" : style.transform;
+	const transform = style.transform === 'none' ? '' : style.transform;
 
 	const scaleConversion = (valueA, scaleA, scaleB) => {
 		const [minA, maxA] = scaleA;
@@ -27,7 +24,7 @@ export const flyAndScale = (
 		return Object.keys(style).reduce((str, key) => {
 			if (style[key] === undefined) return str;
 			return str + `${key}:${style[key]};`;
-		}, "");
+		}, '');
 	};
 
 	return {

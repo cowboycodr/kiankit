@@ -13,7 +13,11 @@
 			<h1 class="text-3xl font-semibold">KianKit</h1>
 			<p class="text-muted-foreground">Rapidly build SvelteKit + Supabase apps.</p>
 	</div>
-	<div slot="right">
+	<div class="w-full max-w-96 space-y-3" slot="right">
+		<div class="text-center block md:hidden">
+			<h1 class="text-3xl font-semibold">KianKit</h1>
+			<p class="text-muted-foreground">Rapidly build SvelteKit + Supabase apps.</p>
+		</div>
 		<Card.Root>
 			<Card.Header>
 				<Card.Title>Sign in</Card.Title>
@@ -41,7 +45,7 @@
 		</Card.Root>
 	</div>
 	<div slot="description">
-		<Card.Description>
+		<Card.Description class="text-center">
 			This is a <a class="underline" href="https://github.com/cowboycodr/KianKit">KianKit</a> demo page.
 		</Card.Description>
 	</div>

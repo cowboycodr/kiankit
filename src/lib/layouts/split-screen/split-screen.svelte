@@ -5,14 +5,11 @@
 		</div>
 	</div>
 	<div class="flex w-full items-center justify-center bg-accent p-3">
-		<div class="w-full max-w-96 space-y-3">
-			<div class="flex justify-center text-center md:hidden">
-				<slot name="left" />
-			</div>
-			<slot name="right" />
+		<slot name="right"></slot>
+	</div>
+	{#if $$slots.description}
+		<div class="absolute bottom-5 left-1/2 -translate-x-1/2 transform">
+			<slot name="description" />
 		</div>
-	</div>
-	<div class="absolute bottom-5 left-1/2 -translate-x-1/2 transform">
-		<slot name="description" />
-	</div>
+	{/if}
 </div>

@@ -3,7 +3,7 @@ import { redirect } from '@sveltejs/kit';
 export const signInWithGoogle = async (event) => {
     const { url, locals: { supabase } } = event;
 
-    const next = url.searchParams.get('next');
+    const next = url.searchParams.get('next') || '/';
 
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',

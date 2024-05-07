@@ -8,7 +8,7 @@ KianKit is a powerful starter kit that combines the flexibility of SvelteKit wit
 2. Copy the `.env.example` file and rename it to `.env`.
 3. Configure the Supabase environment variables in the `.env` file with your Supabase project credentials.
 
-> **Note:** KianKit is preconfigured for deployment on Vercel. However, you can easily change the deployment target by modifying the adapter in the `svelte.config.js` file.
+> **Note:** KianKit is preconfigured for deployment on Vercel. However, you can easily change the deployment target by [modifying the adapter](https://kit.svelte.dev/docs/adapters) in the `svelte.config.js` file.
 
 ## Tech Stack
 

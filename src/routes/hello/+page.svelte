@@ -10,11 +10,11 @@
 
 <SplitScreen>
 	<div slot="left">
-			<h1 class="text-3xl font-semibold">KianKit</h1>
-			<p class="text-muted-foreground">Rapidly build SvelteKit + Supabase apps.</p>
+		<h1 class="text-3xl font-semibold">KianKit</h1>
+		<p class="text-muted-foreground">Rapidly build SvelteKit + Supabase apps.</p>
 	</div>
 	<div class="w-full max-w-96 space-y-3" slot="right">
-		<div class="text-center block md:hidden">
+		<div class="block text-center md:hidden">
 			<h1 class="text-3xl font-semibold">KianKit</h1>
 			<p class="text-muted-foreground">Rapidly build SvelteKit + Supabase apps.</p>
 		</div>
@@ -24,20 +24,35 @@
 				<Card.Description>This will only take a few moments.</Card.Description>
 			</Card.Header>
 			<Card.Content>
-				<div class="space-y-2">
-					<Button variant="secondary" class="w-full space-x-1">
-						<span>
-							<Fa icon={faGoogle} />
-						</span>
-						<span>Google</span>
-					</Button>
-					<Button variant="secondary" class="w-full space-x-1" disabled>
-						<span>
-							<Fa icon={faGithub} />
-						</span>
-						<span>Github</span>
-					</Button>
-				</div>
+				<form method="POST">
+					<div class="space-y-2">
+						<Button
+							variant="secondary"
+							class="w-full space-x-1"
+							type="submit"
+							name="provider"
+							value="google"
+						>
+							<span>
+								<Fa icon={faGoogle} />
+							</span>
+							<span>Google</span>
+						</Button>
+						<Button
+							variant="secondary"
+							class="w-full space-x-1"
+							disabled
+							type="submit"
+							name="provider"
+							value="github"
+						>
+							<span>
+								<Fa icon={faGithub} />
+							</span>
+							<span>Github</span>
+						</Button>
+					</div>
+				</form>
 			</Card.Content>
 			<Card.Footer>
 				<Card.Description>More ways to sign in coming soon.</Card.Description>

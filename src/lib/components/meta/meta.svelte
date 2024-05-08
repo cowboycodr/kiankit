@@ -35,7 +35,7 @@
 			content: siteName
 		},
 		{
-			tags: ['og:description', 'twitter:description'],
+			tags: ['description', 'og:description', 'twitter:description'],
 			content: description
 		},
 		{

@@ -4,9 +4,16 @@
 	import Fa from 'svelte-fa';
 	import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
 
+	import { Meta } from '$lib/components/meta';
 	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
 </script>
+
+<Meta 
+	title="KianKit"
+	description="Rapidly build SvelteKit + Supabase apps."
+	twitterUsername="@fromkian"
+/>
 
 <SplitScreen>
 	<div slot="left">

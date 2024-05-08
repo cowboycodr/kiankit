@@ -3,6 +3,8 @@
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
 
+	import { Toaster } from 'svelte-sonner';
+
 	export let data;
 
 	let { supabase, session } = data;
@@ -18,5 +20,7 @@
 		return () => data.subscription.unsubscribe();
 	});
 </script>
+
+<Toaster />
 
 <slot />

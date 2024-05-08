@@ -1,5 +1,5 @@
 <div class="flex min-h-screen">
-	<div class="hidden w-full items-center justify-center p-3 md:flex">
+	<div class="hidden w-full items-center justify-center p-3 lg:flex">
 		<div class="w-full max-w-96">
 			<slot name="left" />
 		</div>

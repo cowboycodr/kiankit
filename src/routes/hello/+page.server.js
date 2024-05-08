@@ -10,11 +10,17 @@ export const actions = {
 
 		if (provider === 'google') {
 			const { error } = await signInWithGoogle(event);
+
+			if (error) {
+				fail(500, {
+					message: error.message
+				});
+			}
 		} else {
-            fail(500, {
-                message: "No OAuth provider provided."
-            })
-        }
+			fail(500, {
+				message: 'No OAuth provider provided.'
+			});
+		}
 
 		if (error) {
 			fail(500, {

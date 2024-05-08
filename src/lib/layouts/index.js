@@ -1,5 +1,3 @@
-import { SplitScreen } from "./split-screen";
+import { SplitScreen } from './split-screen';
 
-export {
-    SplitScreen
-}
+export { SplitScreen };

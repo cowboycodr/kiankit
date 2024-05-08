@@ -1,5 +1,3 @@
-import { signInWithGoogle } from "./google";
+import { signInWithGoogle } from './google';
 
-export {
-    signInWithGoogle
-}
+export { signInWithGoogle };

@@ -1,9 +1,9 @@
 <script>
-    import { page } from "$app/stores";
+	import { page } from '$app/stores';
 
 	// General meta tags
 	export let title = undefined;
-	export let type = "website";
+	export let type = 'website';
 	export let url = $page.url;
 	export let image = undefined;
 	export let siteName = undefined;

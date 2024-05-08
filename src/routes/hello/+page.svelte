@@ -9,7 +9,11 @@
 	import * as Card from '$ui/card';
 </script>
 
-<Meta 
+<svelte:head>
+	<title>KianKit - Rapidly build SvelteKit + Supabase apps.</title>
+</svelte:head>
+
+<Meta
 	title="KianKit"
 	description="Rapidly build SvelteKit + Supabase apps."
 	twitterUsername="@fromkian"

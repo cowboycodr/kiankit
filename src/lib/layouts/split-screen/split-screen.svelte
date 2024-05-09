@@ -1,4 +1,4 @@
-<div class="flex h-screen min-h-[400px]">
+<div class="relative flex h-screen min-h-[425px]">
 	<div class="hidden w-full items-center justify-center p-3 lg:flex">
 		<div class="w-full max-w-96">
 			<slot name="left" />
@@ -8,7 +8,7 @@
 		<slot name="right"></slot>
 	</div>
 	{#if $$slots.description}
-		<div class="fixed bottom-5 left-1/2 -translate-x-1/2 transform">
+		<div class="absolute bottom-5 left-1/2 -translate-x-1/2 transform">
 			<slot name="description" />
 		</div>
 	{/if}

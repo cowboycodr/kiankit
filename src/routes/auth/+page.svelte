@@ -27,7 +27,7 @@
 	<div class="w-full max-w-96 space-y-3" slot="right">
 		<div class="block text-center lg:hidden">
 			<h1 class="text-3xl font-semibold">KianKit</h1>
-			<p class="text-muted-foreground">Rapidly build SvelteKit + Supabase apps.</p>
+			<p>Rapidly build SvelteKit + Supabase apps.</p>
 		</div>
 		<Card.Root>
 			<Card.Header>

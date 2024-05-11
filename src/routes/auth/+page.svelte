@@ -52,7 +52,6 @@
 						<Button
 							variant="secondary"
 							class="w-full space-x-1"
-							disabled
 							type="submit"
 							name="provider"
 							value="github"

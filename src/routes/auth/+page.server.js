@@ -1,5 +1,5 @@
 import { json, fail } from '@sveltejs/kit';
-import { signInWithGoogle } from '$lib/server/auth';
+import { signInWithGithub, signInWithGoogle } from '$lib/server/auth';
 
 export const actions = {
 	default: async (event) => {
@@ -10,6 +10,14 @@ export const actions = {
 
 		if (provider === 'google') {
 			const { error } = await signInWithGoogle(event);
+
+			if (error) {
+				fail(500, {
+					message: error.message
+				});
+			}
+		} else if (provider === 'github') {
+			const { error } = await signInWithGithub(event);
 
 			if (error) {
 				fail(500, {

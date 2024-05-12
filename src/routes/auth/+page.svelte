@@ -21,7 +21,7 @@
 
 <SplitScreen>
 	<div slot="left">
-		<h1 class="text-3xl font-semibold">KianKit</h1>
+		<h1 class="text-3xl font-semibold">Kian<span class="text-accent-foreground">Kit</span></h1>
 		<p class="text-muted-foreground">Rapidly build SvelteKit + Supabase apps.</p>
 	</div>
 	<div class="w-full max-w-96 space-y-3" slot="right">

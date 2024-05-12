@@ -12,6 +12,13 @@ KianKit is a powerful starter kit that combines the flexibility of SvelteKit wit
 
 > **Note:** KianKit is preconfigured for deployment on Vercel. However, you can easily change the deployment target by [modifying the adapter](https://kit.svelte.dev/docs/adapters) in the `svelte.config.js` file.
 
+## Components & Layouts
+
+KianKit offers a range of pre-designed, responsive components and layouts that are easy to use and highly adaptable to suit your needs.
+
+- **SplitScreen**: A basic screen layout featuring a blank white area alongside an accented right-hand slot.
+- **Header**: A straightforward header component with a centered navigation component designed to fit into the current size box. It includes one slot for the entire component.
+
 ## Tech Stack
 
 KianKit leverages the following technologies to provide a solid foundation for your application:

@@ -76,10 +76,17 @@
 				<Card.Description>More ways to sign in coming soon.</Card.Description>
 			</Card.Footer>
 		</Card.Root>
-	</div>
-	<div slot="description">
-		<Card.Description class="text-center">
-			This is a <a class="underline" href="https://github.com/cowboycodr/KianKit">KianKit</a> demo page.
-		</Card.Description>
+		<div class="flex w-full justify-center lg:hidden">
+			<Card.Description>
+				This is a <a class="underline" href="https://github.com/cowboycodr/KianKit">KianKit</a> demo
+				page.
+			</Card.Description>
+		</div>
 	</div>
 </SplitScreen>
+
+<div class="absolute bottom-5 hidden w-full justify-center lg:flex">
+	<Card.Description>
+		This is a <a class="underline" href="https://github.com/cowboycodr/KianKit">KianKit</a> demo page.
+	</Card.Description>
+</div>

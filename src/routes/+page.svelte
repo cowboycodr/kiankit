@@ -2,8 +2,14 @@
 	import Fa from 'svelte-fa';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+	import { User } from 'lucide-svelte';
+
 	import { Header, Logo } from '$components/header';
 	import { Button } from '$ui/button';
+
+	export let data;
+	let { session } = data;
+	$: ({ session } = data);
 </script>
 
 <svelte:head>
@@ -32,11 +38,19 @@
 				</Button>
 			</div>
 		</div>
-		<div class="flex space-x-1">
-			<div>
-				<Button href="/auth" variant="secondary" size="sm">Log in</Button>
-				<Button href="/auth" size="sm">Sign up</Button>
-			</div>
+		<div class="flex items-center space-x-1">
+			{#if session}
+				<div>
+					<Button href="/account" variant="link" size="icon">
+						<User />
+					</Button>
+				</div>
+			{:else}
+				<div>
+					<Button href="/auth" variant="secondary" size="sm">Log in</Button>
+					<Button href="/auth" size="sm">Sign up</Button>
+				</div>
+			{/if}
 		</div>
 	</div>
 </Header>

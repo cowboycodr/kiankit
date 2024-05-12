@@ -7,8 +7,6 @@
 	export { className as class };
 </script>
 
-<div
-	class={cn(iconVariants({ variant, size, className }))}
->
+<div class={cn(iconVariants({ variant, size, className }))}>
 	<slot />
 </div>

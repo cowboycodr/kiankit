@@ -4,9 +4,12 @@
 	import Fa from 'svelte-fa';
 	import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
 
-	import { Meta } from '$lib/components/meta';
+	import { ArrowLeft } from 'lucide-svelte';
+
+	import { Meta } from '$components/meta';
 	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
+	import { Logo } from '$components/header';
 </script>
 
 <svelte:head>
@@ -19,15 +22,26 @@
 	twitterUsername="@fromkian"
 />
 
+<div class="fixed left-3 top-3 z-50">
+	<Button
+		class="rounded-full text-muted-foreground"
+		variant="ghost"
+		size="icon"
+		on:click={() => {
+			window.history.back();
+		}}
+	>
+		<ArrowLeft />
+	</Button>
+</div>
+
 <SplitScreen>
-	<div slot="left">
-		<h1 class="text-3xl font-semibold">Kian<span class="text-accent-foreground">Kit</span></h1>
-		<p class="text-muted-foreground">Rapidly build SvelteKit + Supabase apps.</p>
+	<div slot="left" class="flex items-center justify-center">
+		<Logo size="xl" />
 	</div>
 	<div class="w-full max-w-96 space-y-3" slot="right">
-		<div class="block text-center lg:hidden">
-			<h1 class="text-3xl font-semibold">KianKit</h1>
-			<p>Rapidly build SvelteKit + Supabase apps.</p>
+		<div class="flex w-full justify-center lg:hidden">
+			<Logo size="lg" />
 		</div>
 		<Card.Root>
 			<Card.Header>
@@ -37,9 +51,15 @@
 			<Card.Content>
 				<form method="POST">
 					<div class="space-y-2">
+						<Button class="w-full space-x-1" type="submit" name="provider" value="github">
+							<span>
+								<Fa icon={faGithub} />
+							</span>
+							<span>Github</span>
+						</Button>
 						<Button
-							variant="secondary"
 							class="w-full space-x-1"
+							variant="secondary"
 							type="submit"
 							name="provider"
 							value="google"
@@ -48,18 +68,6 @@
 								<Fa icon={faGoogle} />
 							</span>
 							<span>Google</span>
-						</Button>
-						<Button
-							variant="secondary"
-							class="w-full space-x-1"
-							type="submit"
-							name="provider"
-							value="github"
-						>
-							<span>
-								<Fa icon={faGithub} />
-							</span>
-							<span>Github</span>
 						</Button>
 					</div>
 				</form>

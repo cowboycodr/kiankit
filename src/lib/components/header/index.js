@@ -1,3 +1,9 @@
-import Header from './header.svelte';
+import Root from './header.svelte';
+import Logo from './logo.svelte';
 
-export { Header };
+export {
+	Root,
+	//
+	Root as Header,
+	Logo
+};

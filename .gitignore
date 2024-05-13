@@ -3,6 +3,7 @@ node_modules
 /build
 /.svelte-kit
 /.vercel
+/.vscode
 /package
 .env
 .env.*

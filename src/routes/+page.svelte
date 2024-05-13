@@ -2,7 +2,7 @@
 	import Fa from 'svelte-fa';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-	import { Menu, User } from 'lucide-svelte';
+	import { Menu, User, ChevronDown, ChevronUp } from 'lucide-svelte';
 
 	import { Header, Logo } from '$components/header';
 	import { Button } from '$ui/button';
@@ -47,9 +47,7 @@
 					<Dropdown.Root>
 						<Dropdown.Trigger asChild let:builder>
 							<Button builders={[builder]} class="space-x-1" variant="link" size="sm">
-								<div>
-									<User />
-								</div>
+								<User />
 							</Button>
 						</Dropdown.Trigger>
 						<Dropdown.Content class="min-w-48">
@@ -85,9 +83,13 @@
 						<div class="flex-grow">
 							<Collapsible.Root>
 								<Collapsible.Trigger asChild let:builder>
-									<Button class="w-full" variant="ghost" builders={[builder]}>
+									<Button
+										class="w-full items-center space-x-1"
+										variant="ghost"
+										builders={[builder]}
+									>
 										<span> Resources </span>
-										<span> </span>
+										<ChevronDown size="16" />
 									</Button>
 								</Collapsible.Trigger>
 								<Collapsible.Content class="text-center">
@@ -112,8 +114,10 @@
 									<Button class="w-full" variant="secondary" type="submit">Sign out</Button>
 								</form>
 							{:else}
-								<Button href="/auth" variant="secondary" size="sm">Log in</Button>
-								<Button href="/auth" size="sm">Sign up</Button>
+								<div class="flex flex-col space-y-1">
+									<Button href="/auth" variant="secondary" size="sm">Log in</Button>
+									<Button href="/auth" size="sm">Sign up</Button>
+								</div>
 							{/if}
 						</Sheet.Footer>
 					</Sheet.Content>

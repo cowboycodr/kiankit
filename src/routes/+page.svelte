@@ -114,7 +114,7 @@
 									<Button class="w-full" variant="secondary" type="submit">Sign out</Button>
 								</form>
 							{:else}
-								<div class="flex flex-col space-y-1">
+								<div class="flex w-full flex-col space-y-1">
 									<Button href="/auth" variant="secondary" size="sm">Log in</Button>
 									<Button href="/auth" size="sm">Sign up</Button>
 								</div>

@@ -5,6 +5,8 @@
 
 	import { Toaster } from 'svelte-sonner';
 
+	import { Meta } from '$components/meta';
+
 	export let data;
 
 	let { supabase, session } = data;
@@ -22,5 +24,12 @@
 </script>
 
 <Toaster />
+
+<Meta
+	title="KianKit"
+	description="Rapidly build SvelteKit + Supabase apps."
+	twitterUsername="@fromkian"
+/>
+
 
 <slot />

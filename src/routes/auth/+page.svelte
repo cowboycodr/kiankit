@@ -6,7 +6,6 @@
 
 	import { ArrowLeft } from 'lucide-svelte';
 
-	import { Meta } from '$components/meta';
 	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
 	import { Logo } from '$components/header';
@@ -15,12 +14,6 @@
 <svelte:head>
 	<title>KianKit - Rapidly build SvelteKit + Supabase apps.</title>
 </svelte:head>
-
-<Meta
-	title="KianKit"
-	description="Rapidly build SvelteKit + Supabase apps."
-	twitterUsername="@fromkian"
-/>
 
 <div class="fixed left-3 top-3 z-50">
 	<Button

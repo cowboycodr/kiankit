@@ -2,7 +2,7 @@
 	import Fa from 'svelte-fa';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-	import { Menu, User, ChevronDown, ChevronUp } from 'lucide-svelte';
+	import { Menu, User, ChevronDown } from 'lucide-svelte';
 
 	import { Header, Logo } from '$components/header';
 	import { Button } from '$ui/button';

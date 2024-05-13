@@ -2,11 +2,13 @@
 	import Fa from 'svelte-fa';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-	import { User } from 'lucide-svelte';
+	import { Menu, User } from 'lucide-svelte';
 
 	import { Header, Logo } from '$components/header';
 	import { Button } from '$ui/button';
 	import * as Dropdown from '$ui/dropdown-menu';
+	import * as Sheet from '$ui/sheet';
+	import * as Collapsible from '$ui/collapsible';
 
 	export let data;
 	let { session } = data;
@@ -24,7 +26,7 @@
 				<Logo />
 				<h3 class="text-xl font-semibold">KianKit</h3>
 			</div>
-			<div class="px-2">
+			<div class="hidden px-2 md:block">
 				<Button
 					class="space-x-1"
 					href="https://github.com/cowboycodr/KianKit"
@@ -41,14 +43,13 @@
 		</div>
 		<div class="flex items-center space-x-1">
 			{#if session}
-				<div>
+				<div class="hidden md:block">
 					<Dropdown.Root>
 						<Dropdown.Trigger asChild let:builder>
 							<Button builders={[builder]} class="space-x-1" variant="link" size="sm">
 								<div>
 									<User />
 								</div>
-								<div>Profile</div>
 							</Button>
 						</Dropdown.Trigger>
 						<Dropdown.Content class="min-w-48">
@@ -65,11 +66,59 @@
 					</Dropdown.Root>
 				</div>
 			{:else}
-				<div>
+				<div class="hidden lg:block">
 					<Button href="/auth" variant="secondary" size="sm">Log in</Button>
 					<Button href="/auth" size="sm">Sign up</Button>
 				</div>
 			{/if}
+			<div class="md:hidden">
+				<Sheet.Root>
+					<Sheet.Trigger asChild let:builder>
+						<Button builders={[builder]} variant="ghost" size="icon">
+							<Menu />
+						</Button>
+					</Sheet.Trigger>
+					<Sheet.Content class="flex h-full flex-col">
+						<Sheet.Header>
+							<Sheet.Title>Menu</Sheet.Title>
+						</Sheet.Header>
+						<div class="flex-grow">
+							<Collapsible.Root>
+								<Collapsible.Trigger asChild let:builder>
+									<Button class="w-full" variant="ghost" builders={[builder]}>
+										<span> Resources </span>
+										<span> </span>
+									</Button>
+								</Collapsible.Trigger>
+								<Collapsible.Content class="text-center">
+									<Button
+										class="space-x-1"
+										href="https://github.com/cowboycodr/KianKit"
+										variant="link"
+										size="sm"
+										target="_blank"
+									>
+										<span>
+											<Fa size="lg" icon={faGithub} />
+										</span>
+										<span>Github</span>
+									</Button>
+								</Collapsible.Content>
+							</Collapsible.Root>
+						</div>
+						<Sheet.Footer>
+							{#if session}
+								<form class="w-full" method="POST" action="/auth?/signout">
+									<Button class="w-full" variant="secondary" type="submit">Sign out</Button>
+								</form>
+							{:else}
+								<Button href="/auth" variant="secondary" size="sm">Log in</Button>
+								<Button href="/auth" size="sm">Sign up</Button>
+							{/if}
+						</Sheet.Footer>
+					</Sheet.Content>
+				</Sheet.Root>
+			</div>
 		</div>
 	</div>
 </Header>

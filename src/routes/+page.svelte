@@ -126,3 +126,25 @@
 		</div>
 	</div>
 </Header>
+
+<div class="container">
+	<section
+		class="flex flex-col items-center space-y-2 py-8 pb-8 text-center md:py-12 md:pb-8 lg:py-24 lg:pb-20"
+	>
+		<h1 class="text-balance text-3xl font-semibold tracking-tighter md:text-6xl lg:leading-[1.1]">
+			Focus on brilliance, not the basics
+		</h1>
+		<p class="max-w-[750px] text-balance text-lg text-muted-foreground sm:text-xl">
+			Accelerate your development with KianKit's pre-configured setup for SvelteKit and Supabase.
+		</p>
+		<div class="flex space-x-3 py-4">
+			<Button href="/auth">Get Started</Button>
+			<Button href="https://github.com/cowboycodr/KianKit" class="flex space-x-2" variant="outline">
+				<span>
+					<Fa icon={faGithub} />
+				</span>
+				<span> GitHub </span>
+			</Button>
+		</div>
+	</section>
+</div>

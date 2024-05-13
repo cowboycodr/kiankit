@@ -49,7 +49,7 @@
 				<Card.Description>This will only take a few moments.</Card.Description>
 			</Card.Header>
 			<Card.Content>
-				<form method="POST">
+				<form method="POST" action="?/signin">
 					<div class="space-y-2">
 						<Button class="w-full space-x-1" type="submit" name="provider" value="github">
 							<span>

@@ -6,6 +6,7 @@
 
 	import { Header, Logo } from '$components/header';
 	import { Button } from '$ui/button';
+	import * as Dropdown from '$ui/dropdown-menu';
 
 	export let data;
 	let { session } = data;
@@ -25,7 +26,7 @@
 			</div>
 			<div class="px-2">
 				<Button
-					class="flex space-x-1"
+					class="space-x-1"
 					href="https://github.com/cowboycodr/KianKit"
 					variant="link"
 					size="sm"
@@ -41,9 +42,27 @@
 		<div class="flex items-center space-x-1">
 			{#if session}
 				<div>
-					<Button href="/account" variant="link" size="icon">
-						<User />
-					</Button>
+					<Dropdown.Root>
+						<Dropdown.Trigger asChild let:builder>
+							<Button builders={[builder]} class="space-x-1" variant="link" size="sm">
+								<div>
+									<User />
+								</div>
+								<div>Profile</div>
+							</Button>
+						</Dropdown.Trigger>
+						<Dropdown.Content class="min-w-48">
+							<Dropdown.Label>Profile</Dropdown.Label>
+							<Dropdown.Separator />
+							<Dropdown.Group>
+								<form method="POST" action="/auth?/signout">
+									<button class="w-full" type="submit">
+										<Dropdown.Item>Sign out</Dropdown.Item>
+									</button>
+								</form>
+							</Dropdown.Group>
+						</Dropdown.Content>
+					</Dropdown.Root>
 				</div>
 			{:else}
 				<div>

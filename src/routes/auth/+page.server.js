@@ -1,8 +1,8 @@
-import { json, fail } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import { signInWithGithub, signInWithGoogle } from '$lib/server/auth';
 
 export const actions = {
-	default: async (event) => {
+	signin: async (event) => {
 		const { request } = event;
 
 		const formData = await request.formData();
@@ -35,5 +35,16 @@ export const actions = {
 				message: error.message
 			});
 		}
+	},
+	signout: async (event) => {
+		const {
+			locals: { supabase }
+		} = event;
+
+		console.log('sign out');
+
+		await supabase.auth.signOut();
+
+		throw redirect(303, '/');
 	}
 };

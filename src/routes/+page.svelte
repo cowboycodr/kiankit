@@ -66,7 +66,7 @@
 						</Dropdown.Root>
 					</div>
 				{:else}
-					<div class="hidden lg:block">
+					<div class="hidden md:block">
 						<Button href="/auth" variant="secondary" size="sm">Log in</Button>
 						<Button href="/auth" size="sm">Sign up</Button>
 					</div>
@@ -74,7 +74,7 @@
 				<div class="md:hidden">
 					<Sheet.Root>
 						<Sheet.Trigger asChild let:builder>
-							<Button builders={[builder]} variant="ghost" size="icon">
+							<Button builders={[builder]} variant="ghost" size="icon" aria-label="Menu">
 								<Menu />
 							</Button>
 						</Sheet.Trigger>

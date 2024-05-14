@@ -30,6 +30,8 @@ KianKit leverages the following technologies to provide a solid foundation for y
 - **Lucide**: A beautifully crafted open-source icon library.
 - **Fortawesome**: A popular icon library with a vast collection of icons.
 
+> In addition to simplicity, these libraries are [lightweight and fast](https://pagespeed.web.dev/analysis/https-kit-fromkian-com/8742el3ywj?form_factor=mobile).
+
 ## Contributing
 
 We welcome contributions to improve KianKit! If you encounter any issues or have suggestions for new features, please open an issue on the project's GitHub repository.

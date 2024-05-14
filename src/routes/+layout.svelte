@@ -31,5 +31,4 @@
 	twitterUsername="@fromkian"
 />
 
-
 <slot />

@@ -6,6 +6,7 @@
 
 	import { Header, Logo } from '$components/header';
 	import { Button } from '$ui/button';
+	import * as Card from '$ui/card';
 	import * as Dropdown from '$ui/dropdown-menu';
 	import * as Sheet from '$ui/sheet';
 	import * as Collapsible from '$ui/collapsible';
@@ -147,6 +148,68 @@
 				</span>
 				<span> GitHub </span>
 			</Button>
+		</div>
+	</section>
+	<section class="flex flex-col items-center space-y-2 pb-8 lg:pb-20">
+		<h2
+			class="text-center text-2xl font-semibold leading-[1.1] tracking-tighter sm:text-3xl md:text-5xl"
+		>
+			Features
+		</h2>
+		<p class="text-balanace max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
+			KianKit utilizes a variety of popular frontend & backend libraries.
+		</p>
+		<div class="grid w-full max-w-[64rem] grid-cols-1 gap-2 md:grid-cols-3">
+			<Card.Root>
+				<Card.Header>
+					<Card.Title>Svelte</Card.Title>
+					<Card.Description>
+						Component-based JavaScript framework, that prioritizes speed and simplicity.
+					</Card.Description>
+				</Card.Header>
+			</Card.Root>
+			<Card.Root>
+				<Card.Header>
+					<Card.Title>SvelteKit</Card.Title>
+					<Card.Description>
+						An app framework built on top of Svelte. Routing, SSR, and more.
+					</Card.Description>
+				</Card.Header>
+			</Card.Root>
+			<Card.Root>
+				<Card.Header>
+					<Card.Title>Supabase</Card.Title>
+					<Card.Description>
+						An open-source firebase alternative with a generous free tier, and self-hosting options.
+					</Card.Description>
+				</Card.Header>
+			</Card.Root>
+			<Card.Root>
+				<Card.Header>
+					<Card.Title>Tailwind CSS</Card.Title>
+					<Card.Description>
+						Utility-first CSS framework for rapidly building modern websites without ever leaving
+						your HTML.
+					</Card.Description>
+				</Card.Header>
+			</Card.Root>
+			<Card.Root>
+				<Card.Header>
+					<Card.Title>shadcn/ui</Card.Title>
+					<Card.Description>
+						Beautifully designed components that you can copy and paste into your apps. Accessible.
+						Customizable. Open source.
+					</Card.Description>
+				</Card.Header>
+			</Card.Root>
+			<Card.Root>
+				<Card.Header>
+					<Card.Title>Lucide</Card.Title>
+					<Card.Description>
+						Open-source library that provides 1000s of beautiful & consistent icons.
+					</Card.Description>
+				</Card.Header>
+			</Card.Root>
 		</div>
 	</section>
 </div>

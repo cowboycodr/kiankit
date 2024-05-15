@@ -6,9 +6,24 @@
 
 	import { ArrowLeft } from 'lucide-svelte';
 
+	import { superForm } from 'sveltekit-superforms';
+	import { zodClient } from 'sveltekit-superforms/adapters';
+	import { schema as authSchema } from '$lib/auth/schema.js';
+
 	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
 	import { Logo } from '$components/header';
+	import { Separator } from '$ui/separator';
+	import * as Form from '$ui/form';
+	import { Input } from '$ui/input';
+
+	export let data;
+
+	const form = superForm(data.form, {
+		validators: zodClient(authSchema)
+	});
+
+	const { form: formData, enhance } = form;
 </script>
 
 <svelte:head>
@@ -41,26 +56,58 @@
 				<Card.Title>Sign in</Card.Title>
 				<Card.Description>This will only take a few moments.</Card.Description>
 			</Card.Header>
-			<Card.Content>
+			<Card.Content class="space-y-3 lg:space-y-5">
+				<form method="POST" action="?/signin" use:enhance>
+					<div class="space-y-2">
+						<Form.Field {form} name="email">
+							<Form.Control let:attrs>
+								<Form.Label>Email</Form.Label>
+								<Input {...attrs} placeholder="john@example.com" bind:value={$formData.email}
+								></Input>
+							</Form.Control>
+						</Form.Field>
+						<Form.Field {form} name="password">
+							<Form.Control let:attrs>
+								<Form.Label>Password</Form.Label>
+								<Input
+									{...attrs}
+									type="password"
+									placeholder="Password"
+									bind:value={$formData.password}
+								></Input>
+							</Form.Control>
+							<Form.FieldErrors />
+						</Form.Field>
+						<input type="hidden" name="method" value="email" />
+						<Form.Button class="w-full" type="submit">Sign up</Form.Button>
+					</div>
+				</form>
+				<Separator />
 				<form method="POST" action="?/signin">
 					<div class="space-y-2">
-						<Button class="w-full space-x-1" type="submit" name="provider" value="github">
-							<span>
-								<Fa icon={faGithub} />
-							</span>
-							<span>Github</span>
-						</Button>
 						<Button
 							class="w-full space-x-1"
 							variant="secondary"
 							type="submit"
-							name="provider"
+							name="method"
 							value="google"
 						>
 							<span>
 								<Fa icon={faGoogle} />
 							</span>
 							<span>Google</span>
+						</Button>
+						<Button
+							class="w-full space-x-1"
+							variant="secondary"
+							type="submit"
+							name="method"
+							value="github"
+						>
+							<span>
+								<Fa icon={faGithub} />
+							</span>
+							<span>Github</span>
 						</Button>
 					</div>
 				</form>

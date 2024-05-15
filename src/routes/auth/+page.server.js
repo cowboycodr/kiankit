@@ -1,47 +1,75 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { signInWithGithub, signInWithGoogle } from '$lib/server/auth';
+import { signInWithGithub, signInWithGoogle, signUpWithEmail } from '$lib/server/auth';
+import { superValidate } from 'sveltekit-superforms';
+import { schema as authSchema } from '$lib/auth';
+import { zod } from 'sveltekit-superforms/adapters';
+
+export const load = async (event) => {
+	return {
+		form: await superValidate(zod(authSchema))
+	};
+};
 
 export const actions = {
 	signin: async (event) => {
-		const { request } = event;
+		const form = await superValidate(event, zod(authSchema));
 
-		const formData = await request.formData();
-		const provider = formData.get('provider');
+		if (!form.valid) {
+			return fail(400, {
+				form
+			})
+		}
 
-		if (provider === 'google') {
-			const { error } = await signInWithGoogle(event);
+		const { method } = form.data;
+
+		// Handle different providers
+		if (method === 'email') {
+			const { error } = await signUpWithEmail(event, form);
 
 			if (error) {
-				fail(500, {
+				console.error(error);
+
+				return fail(500, {
 					message: error.message
 				});
 			}
-		} else if (provider === 'github') {
+		} else if (method === 'google') {
+			const { error } = await signInWithGoogle(event);
+
+			if (error) {
+				console.error(error);
+
+				return fail(500, {
+					message: error.message
+				});
+			}
+		} else if (method === 'github') {
 			const { error } = await signInWithGithub(event);
 
 			if (error) {
-				fail(500, {
+				console.error(error);
+
+				return fail(500, {
 					message: error.message
 				});
 			}
 		} else {
-			fail(500, {
-				message: 'No OAuth provider provided.'
+			console.error("Invalid method.")
+
+			return fail(400, {
+				form,
+				message: 'Invalid method.'
 			});
 		}
 
-		if (error) {
-			fail(500, {
-				message: error.message
-			});
+		return {
+			form,
 		}
 	},
 	signout: async (event) => {
 		const {
 			locals: { supabase }
 		} = event;
-
-		console.log('sign out');
 
 		await supabase.auth.signOut();
 

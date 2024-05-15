@@ -32,6 +32,16 @@ KianKit leverages the following technologies to provide a solid foundation for y
 
 > In addition to simplicity, these libraries are [lightweight and fast](https://pagespeed.web.dev/analysis/https-kit-fromkian-com/8742el3ywj?form_factor=mobile).
 
+## Principles
+
+KianKit strictly adheres to these core principles, and we constantly try to better align with them:
+
+- **Simplicity with extensibility**: Simplicity must not get in the way of extensibility and vice versa.
+- **Minimalism**: Provide the user with what they need. Nothing else.
+- **Eradicate complexity**: Minimize unnecessary (and sometimes necessary) complexity at all costs.
+
+These principles aim to give contributors a clearer vision of our goals, and to ensure that KianKit remains user-friendly, efficient, and adaptable. By prioritizing simplicity with extensibility, providing only what is essential, and being efficient at all times, KianKit can offer developers a streamlined and productive experience. Ultimately leading to faster development cycles, and more maintainable codebases.
+
 ## Contributing
 
 We welcome contributions to improve KianKit! If you encounter any issues or have suggestions for new features, please open an issue on the project's GitHub repository.

@@ -17,7 +17,7 @@ export const actions = {
 		if (!form.valid) {
 			return fail(400, {
 				form
-			})
+			});
 		}
 
 		const { method } = form.data;
@@ -54,7 +54,7 @@ export const actions = {
 				});
 			}
 		} else {
-			console.error("Invalid method.")
+			console.error('Invalid method.');
 
 			return fail(400, {
 				form,
@@ -63,8 +63,8 @@ export const actions = {
 		}
 
 		return {
-			form,
-		}
+			form
+		};
 	},
 	signout: async (event) => {
 		const {

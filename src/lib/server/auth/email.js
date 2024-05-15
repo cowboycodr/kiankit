@@ -19,11 +19,11 @@ export const signUpWithEmail = async (event, form) => {
 		}
 	});
 
-    if (error) {
-        return { error }
-    }
+	if (error) {
+		return { error };
+	}
 
-	throw redirect(303, '/auth/confirm?method=email')
+	throw redirect(303, '/auth/confirm?method=email');
 };
 
 export const signInWithEmail = async (event) => {};

@@ -1,3 +1,3 @@
-import { schema } from "./schema.js";
+import { schema } from './schema.js';
 
 export { schema };

@@ -72,6 +72,9 @@
 					</div>
 				{/if}
 				<div class="md:hidden">
+					<Button href="https://github.com/cowboycodr/KianKit" variant="ghost" size="icon">
+						<Fa size="24" icon={faGithub} />
+					</Button>
 					<Sheet.Root>
 						<Sheet.Trigger asChild let:builder>
 							<Button builders={[builder]} variant="ghost" size="icon" aria-label="Menu">
@@ -83,32 +86,7 @@
 								<Sheet.Title>Menu</Sheet.Title>
 							</Sheet.Header>
 							<div class="flex-grow">
-								<Collapsible.Root>
-									<Collapsible.Trigger asChild let:builder>
-										<Button
-											class="w-full items-center space-x-1"
-											variant="ghost"
-											builders={[builder]}
-										>
-											<span> Resources </span>
-											<ChevronDown size="16" />
-										</Button>
-									</Collapsible.Trigger>
-									<Collapsible.Content class="text-center">
-										<Button
-											class="space-x-1"
-											href="https://github.com/cowboycodr/KianKit"
-											variant="link"
-											size="sm"
-											target="_blank"
-										>
-											<span>
-												<Fa size="lg" icon={faGithub} />
-											</span>
-											<span>Github</span>
-										</Button>
-									</Collapsible.Content>
-								</Collapsible.Root>
+								<!-- Menu content goes here -->
 							</div>
 							<Sheet.Footer>
 								{#if session}

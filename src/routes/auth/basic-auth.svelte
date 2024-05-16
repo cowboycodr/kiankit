@@ -12,7 +12,7 @@
 	export let type = 'signup';
 	export let data;
 
-	$: action = type ? 'signup' === '/auth?/signup' : '/auth?/login';
+	$: action = type === 'signup' ? '/auth?/signup' : '/auth?/login';
 
 	let loading = false;
 

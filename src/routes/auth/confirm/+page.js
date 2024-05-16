@@ -8,7 +8,7 @@ export const load = async (event) => {
 
 	if (method === 'email') {
 		message = 'Confirm your email.';
-		instructions = 'Check your inbox for a message from us, and click the link that is attached';
+		instructions = 'Check your inbox for a message from us, and click the link that is attached.';
 	}
 
 	return {

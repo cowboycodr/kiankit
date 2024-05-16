@@ -1,6 +1,6 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { signInWithGithub, signInWithGoogle, signUpWithEmail, signInWithEmail } from '$lib/server/auth';
-import { superValidate } from 'sveltekit-superforms';
+import { setError, superValidate } from 'sveltekit-superforms';
 import { schema as authSchema } from '$lib/auth';
 import { zod } from 'sveltekit-superforms/adapters';
 
@@ -9,7 +9,7 @@ export const load = async (event) => {
 };
 
 export const actions = {
-	signin: async (event) => {
+	signup: async (event) => {
 		const form = await superValidate(event, zod(authSchema));
 
 		if (!form.valid) {
@@ -25,17 +25,14 @@ export const actions = {
 			const { error } = await signUpWithEmail(event, form);
 
 			if (error) {
-				console.error({ error });
-
-				return fail(500, {
-					message: error.message
-				});
+				console.error(error)
+				return setError(form, 'email', error.message);
 			}
 		} else {
 			const { error } = await handleOAuthProvider(method);
 
 			if (error) {
-				console.error({ error });
+				console.error(error);
 
 				return fail(500, {
 					message: error.message,
@@ -62,16 +59,16 @@ export const actions = {
 			const { error } = await signInWithEmail(event, form);
 
 			if (error) {
-				console.error({ error });
+				if (error.message === 'Invalid login credentials') {
+					return setError(form, 'password', error.message);
+				}
 
-				return fail(500, {
-					message: error.message
-				});
+				return setError(form, 'email', error.message);
 			} else {
 				const { error } = await handleOAuthProvider(method);
 
 				if (error) {
-					console.error({ error });
+					console.error(error);
 
 					return fail(500, {
 						message: error.message

@@ -6,7 +6,8 @@ KianKit is a powerful starter kit that combines the flexibility of SvelteKit wit
 
 1. Clone the repository to your local machine.
 2. Copy the `.env.example` file and rename it to `.env`.
-3. Configure the Supabase environment variables in the `.env` file with your Supabase project credentials.
+3. Configure [OAuth](https://supabase.com/docs/guides/auth#social-auth) pages and a custom [SMTP](https://supabase.com/docs/guides/auth/auth-smtp) (I recommend Resend)
+4. Configure the Supabase environment variables in the `.env` file with your Supabase project credentials.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcowboycodr%2FKianKit&env=PUBLIC_SUPABASE_URL,PUBLIC_SUPABASE_ANON_KEY&project-name=kiankit-vercel-deployment)
 

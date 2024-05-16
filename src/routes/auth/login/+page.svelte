@@ -8,8 +8,8 @@
 	import { Logo } from '$components/header';
 	import { Separator } from '$ui/separator';
 
-	import BasicAuth from './basic-auth.svelte';
-	import OAuth from './oauth.svelte';
+	import BasicAuth from '../basic-auth.svelte';
+	import OAuth from '../oauth.svelte';
 
 	export let data;
 </script>
@@ -41,29 +41,19 @@
 		</div>
 		<Card.Root>
 			<Card.Header>
-				<Card.Title>Sign in</Card.Title>
+				<Card.Title>Log in</Card.Title>
 				<Card.Description>This will only take a few moments.</Card.Description>
 			</Card.Header>
 			<Card.Content class="space-y-3 lg:space-y-5">
-				<BasicAuth data={data.form} />
+				<BasicAuth action="/auth?/login" data={data.form} />
 				<Separator />
-				<OAuth />
+				<OAuth action="/auth?login" />
 			</Card.Content>
-			<Card.Footer>
-				<Card.Description>More ways to sign in coming soon.</Card.Description>
-			</Card.Footer>
 		</Card.Root>
-		<div class="flex w-full justify-center lg:hidden">
+		<div class="flex w-full justify-center">
 			<Card.Description>
-				This is a <a class="underline" href="https://github.com/cowboycodr/KianKit">KianKit</a> demo
-				page.
+				<a class="underline" href="/auth/signup">Don't have an account?</a>
 			</Card.Description>
 		</div>
 	</div>
 </SplitScreen>
-
-<div class="absolute bottom-5 hidden w-full justify-center lg:flex">
-	<Card.Description>
-		This is a <a class="underline" href="https://github.com/cowboycodr/KianKit">KianKit</a> demo page.
-	</Card.Description>
-</div>

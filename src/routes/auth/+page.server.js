@@ -1,13 +1,11 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { signInWithGithub, signInWithGoogle, signUpWithEmail } from '$lib/server/auth';
+import { signInWithGithub, signInWithGoogle, signUpWithEmail, signInWithEmail } from '$lib/server/auth';
 import { superValidate } from 'sveltekit-superforms';
 import { schema as authSchema } from '$lib/auth';
 import { zod } from 'sveltekit-superforms/adapters';
 
 export const load = async (event) => {
-	return {
-		form: await superValidate(zod(authSchema))
-	};
+	throw redirect(303, '/auth/login');
 };
 
 export const actions = {
@@ -27,44 +25,64 @@ export const actions = {
 			const { error } = await signUpWithEmail(event, form);
 
 			if (error) {
-				console.error(error);
-
-				return fail(500, {
-					message: error.message
-				});
-			}
-		} else if (method === 'google') {
-			const { error } = await signInWithGoogle(event);
-
-			if (error) {
-				console.error(error);
-
-				return fail(500, {
-					message: error.message
-				});
-			}
-		} else if (method === 'github') {
-			const { error } = await signInWithGithub(event);
-
-			if (error) {
-				console.error(error);
+				console.error({ error });
 
 				return fail(500, {
 					message: error.message
 				});
 			}
 		} else {
-			console.error('Invalid method.');
+			const { error } = await handleOAuthProvider(method);
 
-			return fail(400, {
-				form,
-				message: 'Invalid method.'
-			});
+			if (error) {
+				console.error({ error });
+
+				return fail(500, {
+					message: error.message,
+				})
+			}
 		}
 
 		return {
 			form
 		};
+	},
+	login: async (event) => {
+		const form = await superValidate(event, zod(authSchema));
+
+		if (!form.valid) {
+			return fail(400, {
+				form
+			})
+		}
+
+		const { method } = form.data;
+
+		if (method === 'email') {
+			const { error } = await signInWithEmail(event, form);
+
+			if (error) {
+				console.error({ error });
+
+				return fail(500, {
+					message: error.message
+				});
+			} else {
+				const { error } = await handleOAuthProvider(method);
+
+				if (error) {
+					console.error({ error });
+
+					return fail(500, {
+						message: error.message
+					})
+				}
+			}
+		}
+
+		return {
+			form
+		}
 	},
 	signout: async (event) => {
 		const {
@@ -76,3 +94,29 @@ export const actions = {
 		throw redirect(303, '/');
 	}
 };
+
+async function handleOAuthProvider(method, event) {
+	if (method === 'google') {
+		const { error } = await signInWithGoogle(event);
+
+		if (error) {
+			return {
+				error
+			};
+		}
+	} else if (method === 'github') {
+		const { error } = await signInWithGithub();
+
+		if (error) {
+			return {
+				error
+			};
+		}
+	} else {
+		return {
+			error: {
+				message: 'Invalid OAuth provider.'
+			}
+		};
+	}
+}

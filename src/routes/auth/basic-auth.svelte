@@ -7,6 +7,7 @@
 	import * as Form from '$ui/form';
 	import { Input } from '$ui/input';
 
+	export let action = '/auth?/signup';
 	export let data;
 
 	const form = superForm(data, {
@@ -16,7 +17,7 @@
 	const { form: formData, enhance } = form;
 </script>
 
-<form method="POST" action="/auth?/signin" use:enhance>
+<form method="POST" {action} use:enhance>
 	<div class="space-y-2">
 		<Form.Field {form} name="email">
 			<Form.Control let:attrs>

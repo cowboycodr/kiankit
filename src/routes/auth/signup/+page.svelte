@@ -45,9 +45,9 @@
 				<Card.Description>This will only take a few moments.</Card.Description>
 			</Card.Header>
 			<Card.Content class="space-y-3 lg:space-y-5">
-				<BasicAuth data={data.form} />
+				<BasicAuth type="signup" data={data.form} />
 				<Separator />
-				<OAuth />
+				<OAuth type="login" />
 			</Card.Content>
 		</Card.Root>
 		<div class="flex w-full justify-center">

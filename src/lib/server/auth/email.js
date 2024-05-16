@@ -27,9 +27,12 @@ export const signUpWithEmail = async (event, form) => {
 };
 
 export const signInWithEmail = async (event, form) => {
-	const { url, locals: { supabase } } = event;
+	const {
+		url,
+		locals: { supabase }
+	} = event;
 
-	const next = url.searchParams.get('next') || "/";
+	const next = url.searchParams.get('next') || '/';
 
 	const email = form.data.email;
 	const password = form.data.password;
@@ -37,7 +40,7 @@ export const signInWithEmail = async (event, form) => {
 	const { data, error } = await supabase.auth.signInWithPassword({
 		email,
 		password
-	})
+	});
 
 	if (error) {
 		return { error };

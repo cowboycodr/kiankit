@@ -4,7 +4,9 @@
 
 	import { Button } from '$ui/button';
 
-	export let action = '?/auth/signup';
+	export let type = 'signup';
+
+	$: action = type === 'signup' ? '?/auth/signup' : '?/auth/login';
 </script>
 
 <form method="POST" {action}>

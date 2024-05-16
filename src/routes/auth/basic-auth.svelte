@@ -9,8 +9,10 @@
 	import * as Form from '$ui/form';
 	import { Input } from '$ui/input';
 
-	export let action = '/auth?/signup';
+	export let type = 'signup';
 	export let data;
+
+	$: action = type ? 'signup' === '/auth?/signup' : '/auth?/login';
 
 	let loading = false;
 
@@ -24,9 +26,9 @@
 		},
 		onError: ({ result, message }) => {
 			loading = false;
-			console.log('errors')
-			console.log({ result, message })
-		},
+			console.log('errors');
+			console.log({ result, message });
+		}
 	});
 
 	const { form: formData, enhance } = form;
@@ -54,9 +56,7 @@
 			{#if loading}
 				<Loader2 class="animate-spin" size="16" />
 			{/if}
-			<span>
-				Sign up
-			</span>
+			<span> {type === 'signup' ? 'Sign up' : 'Log in'} </span>
 		</Form.Button>
 	</div>
 </form>

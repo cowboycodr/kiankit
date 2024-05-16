@@ -1,5 +1,10 @@
 import { fail, redirect } from '@sveltejs/kit';
-import { signInWithGithub, signInWithGoogle, signUpWithEmail, signInWithEmail } from '$lib/server/auth';
+import {
+	signInWithGithub,
+	signInWithGoogle,
+	signUpWithEmail,
+	signInWithEmail
+} from '$lib/server/auth';
 import { setError, superValidate } from 'sveltekit-superforms';
 import { schema as authSchema } from '$lib/auth';
 import { zod } from 'sveltekit-superforms/adapters';
@@ -25,7 +30,7 @@ export const actions = {
 			const { error } = await signUpWithEmail(event, form);
 
 			if (error) {
-				console.error(error)
+				console.error(error);
 				return setError(form, 'email', error.message);
 			}
 		} else {
@@ -35,8 +40,8 @@ export const actions = {
 				console.error(error);
 
 				return fail(500, {
-					message: error.message,
-				})
+					message: error.message
+				});
 			}
 		}
 
@@ -50,7 +55,7 @@ export const actions = {
 		if (!form.valid) {
 			return fail(400, {
 				form
-			})
+			});
 		}
 
 		const { method } = form.data;
@@ -72,14 +77,14 @@ export const actions = {
 
 					return fail(500, {
 						message: error.message
-					})
+					});
 				}
 			}
 		}
 
 		return {
 			form
-		}
+		};
 	},
 	signout: async (event) => {
 		const {

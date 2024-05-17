@@ -95,8 +95,7 @@ export const actions = {
 
 		throw redirect(303, '/');
 	},
-	confirmation: async (event) => {
-		// Resend confirmation email
+	'resend-confirmation': async (event) => {
 		const {
 			url,
 			locals: { supabase }
@@ -115,7 +114,6 @@ export const actions = {
 		const { data, error } = await supabase.auth.resend({
 			type: 'signup',
 			email,
-			password,
 			options: {
 				emailRedirectTo: `${url.origin}`
 			}
@@ -127,7 +125,7 @@ export const actions = {
 			});
 		}
 
-		await supabase.auth.resend();
+		throw redirect(303, '/confirm?method=email');
 	}
 };
 

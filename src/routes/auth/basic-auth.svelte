@@ -24,10 +24,6 @@
 		},
 		onResult: () => {
 			loading = false;
-		},
-		onError: ({ result }) => {
-			loading = false;
-			console.log({ result });
 		}
 	});
 
@@ -46,10 +42,11 @@
 					{#if error === 'Email not confirmed'}
 						<div {...errorAttrs}>
 							<button
-								on:click={() => {
+								on:submit={() => {
 									toast.success('Confirmation email sent successfully');
 								}}
-								formaction="/auth?/confirmation"
+								type="submit"
+								formaction="/auth?/resend-confirmation"
 								class="text-left"
 							>
 								Email not confirmed. <span class="underline">Need another confirmation email?</span>

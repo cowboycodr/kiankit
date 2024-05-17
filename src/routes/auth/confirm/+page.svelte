@@ -6,6 +6,10 @@
 	let { message, instructions } = data;
 </script>
 
+<svelte:head>
+	<title>Confirmation - KianKit</title>
+</svelte:head>
+
 <SplitScreen>
 	<div slot="left" class="flex items-center justify-center">
 		<Logo size="xl" />

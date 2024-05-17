@@ -40,7 +40,7 @@ export const actions = {
 				console.error(error);
 
 				return fail(500, {
-					message: error.message
+					form
 				});
 			}
 		}
@@ -76,7 +76,7 @@ export const actions = {
 					console.error(error);
 
 					return fail(500, {
-						message: error.message
+						form
 					});
 				}
 			}
@@ -94,6 +94,40 @@ export const actions = {
 		await supabase.auth.signOut();
 
 		throw redirect(303, '/');
+	},
+	confirmation: async (event) => {
+		// Resend confirmation email
+		const {
+			url,
+			locals: { supabase }
+		} = event;
+
+		const form = await superValidate(event, zod(authSchema));
+
+		if (!form.valid) {
+			return fail(400, {
+				form
+			});
+		}
+
+		const { email, password } = form.data;
+
+		const { data, error } = await supabase.auth.resend({
+			type: 'signup',
+			email,
+			password,
+			options: {
+				emailRedirectTo: `${url.origin}`
+			}
+		});
+
+		if (error) {
+			return fail(500, {
+				form
+			});
+		}
+
+		await supabase.auth.resend();
 	}
 };
 

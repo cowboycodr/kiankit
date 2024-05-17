@@ -2,6 +2,7 @@
 	import { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
+	import { toast } from 'svelte-sonner';
 	import { Loader2 } from 'lucide-svelte';
 
 	import { schema as authSchema } from '$lib/auth';
@@ -21,13 +22,12 @@
 		onSubmit: () => {
 			loading = true;
 		},
-		onResponse: () => {
+		onResult: () => {
 			loading = false;
 		},
-		onError: ({ result, message }) => {
+		onError: ({ result }) => {
 			loading = false;
-			console.log('errors');
-			console.log({ result, message });
+			console.log({ result });
 		}
 	});
 
@@ -41,7 +41,25 @@
 				<Form.Label>Email</Form.Label>
 				<Input {...attrs} placeholder="john@example.com" bind:value={$formData.email}></Input>
 			</Form.Control>
-			<Form.FieldErrors />
+			<Form.FieldErrors let:errors let:errorAttrs>
+				{#each errors as error}
+					{#if error === 'Email not confirmed'}
+						<div {...errorAttrs}>
+							<button
+								on:click={() => {
+									toast.success('Confirmation email sent successfully');
+								}}
+								formaction="/auth?/confirmation"
+								class="text-left"
+							>
+								Email not confirmed. <span class="underline">Need another confirmation email?</span>
+							</button>
+						</div>
+					{:else}
+						<div {...errorAttrs}>{error}</div>
+					{/if}
+				{/each}
+			</Form.FieldErrors>
 		</Form.Field>
 		<Form.Field {form} name="password">
 			<Form.Control let:attrs>

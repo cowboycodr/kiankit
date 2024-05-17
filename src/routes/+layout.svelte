@@ -23,7 +23,7 @@
 	});
 </script>
 
-<Toaster />
+<Toaster position="top-center" />
 
 <Meta
 	title="KianKit"

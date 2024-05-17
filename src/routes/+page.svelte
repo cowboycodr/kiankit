@@ -66,8 +66,8 @@
 					</div>
 				{:else}
 					<div class="hidden md:block">
-						<Button href="/auth" variant="secondary" size="sm">Log in</Button>
-						<Button href="/auth" size="sm">Sign up</Button>
+						<Button href="/auth/login" variant="secondary" size="sm">Log in</Button>
+						<Button href="/auth/signup" size="sm">Sign up</Button>
 					</div>
 				{/if}
 				<div class="md:hidden">
@@ -94,8 +94,8 @@
 									</form>
 								{:else}
 									<div class="flex w-full flex-col space-y-1">
-										<Button href="/auth" variant="secondary" size="sm">Log in</Button>
-										<Button href="/auth" size="sm">Sign up</Button>
+										<Button href="/auth/login" variant="secondary" size="sm">Log in</Button>
+										<Button href="/auth/signup" size="sm">Sign up</Button>
 									</div>
 								{/if}
 							</Sheet.Footer>
@@ -118,7 +118,7 @@
 			Accelerate your development with KianKit's pre-configured setup for SvelteKit and Supabase.
 		</p>
 		<div class="flex space-x-3 py-4">
-			<Button href="/auth">Get Started</Button>
+			<Button href="/auth/signup">Get Started</Button>
 			<Button href="https://github.com/cowboycodr/KianKit" class="flex space-x-2" variant="outline">
 				<span>
 					<Fa icon={faGithub} />

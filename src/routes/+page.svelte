@@ -2,14 +2,13 @@
 	import Fa from 'svelte-fa';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-	import { Menu, User, ChevronDown } from 'lucide-svelte';
+	import { Menu, User } from 'lucide-svelte';
 
 	import { Header, Logo } from '$components/header';
 	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
 	import * as Dropdown from '$ui/dropdown-menu';
 	import * as Sheet from '$ui/sheet';
-	import * as Collapsible from '$ui/collapsible';
 
 	export let data;
 	let { session } = data;

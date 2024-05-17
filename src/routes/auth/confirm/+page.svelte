@@ -1,6 +1,10 @@
 <script>
+	import { ArrowLeft } from 'lucide-svelte';
+
 	import { SplitScreen } from '$layouts/split-screen';
 	import { Logo } from '$components/header';
+
+	import { Button } from '$ui/button';
 
 	export let data;
 	let { message, instructions } = data;
@@ -9,6 +13,19 @@
 <svelte:head>
 	<title>Confirmation - KianKit</title>
 </svelte:head>
+
+<div class="fixed left-3 top-3 z-50">
+	<Button
+		class="rounded-full text-muted-foreground"
+		variant="ghost"
+		size="icon"
+		on:click={() => {
+			window.history.go(-1);
+		}}
+	>
+		<ArrowLeft />
+	</Button>
+</div>
 
 <SplitScreen>
 	<div slot="left" class="flex items-center justify-center">
@@ -28,6 +45,11 @@
 			<p class="text-lg text-muted-foreground">
 				{instructions}
 			</p>
+			<div class="flex items-center justify-center space-x-3 lg:justify-normal">
+				<Button href="/auth/login" class="p-0 text-lg lg:text-base" variant="link">
+					Go to log in
+				</Button>
+			</div>
 		</div>
 	</div>
 </SplitScreen>

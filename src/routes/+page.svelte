@@ -55,11 +55,16 @@
 		</p>
 		<div class="flex space-x-3 py-4">
 			<Button href="/auth/signup">Get Started</Button>
-			<Button href="https://github.com/cowboycodr/KianKit" class="flex space-x-2" variant="outline">
+			<Button
+				href="https://github.com/cowboycodr/KianKit"
+				target="_blank"
+				class="flex space-x-2"
+				variant="outline"
+			>
 				<span>
 					<Fa icon={faGithub} />
 				</span>
-				<span> GitHub </span>
+				<span> Star on GitHub </span>
 			</Button>
 		</div>
 	</section>

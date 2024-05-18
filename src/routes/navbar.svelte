@@ -1,18 +1,18 @@
 <script>
-    import { page } from '$app/stores';
+	import { page } from '$app/stores';
 
-    import Fa from 'svelte-fa';
-    import { faGithub } from '@fortawesome/free-brands-svg-icons';
-    
-    import { Menu, User } from 'lucide-svelte';
+	import Fa from 'svelte-fa';
+	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-    import { Navbar, Logo } from '$components/navbar';
-    import { Button } from '$ui/button';
-    import * as Dropdown from '$ui/dropdown-menu';
-    import * as Sheet from '$ui/sheet';
+	import { Menu, User } from 'lucide-svelte';
 
-    let { session } = $page.data;
-    $: ({ session } = $page.data);
+	import { Navbar, Logo } from '$components/navbar';
+	import { Button } from '$ui/button';
+	import * as Dropdown from '$ui/dropdown-menu';
+	import * as Sheet from '$ui/sheet';
+
+	let { session } = $page.data;
+	$: ({ session } = $page.data);
 </script>
 
 <Navbar>
@@ -67,7 +67,12 @@
 					</div>
 				{/if}
 				<div class="md:hidden">
-					<Button href="https://github.com/cowboycodr/KianKit" variant="ghost" size="icon">
+					<Button
+						href="https://github.com/cowboycodr/KianKit"
+						target="_blank"
+						variant="ghost"
+						size="icon"
+					>
 						<Fa size="24" icon={faGithub} />
 					</Button>
 					<Sheet.Root>

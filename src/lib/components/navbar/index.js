@@ -1,9 +1,9 @@
-import Root from './header.svelte';
+import Root from './navbar.svelte';
 import Logo from './logo.svelte';
 
 export {
 	Root,
 	//
-	Root as Header,
+	Root as Navbar,
 	Logo
 };

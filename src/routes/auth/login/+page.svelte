@@ -5,7 +5,7 @@
 
 	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
-	import { Logo } from '$components/header';
+	import { Logo } from '$components/navbar';
 	import { Separator } from '$ui/separator';
 
 	import BasicAuth from '../basic-auth.svelte';

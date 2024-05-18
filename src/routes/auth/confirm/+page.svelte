@@ -2,7 +2,7 @@
 	import { ArrowLeft } from 'lucide-svelte';
 
 	import { SplitScreen } from '$layouts/split-screen';
-	import { Logo } from '$components/header';
+	import { Logo } from '$components/navbar';
 
 	import { Button } from '$ui/button';
 

@@ -2,6 +2,8 @@
 	import Fa from 'svelte-fa';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
+	import { Link } from 'lucide-svelte';
+
 	import Navbar from './navbar.svelte';
 	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
@@ -9,30 +11,36 @@
 	const features = [
 		{
 			title: 'Svelte',
-			description: 'Component-based JavaScript framework, that prioritizes speed and simplicity.'
+			description: 'Component-based JavaScript framework, that prioritizes speed and simplicity.',
+			href: 'https://svelte.dev'
 		},
 		{
 			title: 'SvelteKit',
-			description: 'An app framework built on top of Svelte. Routing, SSR, and more.'
+			description: 'An app framework built on top of Svelte. Routing, SSR, and more.',
+			href: 'https://kit.svelte.dev'
 		},
 		{
 			title: 'Supabase',
 			description:
-				'An open-source firebase alternative with a generous free tier, and self-hosting options.'
+				'An open-source firebase alternative with a generous free tier, and self-hosting options.',
+			href: 'https://supabase.com'
 		},
 		{
 			title: 'Tailwind CSS',
 			description:
-				'Utility-first CSS framework for rapidly building modern websites without ever leaving your HTML.'
+				'Utility-first CSS framework for rapidly building modern websites without ever leaving your HTML.',
+			href: 'https://tailwindcss.com'
 		},
 		{
 			title: 'shadcn/ui',
 			description:
-				'Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open source.'
+				'Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open source.',
+			href: 'https://ui.shadcn.com'
 		},
 		{
 			title: 'Lucide',
-			description: 'Open-source library that provides 1000s of beautiful & consistent icons.'
+			description: 'Open-source library that provides 1000s of beautiful & consistent icons.',
+			href: 'https://lucide.dev'
 		}
 	];
 </script>
@@ -78,15 +86,37 @@
 			KianKit utilizes a variety of popular frontend & backend libraries.
 		</p>
 		<div
-			class="grid w-full max-w-[64rem] grid-cols-1 grid-rows-2 gap-2 py-4 md:grid-cols-3 md:gap-3 lg:gap-4"
+			class="grid w-full max-w-[64rem] grid-flow-row auto-rows-max grid-cols-1 gap-2 py-4 md:grid-cols-3 md:gap-3 lg:gap-4"
 		>
 			{#each features as card}
-				<Card.Root>
+				<Card.Root class="group">
 					<Card.Header>
-						<Card.Title>{card.title}</Card.Title>
+						<div class="flex items-center space-x-2">
+							<Card.Title>
+								{card.title}
+							</Card.Title>
+							<a
+								title={card.title}
+								class="hidden cursor-pointer text-primary md:group-hover:block"
+								href={card.href}
+								target="_blank"
+							>
+								<Link size="16" />
+							</a>
+						</div>
 						<Card.Description>
 							{card.description}
 						</Card.Description>
+						<div class="md:hidden">
+							<a
+								href={card.href}
+								target="_blank"
+								class="flex items-center space-x-1 text-primary md:hidden"
+							>
+								<Link size="14" />
+								<span> Website </span>
+							</a>
+						</div>
 					</Card.Header>
 				</Card.Root>
 			{/each}

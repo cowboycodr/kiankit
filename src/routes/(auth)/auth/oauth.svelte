@@ -6,7 +6,7 @@
 
 	export let type = 'signup';
 
-	$: action = type === 'signup' ? '?/auth/signup' : '?/auth/login';
+	$: action = type === 'signup' ? '/auth?/signup' : '/auth?/login';
 </script>
 
 <form method="POST" {action}>

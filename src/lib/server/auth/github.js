@@ -6,12 +6,12 @@ export const signInWithGithub = async (event) => {
 		locals: { supabase }
 	} = event;
 
-	const next = url.searchParams.get('next') || '/';
+	const next = url.searchParams.get('next');
 
 	const { data, error } = await supabase.auth.signInWithOAuth({
 		provider: 'github',
 		options: {
-			redirectTo: `${url.origin}/auth/callback?next=${encodeURIComponent(next)}`
+			redirectTo: `${url.origin}/auth/callback${next ? `?next=${next}` : ''}`
 		}
 	});
 

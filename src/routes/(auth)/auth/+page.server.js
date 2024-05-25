@@ -34,7 +34,7 @@ export const actions = {
 				return setError(form, 'email', error.message);
 			}
 		} else {
-			const { error } = await handleOAuthProvider(method);
+			const { error } = await handleOAuthProvider(method, event);
 
 			if (error) {
 				console.error(error);
@@ -69,16 +69,16 @@ export const actions = {
 				}
 
 				return setError(form, 'email', error.message);
-			} else {
-				const { error } = await handleOAuthProvider(method);
+			}
+		} else {
+			const { error } = await handleOAuthProvider(method, event);
 
-				if (error) {
-					console.error(error);
+			if (error) {
+				console.error(error);
 
-					return fail(500, {
-						form
-					});
-				}
+				return fail(500, {
+					form
+				});
 			}
 		}
 
@@ -139,7 +139,7 @@ async function handleOAuthProvider(method, event) {
 			};
 		}
 	} else if (method === 'github') {
-		const { error } = await signInWithGithub();
+		const { error } = await signInWithGithub(event);
 
 		if (error) {
 			return {

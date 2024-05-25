@@ -6,7 +6,7 @@ export const signUpWithEmail = async (event, form) => {
 		locals: { supabase }
 	} = event;
 
-	const next = url.searchParams.get('next') || '/';
+	const next = url.searchParams.get('next') || '';
 
 	const email = form.data.email;
 	const password = form.data.password;
@@ -15,7 +15,7 @@ export const signUpWithEmail = async (event, form) => {
 		email,
 		password,
 		options: {
-			emailRedirectTo: `${url.origin}`
+			emailRedirectTo: `${url.origin}/${next}`
 		}
 	});
 
@@ -32,7 +32,7 @@ export const signInWithEmail = async (event, form) => {
 		locals: { supabase }
 	} = event;
 
-	const next = url.searchParams.get('next') || '/';
+	const next = url.searchParams.get('next');
 
 	const email = form.data.email;
 	const password = form.data.password;

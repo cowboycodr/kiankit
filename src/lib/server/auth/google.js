@@ -6,7 +6,7 @@ export const signInWithGoogle = async (event) => {
 		locals: { supabase }
 	} = event;
 
-	const next = url.searchParams.get('next') || '/';
+	const next = url.searchParams.get('next');
 
 	const { data, error } = await supabase.auth.signInWithOAuth({
 		provider: 'google',
@@ -15,7 +15,7 @@ export const signInWithGoogle = async (event) => {
 				access_type: 'offline',
 				prompt: 'consent'
 			},
-			redirectTo: `${url.origin}/auth/callback?next=${encodeURIComponent(next)}`
+			redirectTo: `${url.origin}/auth/callback${next ? `?next=${next}` : ''}`
 		}
 	});
 

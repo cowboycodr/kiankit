@@ -8,10 +8,12 @@ export const signInWithGithub = async (event) => {
 
 	const next = url.searchParams.get('next');
 
+	const redirectTo = `${url.origin}/auth/callback${next ? `?next=${next}` : ''}`
+
 	const { data, error } = await supabase.auth.signInWithOAuth({
 		provider: 'github',
 		options: {
-			redirectTo: `${url.origin}/auth/callback${next ? `?next=${next}` : ''}`
+			redirectTo
 		}
 	});
 

@@ -4,5 +4,5 @@ export const schema = z.object({
 	email: z.string().email().optional(),
 	password: z.string().min(9).optional(),
 	method: z.enum(['email', 'github', 'google']),
-	next: z.string().optional()
+	redirectUrl: z.string().optional()
 });

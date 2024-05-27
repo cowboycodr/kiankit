@@ -110,13 +110,13 @@ export const actions = {
 		}
 
 		const { email, password } = form.data;
-		const next = form.data.next;
+		const redirectUrl = form.data.redirectUrl;
 
 		const { data, error } = await supabase.auth.resend({
 			type: 'signup',
 			email,
 			options: {
-				emailRedirectTo: `${url.origin}${next ? next : '/'}`
+				emailRedirectTo: `${url.origin}${redirectUrl ? redirectUrl : '/'}`
 			}
 		});
 

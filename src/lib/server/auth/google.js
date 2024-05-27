@@ -6,10 +6,8 @@ export const signInWithGoogle = async (event, form) => {
 		locals: { supabase }
 	} = event;
 
-	const next = form.data.next;
-	const redirectTo = `${url.origin}/auth/callback${next ? `?next=${next}` : ''}`;
-
-	console.log({ next, redirectTo });
+	const redirectUrl = form.data.redirectUrl;
+	const redirectTo = `${url.origin}/auth/callback${redirectUrl ? `?r=${redirectUrl}` : ''}`;
 
 	const { data, error } = await supabase.auth.signInWithOAuth({
 		provider: 'google',

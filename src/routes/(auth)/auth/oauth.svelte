@@ -10,11 +10,11 @@
 
 	$: action = type === 'signup' ? '/auth?/signup' : '/auth?/login';
 
-	const next = $page.url.searchParams.get('next');
+	const redirectUrl = $page.url.searchParams.get('r');
 </script>
 
 <form method="POST" {action}>
-	<input type="hidden" name="next" value={next} />
+	<input type="hidden" name="redirectUrl" value={redirectUrl} />
 	<div class="space-y-2">
 		<Button class="w-full space-x-1" variant="secondary" type="submit" name="method" value="google">
 			<span>

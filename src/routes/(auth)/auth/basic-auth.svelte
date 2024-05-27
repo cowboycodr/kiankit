@@ -17,7 +17,7 @@
 
 	$: action = type === 'signup' ? '/auth?/signup' : '/auth?/login';
 
-	const next = $page.url.searchParams.get('next');
+	const redirectUrl = $page.url.searchParams.get('r');
 	let loading = false;
 
 	const form = superForm(data, {
@@ -34,7 +34,7 @@
 </script>
 
 <form method="POST" {action} use:enhance>
-	<input type="hidden" name="next" value={next} />
+	<input type="hidden" name="redirectUrl" value={redirectUrl} />
 	<div class="space-y-2">
 		<Form.Field {form} name="email">
 			<Form.Control let:attrs>

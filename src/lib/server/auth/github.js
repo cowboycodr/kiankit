@@ -1,13 +1,12 @@
 import { redirect } from '@sveltejs/kit';
 
-export const signInWithGithub = async (event) => {
+export const signInWithGithub = async (event, form) => {
 	const {
 		url,
 		locals: { supabase }
 	} = event;
 
-	const next = url.searchParams.get('next');
-
+	const next = form.data.next;
 	const redirectTo = `${url.origin}/auth/callback${next ? `?next=${next}` : ''}`;
 
 	const { data, error } = await supabase.auth.signInWithOAuth({

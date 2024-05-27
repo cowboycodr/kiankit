@@ -1,4 +1,6 @@
 <script>
+	import { page } from '$app/stores';
+
 	import { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
@@ -15,6 +17,7 @@
 
 	$: action = type === 'signup' ? '/auth?/signup' : '/auth?/login';
 
+	const next = $page.url.searchParams.get('next');
 	let loading = false;
 
 	const form = superForm(data, {
@@ -31,6 +34,7 @@
 </script>
 
 <form method="POST" {action} use:enhance>
+	<input type="hidden" name="next" value={next} />
 	<div class="space-y-2">
 		<Form.Field {form} name="email">
 			<Form.Control let:attrs>

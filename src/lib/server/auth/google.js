@@ -1,12 +1,13 @@
 import { redirect } from '@sveltejs/kit';
 
-export const signInWithGoogle = async (event) => {
+export const signInWithGoogle = async (event, form) => {
 	const {
 		url,
 		locals: { supabase }
 	} = event;
 
-	const next = url.searchParams.get('next');
+	const redirectUrl = form.data.redirectUrl;
+	const redirectTo = `${url.origin}/auth/callback${redirectUrl ? `?r=${redirectUrl}` : ''}`;
 
 	const { data, error } = await supabase.auth.signInWithOAuth({
 		provider: 'google',
@@ -15,7 +16,7 @@ export const signInWithGoogle = async (event) => {
 				access_type: 'offline',
 				prompt: 'consent'
 			},
-			redirectTo: `${url.origin}/auth/callback${next ? `?next=${next}` : ''}`
+			redirectTo
 		}
 	});
 

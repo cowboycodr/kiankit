@@ -34,7 +34,7 @@ export const actions = {
 				return setError(form, 'email', error.message);
 			}
 		} else {
-			const { error } = await handleOAuthProvider(method, event);
+			const { error } = await handleOAuthProvider(method, event, form);
 
 			if (error) {
 				console.error(error);
@@ -71,7 +71,7 @@ export const actions = {
 				return setError(form, 'email', error.message);
 			}
 		} else {
-			const { error } = await handleOAuthProvider(method, event);
+			const { error } = await handleOAuthProvider(method, event, form);
 
 			if (error) {
 				console.error(error);
@@ -110,12 +110,13 @@ export const actions = {
 		}
 
 		const { email, password } = form.data;
+		const redirectUrl = form.data.redirectUrl;
 
 		const { data, error } = await supabase.auth.resend({
 			type: 'signup',
 			email,
 			options: {
-				emailRedirectTo: `${url.origin}`
+				emailRedirectTo: `${url.origin}${redirectUrl ? redirectUrl : '/'}`
 			}
 		});
 
@@ -129,9 +130,9 @@ export const actions = {
 	}
 };
 
-async function handleOAuthProvider(method, event) {
+async function handleOAuthProvider(method, event, form) {
 	if (method === 'google') {
-		const { error } = await signInWithGoogle(event);
+		const { error } = await signInWithGoogle(event, form);
 
 		if (error) {
 			return {
@@ -139,7 +140,7 @@ async function handleOAuthProvider(method, event) {
 			};
 		}
 	} else if (method === 'github') {
-		const { error } = await signInWithGithub(event);
+		const { error } = await signInWithGithub(event, form);
 
 		if (error) {
 			return {

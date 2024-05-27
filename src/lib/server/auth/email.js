@@ -6,16 +6,15 @@ export const signUpWithEmail = async (event, form) => {
 		locals: { supabase }
 	} = event;
 
-	const next = url.searchParams.get('next') || '';
-
 	const email = form.data.email;
 	const password = form.data.password;
+	const redirectUrl = form.data.redirectUrl;
 
 	const { data, error } = await supabase.auth.signUp({
 		email,
 		password,
 		options: {
-			emailRedirectTo: `${url.origin}/${next}`
+			emailRedirectTo: `${url.origin}${redirectUrl ? redirectUrl : '/'}`
 		}
 	});
 
@@ -32,10 +31,9 @@ export const signInWithEmail = async (event, form) => {
 		locals: { supabase }
 	} = event;
 
-	const next = url.searchParams.get('next');
-
 	const email = form.data.email;
 	const password = form.data.password;
+	const redirectUrl = form.data.redirectUrl;
 
 	const { data, error } = await supabase.auth.signInWithPassword({
 		email,
@@ -46,5 +44,5 @@ export const signInWithEmail = async (event, form) => {
 		return { error };
 	}
 
-	throw redirect(303, next);
+	throw redirect(303, redirectUrl);
 };

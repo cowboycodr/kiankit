@@ -47,7 +47,7 @@
 			<Card.Content class="space-y-3 lg:space-y-5">
 				<BasicAuth type="signup" data={data.form} />
 				<Separator />
-				<OAuth type="login" />
+				<OAuth type="signup" />
 			</Card.Content>
 		</Card.Root>
 		<div class="flex w-full justify-center">

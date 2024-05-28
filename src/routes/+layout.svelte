@@ -1,16 +1,20 @@
 <script>
 	import '../app.pcss';
-	import { invalidate } from '$app/navigation';
+
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	import { invalidate } from '$app/navigation';
 
+	import extend from 'just-extend';
 	import { Toaster } from 'svelte-sonner';
-
-	import { Meta } from '$components/meta';
+	import { MetaTags } from 'svelte-meta-tags';
 
 	export let data;
 
 	let { supabase, session } = data;
 	$: ({ supabase, session } = data);
+
+	$: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
 
 	onMount(() => {
 		const { data } = supabase.auth.onAuthStateChange((_, _session) => {
@@ -25,11 +29,6 @@
 
 <Toaster position="top-center" />
 
-<Meta
-	title="KianKit"
-	description="Rapidly build SvelteKit + Supabase apps."
-	twitterUsername="@fromkian"
-	image="https://pub-0ad6faf4526b463d9367cf8b6e642b7c.r2.dev/kiankit-og.png"
-/>
+<MetaTags {...metaTags} />
 
 <slot />

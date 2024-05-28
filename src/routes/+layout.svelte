@@ -29,6 +29,7 @@
 	title="KianKit"
 	description="Rapidly build SvelteKit + Supabase apps."
 	twitterUsername="@fromkian"
+	image="https://pub-0ad6faf4526b463d9367cf8b6e642b7c.r2.dev/kiankit-og.png"
 />
 
 <slot />

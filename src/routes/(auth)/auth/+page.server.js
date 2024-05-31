@@ -6,7 +6,7 @@ import {
 	signInWithEmail
 } from '$lib/server/auth';
 import { setError, superValidate } from 'sveltekit-superforms';
-import { schema as authSchema } from '$lib/auth';
+import { authSchema } from '$lib/schemas';
 import { zod } from 'sveltekit-superforms/adapters';
 
 export const load = async (event) => {

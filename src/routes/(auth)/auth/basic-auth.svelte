@@ -7,7 +7,7 @@
 	import { toast } from 'svelte-sonner';
 	import { Loader2 } from 'lucide-svelte';
 
-	import { schema as authSchema } from '$lib/auth';
+	import { authSchema } from '$lib/schemas';
 
 	import * as Form from '$ui/form';
 	import { Input } from '$ui/input';

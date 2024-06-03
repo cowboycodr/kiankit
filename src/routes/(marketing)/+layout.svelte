@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Ponder</title>
+	<title>KianKit</title>
 </svelte:head>
 
 <Navbar />

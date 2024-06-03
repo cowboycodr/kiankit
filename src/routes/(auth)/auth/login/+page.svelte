@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>Log in - Ponder</title>
+	<title>Log in - KianKit</title>
 </svelte:head>
 
 <div class="fixed left-3 top-3 z-50">

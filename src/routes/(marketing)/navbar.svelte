@@ -24,18 +24,15 @@
 					<h3 class="text-xl font-semibold">ponder</h3>
 				</div>
 				<div class="hidden px-2 md:block">
-					<Button
+					<!-- <Button
 						class="space-x-1"
 						href="https://github.com/cowboycodr/Ponder"
 						variant="link"
 						size="sm"
 						target="_blank"
 					>
-						<div>
-							<Fa size="lg" icon={faGithub} />
-						</div>
-						<span class="hidden md:block">Github</span>
-					</Button>
+
+					</Button> -->
 				</div>
 			</div>
 			<div class="flex items-center space-x-1">

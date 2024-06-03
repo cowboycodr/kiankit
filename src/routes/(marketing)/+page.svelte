@@ -53,12 +53,12 @@
 			Build apps without re-inventing the wheel
 		</h1>
 		<p class="max-w-[750px] text-balance text-lg text-muted-foreground sm:text-xl">
-			Accelerate your development with KianKit's pre-configured setup for SvelteKit and Supabase.
+			Accelerate your development with Ponder's pre-configured setup for SvelteKit and Supabase.
 		</p>
 		<div class="flex space-x-3 py-4">
 			<Button href="/auth/signup">Get Started</Button>
 			<Button
-				href="https://github.com/cowboycodr/KianKit"
+				href="https://github.com/cowboycodr/Ponder"
 				target="_blank"
 				class="flex space-x-2"
 				variant="outline"
@@ -77,7 +77,7 @@
 			Features
 		</h2>
 		<p class="text-balanace max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
-			KianKit utilizes a variety of popular frontend & backend libraries.
+			Ponder utilizes a variety of popular frontend & backend libraries.
 		</p>
 		<div
 			class="grid w-full max-w-[64rem] grid-flow-row auto-rows-max grid-cols-1 gap-2 py-4 md:grid-cols-3 md:gap-3 lg:gap-4"

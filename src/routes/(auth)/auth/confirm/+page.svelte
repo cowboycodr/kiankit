@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Confirmation - KianKit</title>
+	<title>Confirmation - Ponder</title>
 </svelte:head>
 
 <div class="fixed left-3 top-3 z-50">

@@ -21,12 +21,12 @@
 			<div class="flex items-center">
 				<div class="flex items-center space-x-1">
 					<Logo />
-					<h3 class="text-xl font-semibold">KianKit</h3>
+					<h3 class="text-xl font-semibold">Ponder</h3>
 				</div>
 				<div class="hidden px-2 md:block">
 					<Button
 						class="space-x-1"
-						href="https://github.com/cowboycodr/KianKit"
+						href="https://github.com/cowboycodr/Ponder"
 						variant="link"
 						size="sm"
 						target="_blank"
@@ -68,7 +68,7 @@
 				{/if}
 				<div class="md:hidden">
 					<Button
-						href="https://github.com/cowboycodr/KianKit"
+						href="https://github.com/cowboycodr/Ponder"
 						target="_blank"
 						variant="ghost"
 						size="icon"

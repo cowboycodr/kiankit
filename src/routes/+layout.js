@@ -32,21 +32,21 @@ export const load = async (event) => {
 	} = await supabase.auth.getSession();
 
 	const baseMetaTags = Object.freeze({
-		title: 'KianKit',
-		titleTemplate: '%s | KianKit',
+		title: 'Ponder',
+		titleTemplate: '%s | Ponder',
 		description: 'Rapidly build SvelteKit + Supabase apps.',
 		canonical: new URL(url.pathname, url.origin).href,
 		openGraph: {
 			type: 'website',
 			url: new URL(url.pathname, url.origin).href,
 			locale: 'en_US',
-			title: 'KianKit',
+			title: 'Ponder',
 			description: 'Rapidly build SvelteKit + Supabase apps.',
-			siteName: 'KianKit',
+			siteName: 'Ponder',
 			images: [
 				{
-					url: 'https://pub-0ad6faf4526b463d9367cf8b6e642b7c.r2.dev/kiankit-og.png',
-					alt: 'KianKit',
+					url: 'https://pub-0ad6faf4526b463d9367cf8b6e642b7c.r2.dev/Ponder-og.png',
+					alt: 'Ponder',
 					width: 1200,
 					height: 630,
 					type: 'image/png'
@@ -57,9 +57,9 @@ export const load = async (event) => {
 			handle: '@fromkian',
 			site: '@fromkian',
 			cardType: 'summary_large_image',
-			title: 'KianKit',
+			title: 'Ponder',
 			description: 'Rapidly build SvelteKit + Supabase apps.',
-			image: 'https://pub-0ad6faf4526b463d9367cf8b6e642b7c.r2.dev/kiankit-og.png',
+			image: 'https://pub-0ad6faf4526b463d9367cf8b6e642b7c.r2.dev/Ponder-og.png',
 			imageAlt: 'Rapidly build SvelteKit + Supabase apps.'
 		}
 	});

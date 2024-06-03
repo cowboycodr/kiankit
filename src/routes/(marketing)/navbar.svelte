@@ -21,7 +21,7 @@
 			<div class="flex items-center">
 				<div class="flex items-center space-x-1">
 					<Logo />
-					<h3 class="text-xl font-semibold">Ponder</h3>
+					<h3 class="text-xl font-semibold">ponder</h3>
 				</div>
 				<div class="hidden px-2 md:block">
 					<Button

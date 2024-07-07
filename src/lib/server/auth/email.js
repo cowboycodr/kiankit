@@ -44,5 +44,5 @@ export const signInWithEmail = async (event, form) => {
 		return { error };
 	}
 
-	throw redirect(303, redirectUrl);
+	throw redirect(303, redirectUrl ? redirectUrl : '/');
 };

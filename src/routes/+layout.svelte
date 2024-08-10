@@ -8,6 +8,7 @@
 	import extend from 'just-extend';
 	import { Toaster } from 'svelte-sonner';
 	import { MetaTags } from 'svelte-meta-tags';
+	import { ModeWatcher } from 'mode-watcher';
 
 	export let data;
 
@@ -28,7 +29,9 @@
 </script>
 
 <Toaster position="top-center" />
-
 <MetaTags {...metaTags} />
+<ModeWatcher />
 
-<slot />
+<div class="min-h-dvh w-full bg-background text-foreground">
+	<slot />
+</div>

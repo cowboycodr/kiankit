@@ -4,7 +4,8 @@
 	import Fa from 'svelte-fa';
 	import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
-	import { Menu, User } from 'lucide-svelte';
+	import { Menu, User, Sun, Moon, Github } from 'lucide-svelte';
+	import { toggleMode } from 'mode-watcher';
 
 	import { Navbar, Logo } from '$components/navbar';
 	import { Button } from '$ui/button';
@@ -39,21 +40,29 @@
 				</div>
 			</div>
 			<div class="flex items-center space-x-1">
+				<Button size="icon-sm" variant="ghost" on:click={toggleMode}>
+					<Sun
+						class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
+					/>
+					<Moon
+						class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+					/>
+					<span class="sr-only">Toggle theme</span>
+				</Button>
 				{#if session}
 					<div class="hidden md:block">
 						<Dropdown.Root>
 							<Dropdown.Trigger asChild let:builder>
-								<Button builders={[builder]} class="space-x-1" variant="link" size="sm">
-									<User />
+								<Button builders={[builder]} class="space-x-1" variant="ghost" size="icon-sm">
+									<User class="h-[1.2rem] w-[1.2rem] transition-all" />
 								</Button>
 							</Dropdown.Trigger>
 							<Dropdown.Content class="min-w-48">
 								<Dropdown.Label>Profile</Dropdown.Label>
-								<Dropdown.Separator />
 								<Dropdown.Group>
 									<form method="POST" action="/auth?/signout">
 										<button class="w-full" type="submit">
-											<Dropdown.Item>Sign out</Dropdown.Item>
+											<Dropdown.Item class="cursor-pointer">Sign out</Dropdown.Item>
 										</button>
 									</form>
 								</Dropdown.Group>
@@ -66,14 +75,14 @@
 						<Button href="/auth/signup" size="sm">Sign up</Button>
 					</div>
 				{/if}
-				<div class="md:hidden">
+				<div class="flex items-center md:hidden">
 					<Button
 						href="https://github.com/cowboycodr/KianKit"
 						target="_blank"
 						variant="ghost"
 						size="icon"
 					>
-						<Fa size="24" icon={faGithub} />
+						<Github class="h-[1.2rem] w-[1.2rem]" />
 					</Button>
 					<Sheet.Root>
 						<Sheet.Trigger asChild let:builder>

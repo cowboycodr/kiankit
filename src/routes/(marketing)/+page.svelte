@@ -45,6 +45,12 @@
 	];
 </script>
 
+<svelte:head>
+	<title>
+		KianKit
+	</title>
+</svelte:head>
+
 <div class="container">
 	<section
 		class="flex flex-col items-center space-y-2 py-8 pb-8 text-center md:py-12 md:pb-8 lg:py-24 lg:pb-20"

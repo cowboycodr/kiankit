@@ -14,10 +14,6 @@
 	export let data;
 </script>
 
-<svelte:head>
-	<title>Sign up - KianKit</title>
-</svelte:head>
-
 <div class="fixed left-3 top-3 z-50">
 	<Button
 		class="rounded-full text-muted-foreground"

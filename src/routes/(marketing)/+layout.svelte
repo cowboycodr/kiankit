@@ -1,5 +1,5 @@
 <script>
-	import Navbar from './navbar.svelte';
+	import Navbar from './(navbar)/navbar.svelte';
 </script>
 
 <Navbar />

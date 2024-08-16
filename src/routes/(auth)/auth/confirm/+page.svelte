@@ -25,14 +25,14 @@
 
 <SplitScreen>
 	<div slot="left" class="flex items-center justify-center">
-		<Logo size="xl" />
+		<Logo class="h-36 w-36" />
 	</div>
 	<div
 		slot="right"
 		class="w-full max-w-lg space-y-3 text-balance text-center lg:text-wrap lg:text-left"
 	>
 		<div class="flex w-full justify-center lg:hidden">
-			<Logo size="lg" />
+			<Logo class="h-16 w-16" />
 		</div>
 		<div>
 			<h1 class="text-3xl font-semibold">

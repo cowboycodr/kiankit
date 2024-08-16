@@ -28,7 +28,7 @@
 	<Button size="sm" variant="ghost" class="rounded-full text-foreground/60">Docs</Button>
 </div>
 <div class="flex w-full items-center justify-end space-x-1">
-	<div class="hidden md:flex items-center space-x-1">
+	<div class="hidden items-center space-x-1 md:flex">
 		{#if session}
 			<UserDropdown {session} />
 		{:else}

@@ -10,9 +10,9 @@ export const load = async (event) => {
 
 	const pageMetaTags = Object.freeze({
 		title: 'App'
-	})
+	});
 
 	return {
-		pageMetaTags,
-	}
+		pageMetaTags
+	};
 };

@@ -41,7 +41,4 @@
 	];
 </script>
 
-
-<div class="container h-[200vh]">
-
-</div>
+<div class="container h-[200vh]"></div>

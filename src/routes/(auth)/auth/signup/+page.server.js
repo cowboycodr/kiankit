@@ -4,8 +4,8 @@ import { zod } from 'sveltekit-superforms/adapters';
 
 export const load = async (event) => {
 	const pageMetaTags = Object.freeze({
-		title: "Sign up"
-	})
+		title: 'Sign up'
+	});
 
 	return {
 		pageMetaTags,

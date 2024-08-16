@@ -13,11 +13,11 @@ export const load = async (event) => {
 
 	const pageMetaTags = Objec.freeze({
 		title: 'Confirmation'
-	})
+	});
 
 	return {
 		message,
 		instructions,
-		pageMetaTags,
+		pageMetaTags
 	};
 };

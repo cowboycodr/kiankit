@@ -6,4 +6,4 @@
 	export { className as class };
 </script>
 
-<Logo class={cn("fill-primary text-primary", className)} {...$$restProps} />
+<Logo class={cn('fill-primary text-primary', className)} {...$$restProps} />

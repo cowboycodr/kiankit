@@ -1,8 +1,8 @@
 <script>
 	import { Navbar } from '$components/navbar';
 
-    import Brand from './brand.svelte';
-    import Menu from './menu.svelte';
+	import Brand from './brand.svelte';
+	import Menu from './menu.svelte';
 
 	let scrollY;
 </script>
@@ -13,7 +13,7 @@
 	<nav class="container w-full p-4">
 		<div class="flex space-x-5">
 			<Brand />
-            <Menu />
+			<Menu />
 		</div>
 	</nav>
 </Navbar>

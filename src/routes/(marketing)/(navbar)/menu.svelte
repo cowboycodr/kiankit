@@ -25,7 +25,13 @@
 	>
 		GitHub
 	</Button>
-	<Button size="sm" variant="ghost" class="rounded-full text-foreground/60">Docs</Button>
+	<Button
+		size="sm"
+		variant="ghost"
+		class="rounded-full text-foreground/60"
+		href="https://docs.fromkian.com"
+		target="_blank">Docs</Button
+	>
 </div>
 <div class="flex w-full items-center justify-end space-x-1">
 	<div class="hidden items-center space-x-1 md:flex">
@@ -68,7 +74,12 @@
 							href="https://github.com/cowboycodr/kiankit"
 							target="_blank">Github</Button
 						>
-						<Button variant="ghost" class="w-full justify-between text-base">
+						<Button
+							variant="ghost"
+							class="w-full justify-between text-base"
+							href="https://docs.fromkian.com"
+							target="_blank"
+						>
 							Docs
 							<!-- <ChevronDown class="h-4" /> -->
 						</Button>

@@ -72,11 +72,12 @@
 	}
 
 	body {
-		@apply bg-background font-geist text-foreground;
+		font-family: 'Geist', theme(fontFamily.sans);
+		@apply bg-background text-foreground;
 	}
 
 	@font-face {
-		font-family: 'Geist', theme(fontFamily.sans);
+		font-family: 'Geist';
 		src: url('https://media.fromkian.com/GeistVF.ttf');
 		font-display: swap;
 	}

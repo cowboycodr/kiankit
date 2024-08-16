@@ -10,10 +10,6 @@
 	let { message, instructions } = data;
 </script>
 
-<svelte:head>
-	<title>Confirmation - KianKit</title>
-</svelte:head>
-
 <div class="fixed left-3 top-3 z-50">
 	<Button
 		class="rounded-full text-muted-foreground"

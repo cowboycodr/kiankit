@@ -11,8 +11,13 @@ export const load = async (event) => {
 		instructions = 'Check your inbox for a message from us, and click the link that is attached.';
 	}
 
+	const pageMetaTags = Objec.freeze({
+		title: 'Confirmation'
+	})
+
 	return {
 		message,
-		instructions
+		instructions,
+		pageMetaTags,
 	};
 };

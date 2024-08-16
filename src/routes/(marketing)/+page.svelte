@@ -1,12 +1,10 @@
 <script>
-	import Fa from 'svelte-fa';
-	import { faGithub } from '@fortawesome/free-brands-svg-icons';
-
-	import { Link } from 'lucide-svelte';
-
-	import Navbar from './navbar.svelte';
-	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
+	import { Button } from '$ui/button';
+	import { Separator } from '$ui/separator';
+
+	import BookIcon from 'lucide-svelte/icons/book';
+	import GithubIcon from 'lucide-svelte/icons/github';
 
 	const features = [
 		{
@@ -45,81 +43,39 @@
 	];
 </script>
 
-<svelte:head>
-	<title>
-		KianKit
-	</title>
-</svelte:head>
-
-<div class="container">
-	<section
-		class="flex flex-col items-center space-y-2 py-8 pb-8 text-center md:py-12 md:pb-8 lg:py-24 lg:pb-20"
-	>
-		<h1 class="text-balance text-3xl font-semibold tracking-tighter md:text-6xl lg:leading-[1.1]">
-			Build apps without re-inventing the wheel
+<div class="container my-12 max-w-[1024px] space-y-12">
+	<div class="space-y-3">
+		<h1 class="text-3xl font-bold tracking-tighter md:text-4xl">
+			SvelteKit + Supabase Starter Kit
 		</h1>
-		<p class="max-w-[750px] text-balance text-lg text-muted-foreground sm:text-xl">
-			Accelerate your development with KianKit's pre-configured setup for SvelteKit and Supabase.
+		<p class="text-lg text-muted-foreground md:w-[50%]">
+			KianKit is your go-to starter kit for rapid application development. Entirely open-source.
 		</p>
-		<div class="flex space-x-3 py-4">
-			<Button href="/auth/signup">Get Started</Button>
+		<div class="flex space-x-1 pt-1">
+			<Button size="sm" href="/auth">Get started</Button>
 			<Button
-				href="https://github.com/cowboycodr/KianKit"
-				target="_blank"
-				class="flex space-x-2"
 				variant="outline"
+				size="sm"
+				href="https://github.com/cowboycodr/kiankit"
+				target="_blank">Star on GitHub</Button
 			>
-				<span>
-					<Fa icon={faGithub} />
-				</span>
-				<span> Star on GitHub </span>
-			</Button>
 		</div>
-	</section>
-	<section class="flex flex-col items-center space-y-2 pb-8 lg:pb-20">
-		<h2
-			class="text-center text-2xl font-semibold leading-[1.1] tracking-tighter sm:text-3xl md:text-5xl"
-		>
-			Features
-		</h2>
-		<p class="text-balanace max-w-[750px] text-center text-lg text-muted-foreground sm:text-xl">
-			KianKit utilizes a variety of popular frontend & backend libraries.
-		</p>
-		<div
-			class="grid w-full max-w-[64rem] grid-flow-row auto-rows-max grid-cols-1 gap-2 py-4 md:grid-cols-3 md:gap-3 lg:gap-4"
-		>
-			{#each features as card}
-				<Card.Root class="group">
+	</div>
+	<div class="space-y-6">
+		<h1 class="text-2xl font-semibold tracking-tighter md:text-3xl">Features</h1>
+		<div class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{#each features as feature}
+				<Card.Root>
 					<Card.Header>
-						<div class="flex items-center space-x-2">
-							<Card.Title>
-								{card.title}
-							</Card.Title>
-							<a
-								title={card.title}
-								class="hidden cursor-pointer text-primary md:group-hover:block"
-								href={card.href}
-								target="_blank"
-							>
-								<Link size="16" />
-							</a>
-						</div>
+						<Card.Title>
+							{feature.title}
+						</Card.Title>
 						<Card.Description>
-							{card.description}
+							{feature.description}
 						</Card.Description>
-						<div class="md:hidden">
-							<a
-								href={card.href}
-								target="_blank"
-								class="flex items-center space-x-1 text-primary md:hidden"
-							>
-								<Link size="14" />
-								<span> Website </span>
-							</a>
-						</div>
 					</Card.Header>
 				</Card.Root>
 			{/each}
 		</div>
-	</section>
+	</div>
 </div>

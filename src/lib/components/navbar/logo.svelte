@@ -1,10 +1,9 @@
 <script>
-	import { Icon } from '$ui/icon';
+	import { cn } from '$lib/utils';
 	import { Hexagon as Logo } from 'lucide-svelte';
 
-	export let size = undefined;
+	let className;
+	export { className as class };
 </script>
 
-<Icon {size}>
-	<Logo class="h-full w-full fill-primary text-primary" />
-</Icon>
+<Logo class={cn('fill-primary text-primary', className)} {...$$restProps} />

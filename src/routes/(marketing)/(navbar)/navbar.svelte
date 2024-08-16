@@ -10,7 +10,7 @@
 <svelte:window bind:scrollY />
 
 <Navbar class={scrollY > 0 ? 'border-b bg-none' : 'border-b-0 bg-background'}>
-	<nav class="container w-full p-4">
+	<nav class="container w-full max-w-[1024px] py-4">
 		<div class="flex space-x-5">
 			<Brand />
 			<Menu />

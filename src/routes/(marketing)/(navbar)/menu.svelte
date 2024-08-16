@@ -19,17 +19,16 @@
 	<Button
 		size="sm"
 		variant="ghost"
-		class="rounded-full"
+		class="rounded-full text-foreground/60"
 		href="https://github.com/cowboycodr/KianKit"
 		target="_blank"
 	>
-		Github
+		GitHub
 	</Button>
-	<Button size="sm" variant="ghost" class="rounded-full">Docs</Button>
+	<Button size="sm" variant="ghost" class="rounded-full text-foreground/60">Docs</Button>
 </div>
 <div class="flex w-full items-center justify-end space-x-1">
-	<div class="hidden md:block">
-		<ThemeToggle />
+	<div class="hidden md:flex items-center space-x-1">
 		{#if session}
 			<UserDropdown {session} />
 		{:else}
@@ -37,7 +36,7 @@
 		{/if}
 	</div>
 	<div class="md:hidden">
-		<Sheet.Root open>
+		<Sheet.Root>
 			<Sheet.Trigger asChild let:builder>
 				<Button builders={[builder]} size="icon-sm" variant="ghost">
 					<Menu />
@@ -62,7 +61,7 @@
 							</div>
 						{/if}
 					</div>
-					<div class="text-secondary-foreground">
+					<div class="text-foreground/60">
 						<Button variant="ghost" class="w-full justify-between text-base">Github</Button>
 						<Button variant="ghost" class="w-full justify-between text-base">
 							Docs

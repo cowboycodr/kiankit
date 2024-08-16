@@ -1,8 +1,10 @@
 <script>
-	import { Link, Github } from 'lucide-svelte';
-
-	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
+	import { Button } from '$ui/button';
+	import { Separator } from '$ui/separator';
+
+	import BookIcon from 'lucide-svelte/icons/book';
+	import GithubIcon from 'lucide-svelte/icons/github';
 
 	const features = [
 		{
@@ -41,4 +43,41 @@
 	];
 </script>
 
-<div class="container h-[200vh]"></div>
+<div class="container my-12 max-w-[1024px] space-y-12">
+	<div class="space-y-3">
+		<h1 class="text-3xl font-bold tracking-tighter md:text-4xl">
+			SvelteKit + Supabase Starter Kit
+		</h1>
+		<p class="text-lg text-muted-foreground md:w-[50%]">
+			KianKit is your go-to starter kit for rapid application development.
+		</p>
+		<div class="flex space-x-1 pt-1">
+			<Button size="sm" href="/auth">Get started</Button>
+			<Button
+				variant="outline"
+				size="sm"
+				href="https://github.com/cowboycodr/kiankit"
+				target="_blank">Star on GitHub</Button
+			>
+		</div>
+	</div>
+	<div class="space-y-6">
+		<h1 class="text-2xl font-semibold tracking-tighter md:text-3xl">
+			Features
+		</h1>
+		<div class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{#each features as feature}
+				<Card.Root>
+					<Card.Header>
+						<Card.Title>
+							{feature.title}
+						</Card.Title>
+						<Card.Description>
+							{feature.description}
+						</Card.Description>
+					</Card.Header>
+				</Card.Root>
+			{/each}
+		</div>
+	</div>
+</div>

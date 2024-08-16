@@ -44,7 +44,7 @@
 			</Sheet.Trigger>
 			<Sheet.Content class="flex h-full flex-col">
 				<Sheet.Header>
-					<Sheet.Title>Menu</Sheet.Title>
+					<Sheet.Title>KianKit</Sheet.Title>
 				</Sheet.Header>
 				<div class="flex-grow space-y-5">
 					<div>
@@ -53,8 +53,8 @@
 								<Button variant="outline" type="submit">Sign out</Button>
 							</form>
 						{:else}
-							<div class="w-full space-y-1">
-								<Button href="/auth/login" class="w-full" size="sm">Sign up</Button>
+							<div class="w-full space-y-3">
+								<Button href="/auth/signup" class="w-full" size="sm">Sign up</Button>
 								<Button href="/auth/login" variant="outline" class="w-full" size="sm">
 									Log in
 								</Button>
@@ -62,10 +62,15 @@
 						{/if}
 					</div>
 					<div class="text-foreground/60">
-						<Button variant="ghost" class="w-full justify-between text-base">Github</Button>
+						<Button
+							variant="ghost"
+							class="w-full justify-between text-base"
+							href="https://github.com/cowboycodr/kiankit"
+							target="_blank">Github</Button
+						>
 						<Button variant="ghost" class="w-full justify-between text-base">
 							Docs
-							<ChevronDown class="h-4" />
+							<!-- <ChevronDown class="h-4" /> -->
 						</Button>
 					</div>
 				</div>

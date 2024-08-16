@@ -51,7 +51,7 @@
 		<p class="text-lg text-muted-foreground md:w-[50%]">
 			KianKit is your go-to starter kit for rapid application development. Entirely open-source.
 		</p>
-		<div class="flex space-x-1 pt-1">
+		<div class="flex space-x-3 pt-1">
 			<Button size="sm" href="/auth">Get started</Button>
 			<Button
 				variant="outline"

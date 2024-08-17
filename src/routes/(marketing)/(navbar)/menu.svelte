@@ -36,7 +36,7 @@
 <div class="flex w-full items-center justify-end space-x-1">
 	<div class="hidden items-center space-x-1 md:flex">
 		{#if session}
-			<UserDropdown {session} />
+			<UserDropdown />
 		{:else}
 			<AuthButtons />
 		{/if}

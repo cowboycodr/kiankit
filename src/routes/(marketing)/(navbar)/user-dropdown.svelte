@@ -3,8 +3,6 @@
 	import * as Dropdown from '$ui/dropdown-menu';
 
 	import UserIcon from 'lucide-svelte/icons/user';
-
-	export let session;
 </script>
 
 <Dropdown.Root>

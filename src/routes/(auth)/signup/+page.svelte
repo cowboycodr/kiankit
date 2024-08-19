@@ -48,7 +48,7 @@
 		</Card.Root>
 		<div class="flex w-full justify-center">
 			<Card.Description>
-				<a class="underline" href="/auth/login">Already have an account?</a>
+				<a class="underline" href="/login">Already have an account?</a>
 			</Card.Description>
 		</div>
 	</div>

@@ -10,9 +10,9 @@ export const GET = async (event) => {
     <url>
         <loc>${url.origin}</loc>
         <lastmod>${currentDate}</lastmod>
-        <loc>${url.origin}/auth/login</loc>
+        <loc>${url.origin}/login</loc>
         <lastmod>${currentDate}</lastmod>
-        <loc>${url.origin}/auth/signup</loc>
+        <loc>${url.origin}/signup</loc>
         <lastmod>${currentDate}</lastmod>
     </url>
 </urlset>

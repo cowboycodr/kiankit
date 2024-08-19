@@ -42,7 +42,7 @@
 				{instructions}
 			</p>
 			<div class="flex items-center justify-center space-x-3 lg:justify-normal">
-				<Button href="/auth/login" class="p-0 text-lg lg:text-base" variant="link">
+				<Button href="/login" class="p-0 text-lg lg:text-base" variant="link">
 					Go to log in
 				</Button>
 			</div>

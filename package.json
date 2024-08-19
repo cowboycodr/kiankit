@@ -30,7 +30,7 @@
 		"@fortawesome/free-brands-svg-icons": "^6.5.2",
 		"@supabase/ssr": "^0.3.0",
 		"@supabase/supabase-js": "^2.43.0",
-		"bits-ui": "^0.21.7",
+		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
 		"formsnap": "^1.0.0",
 		"just-extend": "^6.2.0",

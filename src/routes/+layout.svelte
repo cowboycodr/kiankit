@@ -30,7 +30,7 @@
 
 <Toaster position="top-center" />
 <MetaTags {...metaTags} />
-<ModeWatcher />
+<ModeWatcher defaultMode="system" />
 
 <div class="min-h-dvh w-full bg-background text-foreground">
 	<slot />

@@ -6,9 +6,9 @@
 
 	import { Button } from '$ui/button';
 	import * as Sheet from '$ui/sheet';
+	import { ThemeToggle } from '$components/navbar';
 
 	import AuthButtons from './auth-buttons.svelte';
-	import ThemeToggle from './theme-toggle.svelte';
 	import UserDropdown from './user-dropdown.svelte';
 
 	let { session } = $page.data;

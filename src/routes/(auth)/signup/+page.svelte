@@ -8,8 +8,8 @@
 	import { Logo } from '$components/navbar';
 	import { Separator } from '$ui/separator';
 
-	import BasicAuth from '../basic-auth.svelte';
-	import OAuth from '../oauth.svelte';
+	import BasicAuth from '../(ui)/basic-auth.svelte';
+	import OAuth from '../(ui)/oauth.svelte';
 
 	export let data;
 </script>
@@ -33,22 +33,22 @@
 	</div>
 	<div class="w-full max-w-96 space-y-3" slot="right">
 		<div class="flex w-full justify-center lg:hidden">
-			<Logo class="h-16 w-16 " />
+			<Logo class="h-16 w-16" />
 		</div>
 		<Card.Root>
 			<Card.Header>
-				<Card.Title>Log in</Card.Title>
+				<Card.Title>Sign up</Card.Title>
 				<Card.Description>This will only take a few moments.</Card.Description>
 			</Card.Header>
 			<Card.Content class="space-y-3 lg:space-y-5">
-				<BasicAuth type="login" data={data.form} />
+				<BasicAuth type="signup" data={data.form} />
 				<Separator />
-				<OAuth type="login" />
+				<OAuth type="signup" />
 			</Card.Content>
 		</Card.Root>
 		<div class="flex w-full justify-center">
 			<Card.Description>
-				<a class="underline" href="/auth/signup">Don't have an account?</a>
+				<a class="underline" href="/auth/login">Already have an account?</a>
 			</Card.Description>
 		</div>
 	</div>

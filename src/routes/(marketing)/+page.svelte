@@ -52,7 +52,7 @@
 			KianKit is your go-to starter kit for rapid application development. Entirely open-source.
 		</p>
 		<div class="flex space-x-3 pt-1">
-			<Button size="sm" href="/auth">Get started</Button>
+			<Button size="sm" href="/signup">Get started</Button>
 			<Button
 				variant="outline"
 				size="sm"

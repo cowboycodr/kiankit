@@ -1,8 +1,9 @@
 <script>
 	import { page } from '$app/stores';
 
-	import Menu from 'lucide-svelte/icons/menu';
-	import ChevronDown from 'lucide-svelte/icons/chevron-down';
+	import MenuIcon from 'lucide-svelte/icons/menu';
+	import ChevronDownIcon from 'lucide-svelte/icons/chevron-down';
+	import LogOutIcon from 'lucide-svelte/icons/log-out';
 
 	import { Button } from '$ui/button';
 	import * as Sheet from '$ui/sheet';
@@ -45,7 +46,7 @@
 		<Sheet.Root>
 			<Sheet.Trigger asChild let:builder>
 				<Button builders={[builder]} size="icon-sm" variant="ghost">
-					<Menu />
+					<MenuIcon />
 				</Button>
 			</Sheet.Trigger>
 			<Sheet.Content class="flex h-full flex-col">
@@ -55,8 +56,11 @@
 				<div class="flex-grow space-y-5">
 					<div>
 						{#if session}
-							<form method="POST" action="/auth?/signout" class="contents">
-								<Button variant="outline" type="submit">Sign out</Button>
+							<form method="POST" action="/auth?/logOut" class="contents">
+								<Button class="flex w-full space-x-1" variant="outline" type="submit">
+									<LogOutIcon class="h-[1.2rem] w-[1.2rem]" />
+									<span> Log out </span>
+								</Button>
 							</form>
 						{:else}
 							<div class="w-full space-y-3">

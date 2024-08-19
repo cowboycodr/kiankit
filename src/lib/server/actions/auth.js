@@ -66,23 +66,25 @@ export const login = async (event) => {
 			}
 
 			return setError(form, 'email', error.message);
-		} else {
-			const { error } = await handleOAuthProvider(method, event, form);
-
-			if (error) {
-				console.error(error);
-
-				return fail(500, {
-					form
-				});
-			}
 		}
-
-		return {
-			form
-		};
 	}
-};
+	else {
+		const { error } = await handleOAuthProvider(method, event, form);
+
+		if (error) {
+			console.error(error);
+
+			return fail(500, {
+				form
+			});
+		}
+	}
+
+	return {
+		form
+	};
+
+}
 
 export const logOut = async (event) => {
 	const {

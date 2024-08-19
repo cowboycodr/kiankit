@@ -15,7 +15,7 @@
 	export let type = 'signup';
 	export let data;
 
-	$: action = type === 'signup' ? '/auth?/signup' : '/auth?/login';
+	$: action = type === 'signup' ? '/auth?/signUp' : '/auth?/login';
 
 	const redirectUrl = $page.url.searchParams.get('r');
 	let loading = false;

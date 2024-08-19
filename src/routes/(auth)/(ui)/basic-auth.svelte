@@ -50,7 +50,7 @@
 									toast.success('Confirmation email sent successfully');
 								}}
 								type="submit"
-								formaction="/auth?/resend-confirmation"
+								formaction="/auth?/resendConfirmation"
 								class="text-left"
 							>
 								Email not confirmed. <span class="underline">Need another confirmation email?</span>

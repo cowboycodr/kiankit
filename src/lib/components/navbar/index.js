@@ -9,5 +9,5 @@ export {
 	Root as Navbar,
 	ThemeToggle,
 	ThemeSelector,
-	Logo,
+	Logo
 };

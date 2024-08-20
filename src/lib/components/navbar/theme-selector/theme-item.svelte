@@ -1,8 +1,6 @@
 <script>
 	import { mode } from 'mode-watcher';
 
-	let targetMode;
-	export { targetMode as mode };
 	export let icon;
 	export let active;
 </script>

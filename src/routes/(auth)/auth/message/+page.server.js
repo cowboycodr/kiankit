@@ -1,12 +1,10 @@
 export const load = async (event) => {
 	const { url } = event;
 
-	const method = url.searchParams.get('method') || 'email';
+	const method = url.searchParams.get('message') || 'email';
 
 	let message;
 	let instructions;
-
-	console.log({ method });
 
 	if (method === 'email') {
 		message = 'Confirm your email.';

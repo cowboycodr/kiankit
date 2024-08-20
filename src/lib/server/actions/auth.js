@@ -125,7 +125,7 @@ export const resendConfirmation = async (event) => {
 		});
 	}
 
-	throw redirect('/confirm?method=email');
+	throw redirect('/auth/message?message=email');
 };
 
 async function handleOAuthProvider(method, event, form) {
@@ -178,7 +178,7 @@ export const requestResetPassword = async (event) => {
 		return setError(form, 'email', error.message);
 	}
 
-	throw redirect(303, '/auth/message?method=reset-request');
+	throw redirect(303, '/auth/message?message=reset-request');
 };
 
 export const updatePassword = async (event) => {
@@ -202,5 +202,5 @@ export const updatePassword = async (event) => {
 		return setError(form, 'password', error.message);
 	}
 
-	throw redirect(303, '/auth/message?method=reset-password');
+	throw redirect(303, '/auth/message?message=reset-password');
 };

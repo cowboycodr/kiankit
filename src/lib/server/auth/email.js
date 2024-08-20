@@ -22,7 +22,7 @@ export const signUpWithEmail = async (event, form) => {
 		return { error };
 	}
 
-	throw redirect(303, '/auth/confirm?message=email');
+	throw redirect(303, '/auth/message?message=email');
 };
 
 export const signInWithEmail = async (event, form) => {

@@ -77,5 +77,8 @@
 			{/if}
 			<span> {type === 'signup' ? 'Sign up' : 'Log in'} </span>
 		</Form.Button>
+		<div class="text-center">
+			<a href="/auth/forgot-password" class="text-muted-foreground text-sm underline">Forgot your password?</a>
+		</div>
 	</div>
 </form>

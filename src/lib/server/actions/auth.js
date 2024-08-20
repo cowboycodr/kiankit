@@ -67,8 +67,7 @@ export const login = async (event) => {
 
 			return setError(form, 'email', error.message);
 		}
-	}
-	else {
+	} else {
 		const { error } = await handleOAuthProvider(method, event, form);
 
 		if (error) {
@@ -83,8 +82,7 @@ export const login = async (event) => {
 	return {
 		form
 	};
-
-}
+};
 
 export const logOut = async (event) => {
 	const {
@@ -157,7 +155,10 @@ async function handleOAuthProvider(method, event, form) {
 }
 
 export const requestResetPassword = async (event) => {
-	const { url, locals: { supabase } } = event;
+	const {
+		url,
+		locals: { supabase }
+	} = event;
 
 	const form = await superValidate(event, zod(authSchema));
 	const { email } = form.data;
@@ -165,25 +166,25 @@ export const requestResetPassword = async (event) => {
 	if (!form.valid) {
 		return fail(400, {
 			form
-		})
+		});
 	}
 
-	const { error } = await supabase
-		.auth
-		.resetPasswordForEmail(email, {
-			redirectTo: `${url.origin}/auth/reset-password`
-		})
+	const { error } = await supabase.auth.resetPasswordForEmail(email, {
+		redirectTo: `${url.origin}/auth/reset-password`
+	});
 
 	if (error) {
 		console.error(error);
-		return setError(form, "email", error.message);
+		return setError(form, 'email', error.message);
 	}
 
-	throw redirect(303, "/auth/message?method=reset-request")
-}
+	throw redirect(303, '/auth/message?method=reset-request');
+};
 
 export const updatePassword = async (event) => {
-	const { locals: { supabase } } = event;
+	const {
+		locals: { supabase }
+	} = event;
 
 	const form = await superValidate(event, zod(authSchema));
 	const { password } = form.data;
@@ -191,17 +192,15 @@ export const updatePassword = async (event) => {
 	if (!form.valid) {
 		return fail(400, {
 			form
-		})
+		});
 	}
 
-	const { error } = await supabase
-		.auth
-		.updateUser({ password })
+	const { error } = await supabase.auth.updateUser({ password });
 
 	if (error) {
 		console.error(error);
-		return setError(form, "password", error.message);
+		return setError(form, 'password', error.message);
 	}
 
-	throw redirect(303, "/auth/message?method=reset-password")
-}
+	throw redirect(303, '/auth/message?method=reset-password');
+};

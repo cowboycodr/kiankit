@@ -5,16 +5,16 @@ import { authSchema } from '$lib/schemas';
 import { updatePassword } from '$lib/server/actions';
 
 export const load = async (event) => {
-    const pageMetaTags = Object.freeze({
-        title: 'Reset password'
-    })
+	const pageMetaTags = Object.freeze({
+		title: 'Reset password'
+	});
 
-    return {
-        pageMetaTags,
-        form: await superValidate(zod(authSchema))
-    }
-}
+	return {
+		pageMetaTags,
+		form: await superValidate(zod(authSchema))
+	};
+};
 
 export const actions = {
-    default: updatePassword
-}
+	default: updatePassword
+};

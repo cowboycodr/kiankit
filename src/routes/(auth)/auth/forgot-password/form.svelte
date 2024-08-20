@@ -1,7 +1,7 @@
 <script>
 	import { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
-    import Loader2 from 'lucide-svelte/icons/loader-circle';
+	import Loader2 from 'lucide-svelte/icons/loader-circle';
 
 	import { authSchema } from '$lib/schemas';
 	import * as Form from '$ui/form';
@@ -31,15 +31,13 @@
 				<Form.Label>Email</Form.Label>
 				<Input {...attrs} placeholder="john@example.com" bind:value={$formData.email} />
 			</Form.Control>
-            <Form.FieldErrors />
+			<Form.FieldErrors />
 		</Form.Field>
-        <Form.Button class="w-full items-center space-x-1" type="submit" disabled={loading}>
-            {#if loading}
-                <Loader2 class="animate-spin h-[1.2rem] w-[1.2rem]" />
-            {/if}
-            <span>
-                Send recovery email
-            </span>
-        </Form.Button>
+		<Form.Button class="w-full items-center space-x-1" type="submit" disabled={loading}>
+			{#if loading}
+				<Loader2 class="h-[1.2rem] w-[1.2rem] animate-spin" />
+			{/if}
+			<span> Send recovery email </span>
+		</Form.Button>
 	</div>
 </form>

@@ -21,9 +21,9 @@
 				<Card.Title>Reset password</Card.Title>
 				<Card.Description>This will only take a few moments.</Card.Description>
 			</Card.Header>
-            <Card.Content class="space-y-3 lg:space-y-5">
-                <Form data={data.form} />
-            </Card.Content>
+			<Card.Content class="space-y-3 lg:space-y-5">
+				<Form data={data.form} />
+			</Card.Content>
 		</Card.Root>
 	</div>
 </SplitScreen>

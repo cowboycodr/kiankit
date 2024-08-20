@@ -1,3 +1,10 @@
-import { signUp, login, logOut, resendConfirmation } from './auth';
+import {
+	signUp,
+	login,
+	logOut,
+	resendConfirmation,
+	updatePassword,
+	requestResetPassword
+} from './auth';
 
-export { signUp, login, logOut, resendConfirmation };
+export { signUp, login, logOut, resendConfirmation, updatePassword, requestResetPassword };

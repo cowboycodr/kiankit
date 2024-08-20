@@ -65,9 +65,7 @@
 						{:else}
 							<div class="w-full space-y-3">
 								<Button href="/signup" class="w-full" size="sm">Sign up</Button>
-								<Button href="/login" variant="outline" class="w-full" size="sm">
-									Log in
-								</Button>
+								<Button href="/login" variant="outline" class="w-full" size="sm">Log in</Button>
 							</div>
 						{/if}
 					</div>

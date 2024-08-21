@@ -7,9 +7,6 @@
 	import { Logo } from '$components/navbar';
 
 	import { Button } from '$ui/button';
-
-	export let data;
-	let { message, instructions } = data;
 </script>
 
 <div class="fixed left-3 top-3 z-50">
@@ -18,7 +15,7 @@
 		variant="ghost"
 		size="icon"
 		on:click={async () => {
-			await goto("/");
+			await goto('/');
 		}}
 	>
 		<ArrowLeft />
@@ -30,22 +27,12 @@
 		<Logo class="h-36 w-36" />
 	</div>
 	<div
+		class="w-full max-w-96 space-y-3 text-balance text-center lg:text-wrap lg:text-left"
 		slot="right"
-		class="w-full max-w-lg space-y-3 text-balance text-center lg:text-wrap lg:text-left"
 	>
 		<div class="flex w-full justify-center lg:hidden">
 			<Logo class="h-16 w-16" />
 		</div>
-		<div>
-			<h1 class="text-3xl font-semibold">
-				{message}
-			</h1>
-			<p class="text-lg text-muted-foreground">
-				{instructions}
-			</p>
-			<div class="flex items-center justify-center space-x-3 lg:justify-normal">
-				<Button href="/login" class="p-0 text-lg lg:text-base" variant="link">Go to log in</Button>
-			</div>
-		</div>
+		<slot />
 	</div>
 </SplitScreen>

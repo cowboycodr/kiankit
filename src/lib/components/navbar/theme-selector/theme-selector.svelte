@@ -1,5 +1,5 @@
 <script>
-	import { setMode, mode, systemPrefersMode } from 'mode-watcher';
+	import { setMode, mode, systemPrefersMode, userPrefersMode } from 'mode-watcher';
 
 	import HardDrive from 'lucide-svelte/icons/hard-drive';
 	import MoonIcon from 'lucide-svelte/icons/moon';
@@ -22,21 +22,17 @@
 		}
 	];
 
-	let isSystemTheme = false;
+	$: activeTheme = $userPrefersMode || $mode;
 </script>
 
 <div class="flex items-center rounded-full border">
 	{#each themes as theme}
-		{@const active =
-			(theme.target === $mode && !isSystemTheme) || (theme.target === 'system' && isSystemTheme)}
+		{@const isThemeActive = activeTheme === theme.target}
 		<ThemeItem
-			mode={theme.target}
 			icon={theme.icon}
-			{active}
-			on:click={() => {
-				setMode(theme.target);
-				isSystemTheme = theme.target === 'system';
-			}}
+			active={isThemeActive}
+			
+			on:click={() => { setMode(theme.target) }}
 		/>
 	{/each}
 </div>

@@ -27,7 +27,7 @@
 		<Logo class="h-36 w-36" />
 	</div>
 	<div
-		class="w-full max-w-96 space-y-3 text-balance text-center lg:text-wrap lg:text-left"
+		class="w-full max-w-96 space-y-3"
 		slot="right"
 	>
 		<div class="flex w-full justify-center lg:hidden">

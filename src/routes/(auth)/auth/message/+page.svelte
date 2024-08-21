@@ -18,7 +18,7 @@
 		variant="ghost"
 		size="icon"
 		on:click={async () => {
-			await goto("/");
+			await goto('/');
 		}}
 	>
 		<ArrowLeft />

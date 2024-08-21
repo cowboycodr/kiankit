@@ -1,3 +1,3 @@
-import { SplitScreen } from './split-screen';
+import { SplitScreen, BrandedSplitScreen } from './split-screen';
 
-export { SplitScreen };
+export { SplitScreen, BrandedSplitScreen };

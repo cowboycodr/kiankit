@@ -1,7 +1,5 @@
 <script>
-	import { SplitScreen } from '$layouts';
-
-	import { ArrowLeft } from 'lucide-svelte';
+	import { BrandedSplitScreen } from '$layouts';
 
 	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
@@ -14,42 +12,21 @@
 	export let data;
 </script>
 
-<div class="fixed left-3 top-3 z-50">
-	<Button
-		class="rounded-full text-muted-foreground"
-		variant="ghost"
-		size="icon"
-		on:click={() => {
-			window.history.go(-1);
-		}}
-	>
-		<ArrowLeft />
-	</Button>
-</div>
-
-<SplitScreen>
-	<div slot="left" class="flex items-center justify-center">
-		<Logo class="h-36 w-36" />
+<BrandedSplitScreen>
+	<Card.Root>
+		<Card.Header>
+			<Card.Title>Sign up</Card.Title>
+			<Card.Description>This will only take a few moments.</Card.Description>
+		</Card.Header>
+		<Card.Content class="space-y-3 lg:space-y-5">
+			<BasicAuth type="signup" data={data.form} />
+			<Separator />
+			<OAuth type="signup" />
+		</Card.Content>
+	</Card.Root>
+	<div class="flex w-full justify-center">
+		<Card.Description>
+			<a class="underline" href="/login">Already have an account?</a>
+		</Card.Description>
 	</div>
-	<div class="w-full max-w-96 space-y-3" slot="right">
-		<div class="flex w-full justify-center lg:hidden">
-			<Logo class="h-16 w-16" />
-		</div>
-		<Card.Root>
-			<Card.Header>
-				<Card.Title>Sign up</Card.Title>
-				<Card.Description>This will only take a few moments.</Card.Description>
-			</Card.Header>
-			<Card.Content class="space-y-3 lg:space-y-5">
-				<BasicAuth type="signup" data={data.form} />
-				<Separator />
-				<OAuth type="signup" />
-			</Card.Content>
-		</Card.Root>
-		<div class="flex w-full justify-center">
-			<Card.Description>
-				<a class="underline" href="/login">Already have an account?</a>
-			</Card.Description>
-		</div>
-	</div>
-</SplitScreen>
+</BrandedSplitScreen>

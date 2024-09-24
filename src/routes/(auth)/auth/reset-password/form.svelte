@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
 	import Loader2 from 'lucide-svelte/icons/loader-circle';

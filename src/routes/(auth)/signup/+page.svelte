@@ -1,9 +1,7 @@
-<script>
+<script lang="ts">
 	import { BrandedSplitScreen } from '$layouts';
 
-	import { Button } from '$ui/button';
 	import * as Card from '$ui/card';
-	import { Logo } from '$components/navbar';
 	import { Separator } from '$ui/separator';
 
 	import BasicAuth from '../(ui)/basic-auth.svelte';

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Logo } from '$components/navbar';
 	import { ThemeSelector } from '$components/navbar';
 </script>

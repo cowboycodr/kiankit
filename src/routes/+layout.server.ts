@@ -3,7 +3,7 @@ export const load = async (event) => {
 		locals: { safeGetSession }
 	} = event;
 	const { session, user } = await safeGetSession();
-	
+
 	return {
 		session,
 		user

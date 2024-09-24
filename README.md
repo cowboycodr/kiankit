@@ -1,6 +1,6 @@
 # KianKit (v2)
 
-This is a work-in-progress branch focused on KianKit v2. Planning on 
+This is a work-in-progress branch focused on KianKit v2. Planning on
 releasing this after Svelte 5 officially launches.
 
 Our goal for v2 is to make the codebase easier to understand/ change. While
@@ -16,7 +16,7 @@ Svelte 5, so that users of KianKit can enjoy the many benefits of the new
 update.
 
 > Contributions/ feedback is more-than appreciated. Please create as many
-issues/ pull requests as you'd like.
+> issues/ pull requests as you'd like.
 
 ### Features
 

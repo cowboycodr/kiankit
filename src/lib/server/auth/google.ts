@@ -1,6 +1,8 @@
-import { redirect } from '@sveltejs/kit';
+import { redirect, type ServerLoadEvent } from '@sveltejs/kit';
+import type { SuperValidated } from 'sveltekit-superforms';
+import type { AuthSchema } from '$lib/schemas';
 
-export const signInWithGoogle = async (event, form) => {
+export const signInWithGoogle = async (event: ServerLoadEvent, form: SuperValidated<AuthSchema>) => {
 	const {
 		url,
 		locals: { supabase }

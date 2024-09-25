@@ -3,13 +3,16 @@ import type { SuperValidated } from 'sveltekit-superforms';
 import type { AuthSchema } from '$lib/schemas';
 
 export type AuthResult = {
-    error?: {
-        target: 'email' | 'password';
-        message: string;
-    };
+	error?: {
+		target: 'email' | 'password';
+		message: string;
+	};
 };
 
-export const signUpWithEmail = async (event: ServerLoadEvent, form: SuperValidated<AuthSchema>): Promise<AuthResult> => {
+export const signUpWithEmail = async (
+	event: ServerLoadEvent,
+	form: SuperValidated<AuthSchema>
+): Promise<AuthResult> => {
 	const {
 		url,
 		locals: { supabase }
@@ -25,7 +28,7 @@ export const signUpWithEmail = async (event: ServerLoadEvent, form: SuperValidat
 				target: 'email',
 				message: 'Email is required'
 			}
-		}
+		};
 	}
 
 	if (!password) {
@@ -57,7 +60,10 @@ export const signUpWithEmail = async (event: ServerLoadEvent, form: SuperValidat
 	throw redirect(303, '/auth/message?message=email');
 };
 
-export const signInWithEmail = async (event: ServerLoadEvent, form: SuperValidated<AuthSchema>): Promise<AuthResult> => {
+export const signInWithEmail = async (
+	event: ServerLoadEvent,
+	form: SuperValidated<AuthSchema>
+): Promise<AuthResult> => {
 	const {
 		url,
 		locals: { supabase }

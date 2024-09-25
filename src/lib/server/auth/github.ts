@@ -4,8 +4,8 @@ import type { AuthSchema } from '$lib/schemas';
 import type { AuthResult } from './email';
 
 export const signInWithGithub = async (
-  event: ServerLoadEvent,
-  form: SuperValidated<AuthSchema>
+	event: ServerLoadEvent,
+	form: SuperValidated<AuthSchema>
 ): Promise<AuthResult> => {
 	const {
 		url,

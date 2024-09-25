@@ -167,7 +167,7 @@ export const requestResetPassword = async (event: ServerLoadEvent) => {
 			form
 		});
 	}
-	
+
 	if (!email) {
 		return setError(form, 'email', 'Email is required');
 	}

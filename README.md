@@ -20,7 +20,7 @@ update.
 
 ### Features
 
-- [ ] Rewrite the codebase in TypeScript
+- [x] Rewrite the codebase in TypeScript
 - [ ] Migrate to Svelte 5
 - [ ] Switch from Supabase to Pocketbase
 

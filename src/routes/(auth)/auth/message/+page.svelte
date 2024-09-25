@@ -4,7 +4,7 @@
 	import { ArrowLeft } from 'lucide-svelte';
 
 	import { SplitScreen } from '$layouts/split-screen/index.js';
-	import { Logo } from '$components/navbar';
+	import { Logo } from '$components/navbar/index.js';
 
 	import { Button } from '$ui/button';
 

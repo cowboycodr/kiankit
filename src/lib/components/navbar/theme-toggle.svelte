@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { toggleMode } from 'mode-watcher';
 	import SunIcon from 'lucide-svelte/icons/sun';
 	import MoonIcon from 'lucide-svelte/icons/moon';

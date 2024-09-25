@@ -1,5 +1,8 @@
-<script>
-	import { setMode, mode, systemPrefersMode, userPrefersMode } from 'mode-watcher';
+<script lang="ts">
+	import type { ComponentType } from 'svelte';
+	import type { Icon } from 'lucide-svelte';
+
+	import { setMode, mode, userPrefersMode } from 'mode-watcher';
 
 	import HardDrive from 'lucide-svelte/icons/hard-drive';
 	import MoonIcon from 'lucide-svelte/icons/moon';
@@ -7,18 +10,23 @@
 
 	import ThemeItem from './theme-item.svelte';
 
-	const themes = [
+	interface Theme {
+		target: 'dark' | 'light' | 'system';
+		icon: ComponentType<Icon>;
+	}
+
+	const themes: Theme[] = [
 		{
 			target: 'system',
-			icon: HardDrive
+			icon: HardDrive as ComponentType<Icon>
 		},
 		{
 			target: 'dark',
-			icon: MoonIcon
+			icon: MoonIcon as ComponentType<Icon>
 		},
 		{
 			target: 'light',
-			icon: SunIcon
+			icon: SunIcon as ComponentType<Icon>
 		}
 	];
 

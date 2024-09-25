@@ -1,6 +1,6 @@
-import { fail, redirect } from '@sveltejs/kit';
+import { fail, redirect, type ServerLoadEvent } from '@sveltejs/kit';
 
-import { setError, superValidate } from 'sveltekit-superforms';
+import { setError, superValidate, type SuperValidated } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
 
 import {
@@ -9,9 +9,16 @@ import {
 	signUpWithEmail,
 	signInWithEmail
 } from '$lib/server/auth';
-import { authSchema } from '$lib/schemas';
+import { authSchema, type AuthSchema } from '$lib/schemas';
 
-export const signUp = async (event) => {
+type AuthResult = {
+	error?: {
+		target: 'email' | 'password';
+		message: string;
+	};
+};
+
+export const signUp = async (event: ServerLoadEvent) => {
 	const form = await superValidate(event, zod(authSchema));
 
 	if (!form.valid) {
@@ -26,7 +33,6 @@ export const signUp = async (event) => {
 		const { error } = await signUpWithEmail(event, form);
 
 		if (error) {
-			console.error(error);
 			return setError(form, 'email', error.message);
 		}
 	} else {
@@ -46,7 +52,7 @@ export const signUp = async (event) => {
 	};
 };
 
-export const login = async (event) => {
+export const login = async (event: ServerLoadEvent) => {
 	const form = await superValidate(event, zod(authSchema));
 
 	if (!form.valid) {
@@ -61,18 +67,14 @@ export const login = async (event) => {
 		const { error } = await signInWithEmail(event, form);
 
 		if (error) {
-			if (error.mesage === 'Invalid login credentials') {
-				return setError(form, 'password', error.message);
-			}
-
-			return setError(form, 'email', error.message);
+			return setError(form, error.target, error.message);
 		}
+		// If no error, signInWithEmail will throw a redirect
 	} else {
 		const { error } = await handleOAuthProvider(method, event, form);
 
 		if (error) {
 			console.error(error);
-
 			return fail(500, {
 				form
 			});
@@ -84,7 +86,7 @@ export const login = async (event) => {
 	};
 };
 
-export const logOut = async (event) => {
+export const logOut = async (event: ServerLoadEvent) => {
 	const {
 		locals: { supabase }
 	} = event;
@@ -94,7 +96,7 @@ export const logOut = async (event) => {
 	throw redirect(303, '/');
 };
 
-export const resendConfirmation = async (event) => {
+export const resendConfirmation = async (event: ServerLoadEvent) => {
 	const {
 		url,
 		locals: { supabase }
@@ -111,7 +113,11 @@ export const resendConfirmation = async (event) => {
 	const { email } = form.data;
 	const redirectUrl = form.data.redirectUrl;
 
-	const { data, error } = await supabase.auth.resend({
+	if (!email) {
+		return setError(form, 'email', 'Email is required');
+	}
+
+	const { error } = await supabase.auth.resend({
 		type: 'signup',
 		email,
 		options: {
@@ -125,36 +131,29 @@ export const resendConfirmation = async (event) => {
 		});
 	}
 
-	throw redirect('/auth/message?message=email');
+	throw redirect(303, '/auth/message?message=email');
 };
 
-async function handleOAuthProvider(method, event, form) {
-	if (method === 'google') {
-		const { error } = await signInWithGoogle(event, form);
+async function handleOAuthProvider(
+	method: 'google' | 'github',
+	event: ServerLoadEvent,
+	form: SuperValidated<AuthSchema>
+): Promise<AuthResult> {
+	const handlers = {
+		google: signInWithGoogle,
+		github: signInWithGithub
+	};
 
-		if (error) {
-			return {
-				error
-			};
-		}
-	} else if (method === 'github') {
-		const { error } = await signInWithGithub(event, form);
-
-		if (error) {
-			return {
-				error
-			};
-		}
-	} else {
-		return {
-			error: {
-				message: 'Invalid OAuth provider.'
-			}
-		};
+	const handler = handlers[method];
+	if (!handler) {
+		return { error: { target: 'email', message: 'Invalid OAuth provider.' } };
 	}
+
+	const { error } = await handler(event, form);
+	return error ? { error: { target: 'email', message: error.message } } : {};
 }
 
-export const requestResetPassword = async (event) => {
+export const requestResetPassword = async (event: ServerLoadEvent) => {
 	const {
 		url,
 		locals: { supabase }
@@ -167,6 +166,10 @@ export const requestResetPassword = async (event) => {
 		return fail(400, {
 			form
 		});
+	}
+	
+	if (!email) {
+		return setError(form, 'email', 'Email is required');
 	}
 
 	const { error } = await supabase.auth.resetPasswordForEmail(email, {
@@ -181,7 +184,7 @@ export const requestResetPassword = async (event) => {
 	throw redirect(303, '/auth/message?message=reset-request');
 };
 
-export const updatePassword = async (event) => {
+export const updatePassword = async (event: ServerLoadEvent) => {
 	const {
 		locals: { supabase }
 	} = event;

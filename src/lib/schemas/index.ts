@@ -1,3 +1,3 @@
-import { schema as authSchema } from './auth';
+import { schema as authSchema, type SchemaType as AuthSchema } from './auth';
 
-export { authSchema };
+export { authSchema, type AuthSchema };

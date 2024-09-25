@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { cn } from '$lib/utils';
 	import { Hexagon as Logo } from 'lucide-svelte';
 

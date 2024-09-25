@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Navbar from './(navbar)/navbar.svelte';
 	import Footer from './footer.svelte';
 </script>

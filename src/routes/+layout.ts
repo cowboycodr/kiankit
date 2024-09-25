@@ -31,6 +31,7 @@ export const load = async (event) => {
 		data: { session }
 	} = await supabase.auth.getSession();
 
+	// Replace this with your own meta data.
 	const baseMetaTags = Object.freeze({
 		title: 'KianKit',
 		titleTemplate: '%s | KianKit',

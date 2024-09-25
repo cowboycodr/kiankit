@@ -1,5 +1,6 @@
 import { Dialog as SheetPrimitive } from 'bits-ui';
-import { tv } from 'tailwind-variants';
+import { type VariantProps, tv } from 'tailwind-variants';
+
 import Portal from './sheet-portal.svelte';
 import Overlay from './sheet-overlay.svelte';
 import Content from './sheet-content.svelte';
@@ -7,9 +8,11 @@ import Header from './sheet-header.svelte';
 import Footer from './sheet-footer.svelte';
 import Title from './sheet-title.svelte';
 import Description from './sheet-description.svelte';
+
 const Root = SheetPrimitive.Root;
 const Close = SheetPrimitive.Close;
 const Trigger = SheetPrimitive.Trigger;
+
 export {
 	Root,
 	Close,
@@ -33,8 +36,9 @@ export {
 	Title as SheetTitle,
 	Description as SheetDescription
 };
+
 export const sheetVariants = tv({
-	base: 'fixed z-50 gap-4 bg-background p-6 shadow-lg',
+	base: 'bg-background fixed z-50 gap-4 p-6 shadow-lg',
 	variants: {
 		side: {
 			top: 'inset-x-0 top-0 border-b',
@@ -47,6 +51,7 @@ export const sheetVariants = tv({
 		side: 'right'
 	}
 });
+
 export const sheetTransitions = {
 	top: {
 		in: {
@@ -97,3 +102,5 @@ export const sheetTransitions = {
 		}
 	}
 };
+
+export type Side = VariantProps<typeof sheetVariants>['side'];

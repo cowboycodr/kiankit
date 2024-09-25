@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 
 	import { ArrowLeft } from 'lucide-svelte';
 
-	import { SplitScreen } from '$layouts/split-screen';
+	import { SplitScreen } from '$layouts/split-screen/index.js';
 	import { Logo } from '$components/navbar';
 
 	import { Button } from '$ui/button';

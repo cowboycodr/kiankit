@@ -4,6 +4,7 @@ import Description from './card-description.svelte';
 import Footer from './card-footer.svelte';
 import Header from './card-header.svelte';
 import Title from './card-title.svelte';
+
 export {
 	Root,
 	Content,
@@ -19,3 +20,5 @@ export {
 	Header as CardHeader,
 	Title as CardTitle
 };
+
+export type HeadingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

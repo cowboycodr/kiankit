@@ -1,6 +1,9 @@
-<script>
+<script lang="ts">
 	import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui';
-	export let value = undefined;
+
+	type $$Props = DropdownMenuPrimitive.RadioGroupProps;
+
+	export let value: $$Props['value'] = undefined;
 </script>
 
 <DropdownMenuPrimitive.RadioGroup {...$$restProps} bind:value>

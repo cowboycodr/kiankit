@@ -31,8 +31,9 @@
 		<ThemeItem
 			icon={theme.icon}
 			active={isThemeActive}
-			
-			on:click={() => { setMode(theme.target) }}
+			on:click={() => {
+				setMode(theme.target);
+			}}
 		/>
 	{/each}
 </div>

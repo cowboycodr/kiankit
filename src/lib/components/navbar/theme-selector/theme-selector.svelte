@@ -33,7 +33,7 @@
 	$: activeTheme = $userPrefersMode || $mode;
 </script>
 
-<div class="flex items-center rounded-full border">
+<div class="flex items-center rounded-full border shadow-sm">
 	{#each themes as theme}
 		{@const isThemeActive = activeTheme === theme.target}
 		<ThemeItem

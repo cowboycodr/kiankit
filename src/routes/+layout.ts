@@ -1,4 +1,4 @@
-import { env } from '$env/dynamic/public';
+import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
 import { createBrowserClient, isBrowser, parse } from '@supabase/ssr';
 
 export const load = async (event) => {
@@ -6,7 +6,7 @@ export const load = async (event) => {
 
 	depends('supabase:auth');
 
-	const supabase = createBrowserClient(env.PUBLIC_SUPABASE_URL, env.PUBLIC_SUPABASE_ANON_KEY, {
+	const supabase = createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
 		global: {
 			fetch
 		},

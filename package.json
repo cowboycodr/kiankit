@@ -7,13 +7,15 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "prettier --check .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"prepare": "husky && husky install"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^5.2.4",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"autoprefixer": "^10.4.16",
+		"husky": "^9.1.6",
 		"postcss": "^8.4.32",
 		"postcss-load-config": "^5.0.2",
 		"prettier": "^3.1.1",
@@ -44,5 +46,8 @@
 		"tailwind-variants": "^0.2.1",
 		"vaul-svelte": "^0.3.0",
 		"zod": "^3.23.8"
+	},
+	"lint-staged": {
+		"*.": "prettier --write"
 	}
 }

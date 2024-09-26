@@ -23,13 +23,13 @@
 </div>
 
 <SplitScreen>
-	<div slot="left" class="flex items-center justify-center">
-		<Logo class="h-36 w-36" />
-	</div>
-	<div class="w-full max-w-96 space-y-3" slot="right">
+	<div class="w-full max-w-96 space-y-3" slot="left">
 		<div class="flex w-full justify-center lg:hidden">
 			<Logo class="h-16 w-16" />
 		</div>
 		<slot />
+	</div>
+	<div slot="right" class="flex items-center justify-center">
+		<Logo class="h-36 w-36" />
 	</div>
 </SplitScreen>

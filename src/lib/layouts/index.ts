@@ -1,3 +1,4 @@
 import { SplitScreen, BrandedSplitScreen } from './split-screen';
+import { Center } from './center';
 
-export { SplitScreen, BrandedSplitScreen };
+export { BrandedSplitScreen, Center, SplitScreen };

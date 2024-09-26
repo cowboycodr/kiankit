@@ -48,6 +48,6 @@
 		"zod": "^3.23.8"
 	},
 	"lint-staged": {
-		"*.": "prettier --write"
+		"*.{js,ts,svelte,css,json}": "prettier --write"
 	}
 }

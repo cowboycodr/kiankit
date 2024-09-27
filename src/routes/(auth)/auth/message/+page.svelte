@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 
 	import { ArrowLeft } from 'lucide-svelte';
 
-	import { SplitScreen } from '$layouts/split-screen';
-	import { Logo } from '$components/navbar';
+	import { SplitScreen } from '$layouts/split-screen/index.js';
+	import { Logo } from '$components/navbar/index.js';
 
 	import { Button } from '$ui/button';
 
@@ -26,11 +26,8 @@
 </div>
 
 <SplitScreen>
-	<div slot="left" class="flex items-center justify-center">
-		<Logo class="h-36 w-36" />
-	</div>
 	<div
-		slot="right"
+		slot="left"
 		class="w-full max-w-lg space-y-3 text-balance text-center lg:text-wrap lg:text-left"
 	>
 		<div class="flex w-full justify-center lg:hidden">
@@ -47,5 +44,8 @@
 				<Button href="/login" class="p-0 text-lg lg:text-base" variant="link">Go to log in</Button>
 			</div>
 		</div>
+	</div>
+	<div slot="right" class="flex items-center justify-center">
+		<Logo class="h-36 w-36" />
 	</div>
 </SplitScreen>

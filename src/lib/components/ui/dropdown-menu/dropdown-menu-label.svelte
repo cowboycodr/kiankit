@@ -1,8 +1,13 @@
-<script>
+<script lang="ts">
 	import { DropdownMenu as DropdownMenuPrimitive } from 'bits-ui';
 	import { cn } from '$lib/utils.js';
-	let className = undefined;
-	export let inset = undefined;
+
+	type $$Props = DropdownMenuPrimitive.LabelProps & {
+		inset?: boolean;
+	};
+
+	let className: $$Props['class'] = undefined;
+	export let inset: $$Props['inset'] = undefined;
 	export { className as class };
 </script>
 

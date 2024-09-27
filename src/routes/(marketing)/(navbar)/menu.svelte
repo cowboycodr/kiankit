@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 
 	import MenuIcon from 'lucide-svelte/icons/menu';
@@ -83,7 +83,7 @@
 							target="_blank"
 						>
 							Docs
-							<!-- <ChevronDown class="h-4" /> -->
+							<ChevronDownIcon class="h-4" />
 						</Button>
 					</div>
 				</div>

@@ -1,7 +1,10 @@
-<script>
+<script lang="ts">
 	import * as FormPrimitive from 'formsnap';
+	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';
-	let className = undefined;
+
+	type $$Props = HTMLAttributes<HTMLSpanElement>;
+	let className: string | undefined | null = undefined;
 	export { className as class };
 </script>
 

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { BrandedSplitScreen } from '$layouts/split-screen';
 	import * as Card from '$ui/card';
 

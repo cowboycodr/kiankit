@@ -1,10 +1,6 @@
-<script>
+<script lang="ts">
 	import * as Card from '$ui/card';
 	import { Button } from '$ui/button';
-	import { Separator } from '$ui/separator';
-
-	import BookIcon from 'lucide-svelte/icons/book';
-	import GithubIcon from 'lucide-svelte/icons/github';
 
 	const features = [
 		{

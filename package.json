@@ -7,14 +7,15 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"lint": "prettier --check .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"prepare": "husky && husky install"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/adapter-vercel": "^5.3.0",
+		"@sveltejs/adapter-node": "^5.2.4",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"autoprefixer": "^10.4.16",
+		"husky": "^9.1.6",
 		"postcss": "^8.4.32",
 		"postcss-load-config": "^5.0.2",
 		"prettier": "^3.1.1",
@@ -30,19 +31,23 @@
 		"@fortawesome/free-brands-svg-icons": "^6.5.2",
 		"@supabase/ssr": "^0.3.0",
 		"@supabase/supabase-js": "^2.43.0",
-		"bits-ui": "^0.21.13",
+		"bits-ui": "^0.21.15",
 		"clsx": "^2.1.1",
-		"formsnap": "^1.0.0",
+		"dotenv": "^16.4.5",
+		"formsnap": "^1.0.1",
 		"just-extend": "^6.2.0",
 		"lucide-svelte": "^0.378.0",
 		"mode-watcher": "^0.4.1",
 		"super-sitemap": "^0.15.1",
 		"svelte-fa": "^4.0.2",
 		"svelte-sonner": "^0.3.24",
-		"sveltekit-superforms": "^2.13.1",
-		"tailwind-merge": "^2.3.0",
+		"sveltekit-superforms": "^2.19.0",
+		"tailwind-merge": "^2.5.2",
 		"tailwind-variants": "^0.2.1",
 		"vaul-svelte": "^0.3.0",
 		"zod": "^3.23.8"
+	},
+	"lint-staged": {
+		"*.{js,ts,svelte,css,json}": "prettier --write"
 	}
 }

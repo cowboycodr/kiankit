@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Button } from '$ui/button';
 	import * as Dropdown from '$ui/dropdown-menu';
 

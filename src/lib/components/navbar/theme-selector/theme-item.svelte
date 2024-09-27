@@ -1,6 +1,4 @@
-<script>
-	import { mode } from 'mode-watcher';
-
+<script lang="ts">
 	export let icon;
 	export let active;
 </script>

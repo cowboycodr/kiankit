@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
 	import { Navbar } from '$components/navbar';
 
 	import Brand from './brand.svelte';
 	import Menu from './menu.svelte';
 
-	let scrollY;
+	let scrollY: number;
 </script>
 
 <svelte:window bind:scrollY />

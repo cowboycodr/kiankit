@@ -1,0 +1,6 @@
+# v1.1 (2024-09-26)
+
+- Prepared the codebase to easily migrate to Svelte 5
+- Adapted the codebase to use TypeScript
+- Updated the packages
+- Prepared the codebase for the upcoming v2 release. Most importantly prepared the authentication system to be rewritten to be more understandable, intuitive, and easier to modify.

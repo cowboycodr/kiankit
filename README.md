@@ -1,19 +1,18 @@
-# KianKit (v2)
+# KianKit (v1.1)
 
-This is a work-in-progress branch focused on KianKit v2. Planning on
-releasing this after Svelte 5 officially launches.
+This is a work-in-progress branch focused on KianKit v1.1. This is a standard
+update, primarily preparing the codebase for an easy Svelte 5 migration.
 
-Our goal for v2 is to make the codebase easier to understand/ change. While
-also updating the project to all of the latest standards. Including Svelte
-5, by the time this releases.
+Also will be adding TypeScript. With Svelte, Typescript is essentially
+optional. So I've decided it would be better to have it than to not.
 
-Initially we will rewrite the codebase in TypeScript. This has been
-something many users in the [r/sveltejs](https://reddit.com/r/sveltejs) subreddit have suggested. Also, in
-accordance with our "simplicity first" we are switching from Supabase to
-Pocketbase. Pocketbase is easier to self-host, and is praised for it's
-simple API and comprehensive documentation. Lastly, we will be switching to
-Svelte 5, so that users of KianKit can enjoy the many benefits of the new
-update.
+Lastly, adding Husky and pre-configuring it to format the codebase on
+commit.
+
+In addition to preparing the codebase for Svelte 5, it also prepares
+the auth for a rewrite. Currently, the auth is too complex and hard to extend.
+Something which will be entirely rewritten to be more intuitive, understandable,
+and modifiable in the future.
 
 > Contributions/ feedback is more-than appreciated. Please create as many
 > issues/ pull requests as you'd like.
@@ -21,7 +20,9 @@ update.
 ### Features
 
 - [x] Rewrite the codebase in TypeScript
-- [ ] Migrate to Svelte 5
-- [ ] Switch from Supabase to Pocketbase
+- [x] Add husky pre-commit hooks
+- [x] Update dependencies
 
 ... any suggestions would be appreciated in the form of issues/ pull requests.
+
+#### Thanks for using KianKit!

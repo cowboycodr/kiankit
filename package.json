@@ -33,6 +33,6 @@
 	"type": "module",
 	"lint-staged": {
 		"*.{js,ts}": "eslint --cache --fix",
-		"*.{js,ts,svelte,pcss,css,md}": "prettier --write"
+		"*.{js,ts,svelte,pcss,css,json,md}": "prettier --write"
 	}
 }

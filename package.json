@@ -39,5 +39,10 @@
 	"lint-staged": {
 		"*.{js,ts}": "eslint --cache --fix",
 		"*.{js,ts,svelte,pcss,css,json,md}": "prettier --write"
+	},
+	"dependencies": {
+		"clsx": "^2.1.1",
+		"tailwind-merge": "^2.5.2",
+		"tailwind-variants": "^0.2.1"
 	}
 }

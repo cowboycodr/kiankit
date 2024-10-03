@@ -34,7 +34,7 @@
 	];
 </script>
 
-<div class="container max-w-[1024px] py-12">
+<div class="container max-w-[1024px] space-y-12 py-12">
 	<div class="space-y-3">
 		<h1 class="text-3xl font-bold tracking-tighter md:text-4xl">Lorem ipsum dolor sit amet</h1>
 		<p class="text-lg text-muted-foreground md:w-[50%]">

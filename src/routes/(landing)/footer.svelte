@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { ThemeController } from '@/components/theme-controller';
 </script>
 
 <footer class="min-h-16 w-full border-t">
@@ -7,6 +8,7 @@
 			<div class="flex items-center space-x-1">
 				<span>Acme © 2024 </span>
 			</div>
+			<ThemeController />
 		</div>
 	</div>
 </footer>

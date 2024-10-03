@@ -48,6 +48,7 @@
 		"clsx": "^2.1.1",
 		"formsnap": "^1.0.1",
 		"lucide-svelte": "^0.447.0",
+		"mode-watcher": "^0.4.1",
 		"svelte-fa": "^4.0.3",
 		"svelte-sonner": "^0.3.28",
 		"sveltekit-superforms": "^2.19.0",

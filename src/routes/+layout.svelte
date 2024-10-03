@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.pcss';
 
+	import { ModeWatcher } from 'mode-watcher';
 	import { Toaster } from 'svelte-sonner';
 
 	import { invalidate } from '$app/navigation';
@@ -20,6 +21,7 @@
 	});
 </script>
 
+<ModeWatcher defaultMode="system" />
 <Toaster position="top-center" />
 
 <slot />

@@ -8,7 +8,7 @@
 		base: 'fill-primary text-primary',
 		variants: {
 			size: {
-				sm: 'h-7 w-7',
+				sm: 'h-8 w-8',
 				md: 'h-9 w-9',
 				lg: 'h-16 w-16',
 				xl: 'h-36 w-36'

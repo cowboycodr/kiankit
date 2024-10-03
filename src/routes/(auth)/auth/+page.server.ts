@@ -42,5 +42,8 @@ export const actions: Actions = {
 	},
 	async oauth() {
 		// TODO
+	},
+	async logout() {
+		// TODO
 	}
 };

@@ -88,8 +88,8 @@
 									<span> Log out </span>
 								</Button>
 							{:else}
-								<Button class="w-full" variant="outline" href="/signup">Sign up</Button>
-								<Button class="w-full" href="/login">Log in</Button>
+								<Button class="w-full" variant="outline" href="/login">Log in</Button>
+								<Button class="w-full" href="/signup">Sign up</Button>
 							{/if}
 						</div>
 						<div class="text-muted-foreground">

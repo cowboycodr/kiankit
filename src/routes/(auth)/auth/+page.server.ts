@@ -1,11 +1,11 @@
-import type { Actions } from './$types';
+import type { Actions, PageServerLoad } from './$types';
 import { redirect, fail } from '@sveltejs/kit';
 
 import { superValidate } from 'sveltekit-superforms';
 import { zod } from 'sveltekit-superforms/adapters';
 import { emailAuthSchema } from '@/schemas';
 
-export const load = async () => {
+export const load: PageServerLoad = async () => {
 	return redirect(303, '/login');
 };
 
@@ -43,7 +43,11 @@ export const actions: Actions = {
 	async oauth() {
 		// TODO
 	},
-	async logout() {
-		// TODO
+	async logout(event) {
+		const {
+			locals: { supabase }
+		} = event;
+
+		await supabase.auth.signOut();
 	}
 };

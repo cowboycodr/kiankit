@@ -1,14 +1,18 @@
 <script lang="ts">
-	import MenuIcon from 'lucide-svelte/icons/menu';
+	import { page } from '$app/stores';
+	import { enhance } from '$app/forms';
+
+	import CircleUserIcon from 'lucide-svelte/icons/circle-user';
 	import ChevronDownIcon from 'lucide-svelte/icons/chevron-down';
 	import LogOutIcon from 'lucide-svelte/icons/log-out';
+	import MenuIcon from 'lucide-svelte/icons/menu';
 
 	import { Logo } from '@/components/logo';
 	import { Button } from '@/components/ui/button';
 	import * as Sheet from '@/components/ui/sheet';
-	import type { Session } from '@supabase/supabase-js';
+	import * as Dropdown from '@/components/ui/dropdown-menu';
 
-	export let session: Session;
+	$: ({ session } = $page.data);
 
 	let scrollY: number;
 </script>
@@ -17,7 +21,7 @@
 
 <header class="sticky top-0 w-full bg-background {scrollY > 0 ? 'border-b' : ''}">
 	<nav class="container flex w-full max-w-[1024px] items-center space-x-5 p-4">
-		<div class="flex w-full items-center space-x-3 md:w-auto">
+		<div class="flex h-9 w-full items-center space-x-3 md:w-auto">
 			<div class="hidden md:contents">
 				<Logo size="sm" />
 			</div>
@@ -26,7 +30,7 @@
 			</div>
 			<h3 class="hidden text-nowrap text-lg font-medium md:block">Acme</h3>
 		</div>
-		<div class="hidden w-full justify-between md:flex">
+		<div class="hidden h-9 w-full justify-between md:flex">
 			<div>
 				<Button size="sm" variant="ghost" class="rounded-full text-foreground/60" href="/product">
 					Product
@@ -38,9 +42,30 @@
 					>Blog</Button
 				>
 			</div>
-			<div>
-				<Button size="sm" variant="outline" href="/login">Log in</Button>
-				<Button size="sm" href="/signup">Sign up</Button>
+			<div class="flex items-center">
+				{#if session}
+					<Dropdown.Root>
+						<Dropdown.Trigger asChild let:builder>
+							<Button builders={[builder]} size="icon" variant="ghost">
+								<CircleUserIcon />
+							</Button>
+						</Dropdown.Trigger>
+						<Dropdown.Content>
+							<Dropdown.Group>
+								<form method="POST" action="/auth?/logout" class="contents" use:enhance>
+									<button type="submit" class="contents">
+										<Dropdown.Item>Log out</Dropdown.Item>
+									</button>
+								</form>
+							</Dropdown.Group>
+						</Dropdown.Content>
+					</Dropdown.Root>
+				{:else}
+					<div>
+						<Button size="sm" variant="outline" href="/login">Log in</Button>
+						<Button size="sm" href="/signup">Sign up</Button>
+					</div>
+				{/if}
 			</div>
 		</div>
 		<div class="md:hidden">
@@ -58,7 +83,7 @@
 						<div class="space-y-3">
 							{#if session}
 								<Button class="w-full" variant="outline">
-									<LogOutIcon class="h-[1.2rem] w-[1.2rem]" />
+									<LogOutIcon size="16" />
 									<span> Log out </span>
 								</Button>
 							{:else}

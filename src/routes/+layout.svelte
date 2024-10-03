@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.pcss';
 
+	import { Toaster } from 'svelte-sonner';
+
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
 
@@ -17,5 +19,7 @@
 		return () => data.subscription.unsubscribe();
 	});
 </script>
+
+<Toaster position="top-center" />
 
 <slot />

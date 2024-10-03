@@ -9,7 +9,7 @@
 		variants: {
 			size: {
 				sm: 'h-7 w-7',
-				md: 'h-8 h-8',
+				md: 'h-9 w-9',
 				lg: 'h-16 w-16',
 				xl: 'h-36 w-36'
 			}

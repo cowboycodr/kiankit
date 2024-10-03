@@ -1,4 +1,68 @@
 <script lang="ts">
+	import { Button } from '@/components/ui/button';
+	import * as Card from '@/components/ui/card';
+
+	const features = [
+		{
+			title: 'Lorem Ipsum',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+		},
+		{
+			title: 'Vestibulum Accumsan',
+			description: 'Vestibulum accumsan velit ut turpis scelerisque, sit amet cursus nisl gravida.'
+		},
+		{
+			title: 'Aenean Consectetur',
+			description: 'Aenean consectetur lacus eu nulla auctor, a tincidunt nisi egestas.'
+		},
+		{
+			title: 'Nullam Tristique',
+			description: 'Nullam tristique tortor a risus volutpat, ac hendrerit lorem finibus.'
+		},
+		{
+			title: 'Pellentesque Habitasse',
+			description: 'Pellentesque habitasse platea dictumst. Etiam nec tempor orci.'
+		},
+		{
+			title: 'Curabitur Volutpat',
+			description: 'Curabitur volutpat metus eget eros convallis, nec fermentum justo luctus.'
+		}
+	];
 </script>
 
-<div class="container max-w-[1024px]"></div>
+<div class="container my-12 max-w-[1024px] space-y-12">
+	<div class="space-y-3">
+		<h1 class="text-3xl font-bold tracking-tighter md:text-4xl">Lorem ipsum dolor sit amet</h1>
+		<p class="text-lg text-muted-foreground md:w-[50%]">
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+			pariatur.
+		</p>
+		<div class="flex space-x-3 pt-1">
+			<Button size="sm" href="/signup">Get started</Button>
+			<Button
+				variant="outline"
+				size="sm"
+				href="https://github.com/cowboycodr/kiankit"
+				target="_blank">Star on GitHub</Button
+			>
+		</div>
+	</div>
+	<div class="space-y-6">
+		<h1 class="text-2xl font-semibold tracking-tighter md:text-3xl">Features</h1>
+		<div class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{#each features as feature}
+				<Card.Root>
+					<Card.Header>
+						<Card.Title>
+							{feature.title}
+						</Card.Title>
+						<Card.Description>
+							{feature.description}
+						</Card.Description>
+						<Card.Content />
+					</Card.Header>
+				</Card.Root>
+			{/each}
+		</div>
+	</div>
+</div>

@@ -7,6 +7,7 @@
 	import LogOutIcon from 'lucide-svelte/icons/log-out';
 	import MenuIcon from 'lucide-svelte/icons/menu';
 
+	import { ThemeToggle } from '@/components/theme-controller';
 	import { Logo } from '@/components/logo';
 	import { Button } from '@/components/ui/button';
 	import * as Sheet from '@/components/ui/sheet';
@@ -104,7 +105,9 @@
 							</Button>
 						</div>
 					</div>
-					<div></div>
+					<div>
+						<ThemeToggle />
+					</div>
 				</Sheet.Content>
 			</Sheet.Root>
 		</div>

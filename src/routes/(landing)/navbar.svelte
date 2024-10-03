@@ -19,7 +19,7 @@
 
 <svelte:window bind:scrollY />
 
-<header class="sticky top-0 w-full bg-background {scrollY > 0 ? 'border-b' : ''}">
+<header class="sticky top-0 w-full border-border bg-background {scrollY > 0 ? 'border-b' : ''}">
 	<nav class="container flex w-full max-w-[1024px] items-center space-x-5 p-4">
 		<div class="flex h-9 w-full items-center space-x-3 md:w-auto">
 			<div class="hidden md:contents">

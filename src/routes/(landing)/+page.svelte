@@ -54,7 +54,7 @@
 				<Button
 					variant="none"
 					size="sm"
-					class="h-8 rounded-full border border-primary/10 bg-gradient-to-t from-primary to-primary/70 text-primary-foreground shadow-md transition-all duration-200 hover:bg-primary/90 dark:bg-gradient-to-b"
+					class="h-8 rounded-full border border-foreground/10 bg-gradient-to-t from-primary to-primary/70 text-primary-foreground shadow-md transition-all duration-200 hover:bg-primary/90 dark:bg-gradient-to-b"
 					type="submit"
 				>
 					<span>Get notified</span>
@@ -64,10 +64,10 @@
 		</div>
 	</div>
 	<div class="space-y-6">
-		<h1 class="text-2xl font-semibold tracking-tighter md:text-3xl">Features</h1>
+		<h1 class="text-2xl font-semibold tracking-tighter md:text-3xl">Album</h1>
 		<div class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 			{#each features as feature}
-				<Card.Root>
+				<Card.Root class="bg-gradient-to-t from-muted to-muted/60">
 					<Card.Header>
 						<Card.Title>
 							{feature.title}

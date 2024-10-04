@@ -1,6 +1,6 @@
 <script>
-	import Navbar from './navbar.svelte';
-	import Footer from './footer.svelte';
+	import Navbar from './components/navbar.svelte';
+	import Footer from './components/footer.svelte';
 </script>
 
 <div class="min-h-dvh">

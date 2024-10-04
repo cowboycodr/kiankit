@@ -64,7 +64,7 @@
 		</div>
 	</div>
 	<div class="space-y-6">
-		<h1 class="text-2xl font-semibold tracking-tighter md:text-3xl">Album</h1>
+		<h2 class="text-2xl font-semibold tracking-tighter md:text-3xl">Album</h2>
 		<div class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 			{#each features as feature}
 				<Card.Root class="bg-gradient-to-t from-muted to-muted/60">

@@ -5,6 +5,8 @@
 - Changed basic auth to email magic link sign in
 - Simplified auth system
 - Removed shared navbar component
+- Add component actions
+- Add `(seo)` group for pages like `/sitemap.xml` and `robots.txt`
 
 # 1.1 (2024-09-26)
 

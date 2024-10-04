@@ -1,4 +1,12 @@
-# v1.1 (2024-09-26)
+# 2.0 (2024-10-00)
+
+- Entire rewrite of the codebase for TypeScript
+- Add `@/` as alternative to `$lib/`
+- Changed basic auth to email magic link sign in
+- Simplified auth system
+- Removed shared navbar component
+
+# 1.1 (2024-09-26)
 
 - Prepared the codebase to easily migrate to Svelte 5
 - Adapted the codebase to use TypeScript

@@ -72,11 +72,12 @@
 						<Card.Title>
 							{feature.title}
 						</Card.Title>
-						<Card.Description>
-							{feature.description}
-						</Card.Description>
-						<Card.Content />
 					</Card.Header>
+					<Card.Content>
+						<div class="text-sm text-muted-foreground">
+							{feature.description}
+						</div>
+					</Card.Content>
 				</Card.Root>
 			{/each}
 		</div>

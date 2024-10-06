@@ -22,7 +22,7 @@
 		</Sheet.Trigger>
 		<Sheet.Content class="flex flex-col">
 			<Sheet.Header>
-				<Sheet.Title>Acme</Sheet.Title>
+				<Sheet.Title>KianKit</Sheet.Title>
 			</Sheet.Header>
 			<div class="flex-1 space-y-5">
 				<div class="space-y-3">

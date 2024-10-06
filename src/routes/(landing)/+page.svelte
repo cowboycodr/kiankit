@@ -8,41 +8,46 @@
 
 	const features = [
 		{
-			title: 'Lorem Ipsum',
-			description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+			title: 'Rapid Setup',
+			description:
+				'Get started with a full-stack application in minutes using SvelteKit, Supabase, and TailwindCSS.'
 		},
 		{
-			title: 'Vestibulum Accumsan',
-			description: 'Vestibulum accumsan velit ut turpis scelerisque, sit amet cursus nisl gravida.'
+			title: 'Integrated Auth',
+			description:
+				'Supabase authentication with support for OAuth, Magic Links, and traditional email/password flows.'
 		},
 		{
-			title: 'Aenean Consectetur',
-			description: 'Aenean consectetur lacus eu nulla auctor, a tincidunt nisi egestas.'
+			title: 'Developer Experience',
+			description:
+				'Pre-configured tools like Vite, TypeScript, and ESLint to boost productivity and maintain code quality.'
 		},
 		{
-			title: 'Nullam Tristique',
-			description: 'Nullam tristique tortor a risus volutpat, ac hendrerit lorem finibus.'
+			title: 'UI Libraries Included',
+			description:
+				'Includes Radix UI and TailwindCSS for creating beautiful, responsive interfaces effortlessly.'
 		},
 		{
-			title: 'Pellentesque Habitasse',
-			description: 'Pellentesque habitasse platea dictumst. Etiam nec tempor orci.'
+			title: 'Open Source',
+			description:
+				'Fully open-source, allowing the community to contribute and improve upon the foundation on GitHub.'
 		},
 		{
-			title: 'Curabitur Volutpat',
-			description: 'Curabitur volutpat metus eget eros convallis, nec fermentum justo luctus.'
+			title: 'Supabase Integration',
+			description:
+				'Easily connect to PostgreSQL databases and leverage real-time capabilities using Supabase client.'
 		}
 	];
 </script>
 
 <div class="container max-w-[1024px] space-y-12 py-12">
 	<div class="space-y-3">
-		<h1 class="text-3xl font-bold tracking-tighter md:text-4xl">Lorem ipsum dolor sit amet</h1>
+		<h1 class="text-3xl font-bold tracking-tighter md:text-4xl">Build faster with KianKit</h1>
 		<p class="text-lg text-muted-foreground md:w-[50%]">
-			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-			pariatur.
+			KianKit is your go-to starter kit for rapid application development. Entirely open-source.
 		</p>
 		<div class="flex space-x-3 pt-1">
-			<form
+			<!-- <form
 				class="flex w-full items-center rounded-full border border-foreground/10 bg-gradient-to-t from-muted to-muted/60 p-1 pl-4 shadow-sm md:max-w-sm"
 			>
 				<input
@@ -60,11 +65,18 @@
 					<span>Get notified</span>
 					<ArrowRightIcon size={18} class="ml-2" />
 				</Button>
-			</form>
+			</form> -->
+			<Button
+				variant="none"
+				class="border border-foreground/10 bg-gradient-to-t from-primary to-primary/70 text-primary-foreground shadow-md transition-all duration-200 hover:bg-primary/90 dark:bg-gradient-to-b"
+			>
+				Read the docs
+			</Button>
+			<Button variant="outline">Star on GitHub</Button>
 		</div>
 	</div>
 	<div class="space-y-6">
-		<h2 class="text-2xl font-semibold tracking-tighter md:text-3xl">Album</h2>
+		<h2 class="text-2xl font-semibold tracking-tighter md:text-3xl">What's in the box?</h2>
 		<div class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
 			{#each features as feature}
 				<Card.Root class="bg-gradient-to-t from-muted to-muted/60">

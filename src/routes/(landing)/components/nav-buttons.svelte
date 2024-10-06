@@ -12,15 +12,21 @@
 
 <div class="hidden h-9 w-full justify-between md:flex">
 	<div>
-		<Button size="sm" variant="ghost" class="rounded-full text-foreground/60" href="/product">
-			Product
-		</Button>
-		<Button size="sm" variant="ghost" class="rounded-full text-foreground/60" href="/pricing"
-			>Pricing</Button
+		<Button
+			size="sm"
+			variant="ghost"
+			class="rounded-full text-foreground/60"
+			target="_blank"
+			href="https://github.com/cowboycodr/kiankit"
 		>
+			GitHub
+		</Button>
 		<Button size="sm" variant="ghost" class="rounded-full text-foreground/60" href="/blog"
 			>Blog</Button
 		>
+		<Button size="sm" variant="ghost" class="rounded-full text-foreground/60" href="/docs"
+			>Docs
+		</Button>
 	</div>
 	<div class="flex items-center">
 		{#if session}

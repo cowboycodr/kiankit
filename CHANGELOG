@@ -1,12 +1,15 @@
-# 2.0 (2024-10-00)
+# 2.0 (2024-10-07)
 
+- Updated dependencies
 - Entire rewrite of the codebase for TypeScript
 - Add `@/` as alternative to `$lib/`
 - Changed basic auth to email magic link sign in
 - Simplified auth system
-- Removed shared navbar component
+- Removed universal navbar component
 - Add component actions
-- Add `(seo)` group for pages like `/sitemap.xml` and `robots.txt`
+- Add `(seo)` group for pages like `/sitemap.xml` and `robots.txt` 
+- Added latest **TypeScript** shadcn/ui components
+- Removed unnecessary deps/ components
 
 # 1.1 (2024-09-26)
 

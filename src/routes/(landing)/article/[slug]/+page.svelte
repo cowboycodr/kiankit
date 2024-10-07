@@ -7,9 +7,14 @@
 
 <main class="container max-w-[1024px] py-12">
 	<article class="prose m-auto dark:prose-invert">
-		<p class="text-xs text-muted-foreground">
-			{blog.date}
-		</p>
+		<div class="flex justify-between">
+			<p>
+				{blog.author}
+			</p>
+			<p>
+				{blog.date}
+			</p>
+		</div>
 		<h1 class="">
 			{blog.title}
 		</h1>

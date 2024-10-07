@@ -3,12 +3,14 @@
 		"slug": "mantra",
 		"title": "I created KianKit so you don't have to. Let me explain.",
 		"date": "2024-05-14",
+		"author": "Kian McKenna",
 		"description": "The starter kit that does the boring stuff so you can focus on the fun parts of building."
 	},
 	{
 		"slug": "v2",
 		"title": "Realigning with Our Principles — KianKit 2",
 		"date": "2024-10-07",
+		"author": "Kian McKenna",
 		"description": "KianKit 2 is a streamlined, opinionated starter kit designed to help you ship projects quickly by focusing on simplicity, minimalism, and eliminating complexity."
 	}
 ]

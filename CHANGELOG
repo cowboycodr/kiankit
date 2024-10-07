@@ -4,7 +4,7 @@
 - Add `@/` as alternative to `$lib/`
 - Changed basic auth to email magic link sign in
 - Simplified auth system
-- Removed shared navbar component
+- Removed universal navbar component
 - Add component actions
 - Add `(seo)` group for pages like `/sitemap.xml` and `robots.txt`
 

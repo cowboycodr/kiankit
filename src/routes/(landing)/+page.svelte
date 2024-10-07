@@ -94,7 +94,7 @@
 								{post.title}
 							</Table.Cell>
 						</a>
-						<Table.Cell>
+						<Table.Cell class="text-nowrap">
 							{moment(post.date).format('MMM D, YYYY')}
 						</Table.Cell>
 					</Table.Row>

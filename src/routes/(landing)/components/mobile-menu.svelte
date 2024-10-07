@@ -11,10 +11,12 @@
 	import * as Sheet from '@/components/ui/sheet';
 
 	$: ({ session } = $page.data);
+
+	let open: boolean;
 </script>
 
 <div class="md:hidden">
-	<Sheet.Root>
+	<Sheet.Root bind:open>
 		<Sheet.Trigger asChild let:builder>
 			<Button builders={[builder]} variant="ghost" size="sm">
 				<MenuIcon />
@@ -47,7 +49,14 @@
 					>
 						<span> GitHub </span>
 					</Button>
-					<Button class="w-full justify-between text-base" variant="ghost" href="/blog">
+					<Button
+						class="w-full justify-between text-base"
+						variant="ghost"
+						href="/#blog"
+						on:click={() => {
+							open = false;
+						}}
+					>
 						<span> Blog </span>
 					</Button>
 					<Button class="w-full justify-between text-base" variant="ghost" href="/docs">

@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
-
-	import ArrowRightIcon from 'lucide-svelte/icons/arrow-right';
-
 	import { Button } from '@/components/ui/button';
 	import * as Card from '@/components/ui/card';
+
+	export let data;
+	$: ({ posts } = data);
 
 	const features = [
 		{
@@ -75,6 +74,29 @@
 						</div>
 					</Card.Content>
 				</Card.Root>
+			{/each}
+		</div>
+	</div>
+	<div class="space-y-6" id="blog">
+		<h2 class="text-2xl font-semibold tracking-tighter md:text-3xl">
+			We have more to say <span class="text-muted-foreground">– read some of our articles</span>
+		</h2>
+		<div class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{#each posts as post}
+				<a class="contents" href={`/article/${post.slug}`}>
+					<Card.Root class="bg-gradient-to-t from-muted to-muted/60">
+						<Card.Header>
+							<Card.Title>
+								{post.title}
+							</Card.Title>
+						</Card.Header>
+						<Card.Content>
+							<div class="text-sm text-muted-foreground">
+								{post.description}
+							</div>
+						</Card.Content>
+					</Card.Root>
+				</a>
 			{/each}
 		</div>
 	</div>

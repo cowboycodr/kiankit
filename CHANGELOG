@@ -9,6 +9,7 @@
 - Add component actions
 - Add `(seo)` group for pages like `/sitemap.xml` and `robots.txt` 
 - Added latest **TypeScript** shadcn/ui components
+- Removed unnecessary deps/ components
 
 # 1.1 (2024-09-26)
 

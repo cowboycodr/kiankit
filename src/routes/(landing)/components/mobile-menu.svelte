@@ -39,13 +39,18 @@
 					{/if}
 				</div>
 				<div class="text-muted-foreground">
-					<Button class="w-full justify-between text-base" variant="ghost">
+					<Button
+						class="w-full justify-between text-base"
+						variant="ghost"
+						target="_blank"
+						href="https://github.com/cowboycodr/kiankit"
+					>
 						<span> GitHub </span>
 					</Button>
-					<Button class="w-full justify-between text-base" variant="ghost">
+					<Button class="w-full justify-between text-base" variant="ghost" href="/blog">
 						<span> Blog </span>
 					</Button>
-					<Button class="w-full justify-between text-base" variant="ghost">
+					<Button class="w-full justify-between text-base" variant="ghost" href="/docs">
 						<span> Docs </span>
 						<ChevronDownIcon class="h-[1.2rem] w-[1.2rem]" />
 					</Button>

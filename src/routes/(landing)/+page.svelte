@@ -1,9 +1,12 @@
 <script lang="ts">
+	import moment from 'moment';
+
 	import { Button } from '@/components/ui/button';
 	import * as Card from '@/components/ui/card';
+	import * as Table from '@/components/ui/table';
 
 	export let data;
-	$: ({ posts } = data);
+	let { posts } = data;
 
 	const features = [
 		{
@@ -81,23 +84,22 @@
 		<h2 class="text-2xl font-semibold tracking-tighter md:text-3xl">
 			We have more to say <span class="text-muted-foreground">– read some of our articles</span>
 		</h2>
-		<div class="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-			{#each posts as post}
-				<a class="contents" href={`/article/${post.slug}`}>
-					<Card.Root class="bg-gradient-to-t from-muted to-muted/60">
-						<Card.Header>
-							<Card.Title>
+		<Table.Root class="w-full">
+			<Table.Caption>A list of our recent articles</Table.Caption>
+			<Table.Body>
+				{#each posts as post}
+					<Table.Row>
+						<a href={`/article/${post.slug}`}>
+							<Table.Cell class="font-medium">
 								{post.title}
-							</Card.Title>
-						</Card.Header>
-						<Card.Content>
-							<div class="text-sm text-muted-foreground">
-								{post.description}
-							</div>
-						</Card.Content>
-					</Card.Root>
-				</a>
-			{/each}
-		</div>
+							</Table.Cell>
+						</a>
+						<Table.Cell>
+							{moment(post.date).format('MMM D, YYYY')}
+						</Table.Cell>
+					</Table.Row>
+				{/each}
+			</Table.Body>
+		</Table.Root>
 	</div>
 </div>

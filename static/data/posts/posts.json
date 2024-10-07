@@ -1,8 +1,14 @@
 [
 	{
 		"slug": "mantra",
-		"title": "I created KianKit so you don't have to – let me explain.",
+		"title": "I created KianKit so you don't have to.",
 		"date": "2024-10-06",
 		"description": "We'll take care of the boring stuff, so you can work on what actually matters."
+	},
+	{
+		"slug": "kiankit-2",
+		"title": "KianKit 2",
+		"date": "2024-10-07",
+		"description": ""
 	}
 ]

@@ -25,7 +25,11 @@ export const load: PageLoad = async ({ params, fetch }) => {
 
 	const pageMetaTags: MetaTagsProps = {
 		title: blog.title,
-		description: blog.description
+		description: blog.description,
+		openGraph: {
+			title: blog.title,
+			description: blog.description
+		}
 	};
 
 	blog.date = moment(blog.date).format('MMM Do, YYYY');

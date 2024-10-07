@@ -80,7 +80,7 @@
 			{/each}
 		</div>
 	</div>
-	<div class="space-y-6" id="blog">
+	<div class="space-y-6" id="articles">
 		<h2 class="text-2xl font-semibold tracking-tighter md:text-3xl">
 			We have more to say <span class="text-muted-foreground">– read some of our articles</span>
 		</h2>

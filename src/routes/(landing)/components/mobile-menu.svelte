@@ -52,12 +52,12 @@
 					<Button
 						class="w-full justify-between text-base"
 						variant="ghost"
-						href="/#blog"
+						href="/#articles"
 						on:click={() => {
 							open = false;
 						}}
 					>
-						<span> Blog </span>
+						<span> Articles </span>
 					</Button>
 					<Button class="w-full justify-between text-base" variant="ghost" href="/docs">
 						<span> Docs </span>

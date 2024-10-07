@@ -21,8 +21,8 @@
 		>
 			GitHub
 		</Button>
-		<Button size="sm" variant="ghost" class="rounded-full text-foreground/60" href="/#blog"
-			>Blog</Button
+		<Button size="sm" variant="ghost" class="rounded-full text-foreground/60" href="/#articles"
+			>Articles</Button
 		>
 		<Button size="sm" variant="ghost" class="rounded-full text-foreground/60" href="/docs"
 			>Docs

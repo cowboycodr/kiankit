@@ -53,6 +53,7 @@
 		"formsnap": "^1.0.1",
 		"just-extend": "^6.2.0",
 		"lucide-svelte": "^0.447.0",
+		"marked": "^14.1.2",
 		"mode-watcher": "^0.4.1",
 		"svelte-fa": "^4.0.3",
 		"svelte-sonner": "^0.3.28",

@@ -1,5 +1,4 @@
 <script>
-	import { marked } from 'marked';
 	import { Separator } from '@/components/ui/separator';
 
 	export let data;
@@ -8,12 +7,13 @@
 
 <main class="container max-w-[1024px] py-12">
 	<article class="prose m-auto dark:prose-invert">
+		<p class="text-xs text-muted-foreground">
+			{blog.date}
+		</p>
 		<h1 class="">
 			{blog.title}
 		</h1>
-		<p class="text-muted-foreground">
-			{blog.description}
-		</p>
 		<Separator />
+		{@html content}
 	</article>
 </main>

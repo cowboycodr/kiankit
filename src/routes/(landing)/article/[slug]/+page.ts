@@ -1,7 +1,10 @@
 import type { PageLoad } from './$types';
 import type { Post } from '../../types';
+import type { MetaTagsProps } from 'svelte-meta-tags';
 
 import { error } from '@sveltejs/kit';
+import { marked } from 'marked';
+import moment from 'moment';
 
 export const load: PageLoad = async ({ params, fetch }) => {
 	const { slug } = params;
@@ -18,10 +21,18 @@ export const load: PageLoad = async ({ params, fetch }) => {
 	const blog = filteredBlogs[0];
 
 	const contentResponse = await fetch(`/data/posts/${slug}.md`);
-	const content = await contentResponse.text();
+	const content = marked(await contentResponse.text());
+
+	const pageMetaTags: MetaTagsProps = {
+		title: blog.title,
+		description: blog.description
+	};
+
+	blog.date = moment(blog.date).format('MMM Do, YYYY');
 
 	return {
 		blog,
-		content
+		content,
+		pageMetaTags
 	};
 };

@@ -6,7 +6,7 @@
 </script>
 
 <main class="container max-w-[1024px] py-12">
-	<article class="prose m-auto dark:prose-invert">
+	<article class="prose m-auto max-w-full dark:prose-invert">
 		<div class="flex justify-between">
 			<p>
 				{blog.author}

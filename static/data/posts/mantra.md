@@ -8,6 +8,6 @@ KianKit has all the essentials baked in: auth, components, theming, icons, Tailw
 
 My goal with KianKit is to keep it fresh, always updating to the newest standards and adding cool new features. Once it's stable, I'll release v1 and move development to a new branch for each version—so you can always deploy from a solid, finished boilerplate instead of something half-baked.
 
-Check out KianKit's starter page and auth demo [here](https://kit.fromkian.com). The code is available on [GitHub](https://github.com/cowboycodr/KianKit).
+Check out KianKit's starter page and auth demo [here](https://demo.kian.im). The code is available on [GitHub](https://github.com/cowboycodr/KianKit).
 
 And trust me, there's a lot more on the way.

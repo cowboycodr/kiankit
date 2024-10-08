@@ -28,7 +28,7 @@
 			>Docs
 		</Button>
 	</div>
-	<div class="flex items-center">
+	<!-- <div class="flex items-center">
 		{#if session}
 			<Dropdown.Root>
 				<Dropdown.Trigger asChild let:builder>
@@ -52,5 +52,5 @@
 				<Button size="sm" href="/signup">Sign up</Button>
 			</div>
 		{/if}
-	</div>
+	</div> -->
 </div>

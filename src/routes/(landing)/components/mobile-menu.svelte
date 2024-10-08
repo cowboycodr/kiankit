@@ -27,7 +27,7 @@
 				<Sheet.Title>KianKit</Sheet.Title>
 			</Sheet.Header>
 			<div class="flex-1 space-y-5">
-				<div class="space-y-3">
+				<!-- <div class="space-y-3">
 					{#if session}
 						<form action="/auth?/logout" method="POST" class="contents" use:enhance>
 							<Button class="w-full space-x-1" variant="outline" type="submit">
@@ -39,7 +39,7 @@
 						<Button class="w-full" variant="outline" href="/login">Log in</Button>
 						<Button class="w-full" href="/signup">Sign up</Button>
 					{/if}
-				</div>
+				</div> -->
 				<div class="text-muted-foreground">
 					<Button
 						class="w-full justify-between text-base"

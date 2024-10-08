@@ -32,4 +32,4 @@ KianKit 2 is about realigning with what made it successful from the start: keepi
 - **Stay Focused**: Avoid feature bloat and unnecessary setup. KianKit is built to support your needs without excess.
 - **Extend Easily**: Whether you need to tweak authentication, adjust the SEO settings, or add custom UI components, KianKit is ready to grow with your projects without added complexity.
 
-Check out KianKit's updated demo and see how these principles come to life: [Starter Page and Auth Demo](https://kit.fromkian.com). The full code is available on [GitHub](https://github.com/cowboycodr/KianKit).
+Check out KianKit's updated demo and see how these principles come to life: [Starter Page and Auth Demo](https://demo.kian.im). The full code is available on [GitHub](https://github.com/cowboycodr/KianKit).

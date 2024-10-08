@@ -44,7 +44,9 @@
 
 <div class="container max-w-[1024px] space-y-12 py-12">
 	<div class="space-y-3">
-		<h1 class="text-3xl font-bold tracking-tighter md:text-4xl">Build faster with KianKit</h1>
+		<h1 class="text-3xl font-bold tracking-tighter md:text-4xl">
+			SvelteKit + Supabase Starter Kit
+		</h1>
 		<p class="text-lg text-muted-foreground md:w-[50%]">
 			KianKit is your go-to starter kit for rapid application development. Entirely open-source.
 		</p>

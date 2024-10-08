@@ -1,1 +1,1 @@
-export { authSchema, type AuthSchema } from './auth';
+export { emailAuthSchema, type EmailAuthSchema } from './email-auth';

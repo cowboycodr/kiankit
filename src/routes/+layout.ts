@@ -1,26 +1,31 @@
-import { PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY } from '$env/static/public';
-import { createBrowserClient, isBrowser, parse } from '@supabase/ssr';
+import { createBrowserClient, createServerClient, isBrowser } from '@supabase/ssr';
+import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$env/static/public';
+import { type MetaTagsProps } from 'svelte-meta-tags';
+import type { LayoutLoad } from './$types';
 
-export const load = async (event) => {
-	const { fetch, data, depends, url } = event;
-
+export const load: LayoutLoad = async ({ data, url, depends, fetch }) => {
+	/**
+	 * Declare a dependency so the layout can be invalidated, for example, on
+	 * session refresh.
+	 */
 	depends('supabase:auth');
 
-	const supabase = createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
-		global: {
-			fetch
-		},
-		cookies: {
-			get(key) {
-				if (!isBrowser()) {
-					return JSON.stringify(data.session);
+	const supabase = isBrowser()
+		? createBrowserClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+				global: {
+					fetch
 				}
-
-				const cookie = parse(document.cookie);
-				return cookie[key];
-			}
-		}
-	});
+			})
+		: createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
+				global: {
+					fetch
+				},
+				cookies: {
+					getAll() {
+						return data.cookies;
+					}
+				}
+			});
 
 	/**
 	 * It's fine to use `getSession` here, because on the client, `getSession` is
@@ -31,23 +36,31 @@ export const load = async (event) => {
 		data: { session }
 	} = await supabase.auth.getSession();
 
-	// Replace this with your own meta data.
-	const baseMetaTags = Object.freeze({
-		title: 'KianKit',
-		titleTemplate: '%s | KianKit',
-		description: 'Rapidly build SvelteKit + Supabase apps.',
-		canonical: new URL(url.pathname, url.origin).href,
+	const {
+		data: { user }
+	} = await supabase.auth.getUser();
+
+	const title = `Acme`;
+	const description = `Lorem ipsum dolor sit amet`;
+	const canonicalUrl = new URL(url.pathname, url.origin).href;
+	const OGImage = 'https://media.fromkian.com/acme.jpg';
+
+	const baseMetaTags: MetaTagsProps = {
+		title,
+		titleTemplate: `%s — ${title}`,
+		description,
+		canonical: canonicalUrl,
 		openGraph: {
 			type: 'website',
-			url: new URL(url.pathname, url.origin).href,
+			url: canonicalUrl,
 			locale: 'en_US',
-			title: 'KianKit',
-			description: 'Rapidly build SvelteKit + Supabase apps.',
-			siteName: 'KianKit',
+			title,
+			description,
+			siteName: title,
 			images: [
 				{
-					url: 'https://pub-0ad6faf4526b463d9367cf8b6e642b7c.r2.dev/kiankit-og.png',
-					alt: 'KianKit',
+					url: OGImage,
+					alt: title,
 					width: 1200,
 					height: 630,
 					type: 'image/png'
@@ -55,15 +68,14 @@ export const load = async (event) => {
 			]
 		},
 		twitter: {
-			handle: '@fromkian',
-			site: '@fromkian',
+			handle: `@example`,
+			site: `@example`,
 			cardType: 'summary_large_image',
-			title: 'KianKit',
-			description: 'Rapidly build SvelteKit + Supabase apps.',
-			image: 'https://pub-0ad6faf4526b463d9367cf8b6e642b7c.r2.dev/kiankit-og.png',
-			imageAlt: 'Rapidly build SvelteKit + Supabase apps.'
+			description,
+			image: OGImage,
+			imageAlt: description
 		}
-	});
+	};
 
-	return { supabase, session, baseMetaTags };
+	return { session, supabase, user, baseMetaTags };
 };

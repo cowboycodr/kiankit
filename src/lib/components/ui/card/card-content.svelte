@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { cn } from '$lib/utils.js';
+	import { cn } from '@/utils.js';
 
 	type $$Props = HTMLAttributes<HTMLDivElement>;
 
@@ -8,6 +8,6 @@
 	export { className as class };
 </script>
 
-<div class={cn('p-6 pt-0', className)} {...$$restProps}>
+<div class={cn('p-6', className)} {...$$restProps}>
 	<slot />
 </div>

@@ -11,6 +11,33 @@
 			</p>
 		</section>
 
+		<section id="techstack">
+			<h1>Tech Stack</h1>
+			<p>
+				KianKit leverages the following technologies to provide a solid foundation for your
+				application:
+			</p>
+			<ul>
+				<li>
+					<strong>SvelteKit</strong>: A modern, file-based framework for building web applications
+					with Svelte.
+				</li>
+				<li>
+					<strong>Supabase</strong>: An open-source backend-as-a-service alternative to Firebase.
+				</li>
+				<li><strong>Shadcn/ui</strong>: A library of customizable UI components.</li>
+				<li>
+					<strong>Tailwind CSS</strong>: A utility-first CSS framework for rapid UI development.
+				</li>
+				<li>
+					<strong>Lucide Icons</strong>: A collection of open-source icons for your application.
+				</li>
+				<li>
+					<strong>Fortawesome</strong>: Popular icon library for additional graphical elements.
+				</li>
+			</ul>
+		</section>
+
 		<section id="getting-started">
 			<h1>Getting Started</h1>
 			<p>Ready to jump in? Let's go!</p>

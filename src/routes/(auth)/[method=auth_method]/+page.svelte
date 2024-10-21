@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { run } from 'svelte/legacy';
+	import type { PageServerData } from './$types';
 
 	import ArrowLeftIcon from 'lucide-svelte/icons/arrow-left';
 
@@ -11,14 +11,11 @@
 	import AuthForm from '../auth/auth-form.svelte';
 
 	interface Props {
-		data: any;
+		data: PageServerData;
 	}
 
 	let { data }: Props = $props();
 	let { method, emailAuthForm } = $state(data);
-	run(() => {
-		({ method, emailAuthForm } = data);
-	});
 </script>
 
 <div class="absolute left-3 top-3 z-50">

@@ -1,6 +1,10 @@
-<script>
-	/** @type {{left?: import('svelte').Snippet, right?: import('svelte').Snippet}} */
-	let { left, right } = $props();
+<script lang="ts">
+	interface Props {
+		left?: import('svelte').Snippet;
+		right?: import('svelte').Snippet;
+	}
+
+	let { left, right }: Props = $props();
 </script>
 
 <div class="relative flex min-h-dvh">

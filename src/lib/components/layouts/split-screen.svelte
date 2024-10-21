@@ -1,8 +1,13 @@
+<script>
+	/** @type {{left?: import('svelte').Snippet, right?: import('svelte').Snippet}} */
+	let { left, right } = $props();
+</script>
+
 <div class="relative flex min-h-dvh">
 	<div class="flex w-full items-center justify-center bg-secondary p-3">
-		<slot name="left"></slot>
+		{@render left?.()}
 	</div>
 	<div class="hidden w-full items-center justify-center p-3 lg:flex">
-		<slot name="right" />
+		{@render right?.()}
 	</div>
 </div>

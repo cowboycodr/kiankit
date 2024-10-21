@@ -10,8 +10,13 @@
 	import { MetaTags } from 'svelte-meta-tags';
 	import extend from 'just-extend';
 
-	export let data;
-	$: ({ session, supabase } = data);
+	interface Props {
+		data: any;
+		children?: import('svelte').Snippet;
+	}
+
+	let { data, children }: Props = $props();
+	let { session, supabase } = $derived(data);
 
 	onMount(() => {
 		const { data } = supabase.auth.onAuthStateChange((_, newSession) => {
@@ -23,11 +28,11 @@
 		return () => data.subscription.unsubscribe();
 	});
 
-	$: metaTags = extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags);
+	let metaTags = $derived(extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags));
 </script>
 
 <ModeWatcher defaultMode="system" />
 <Toaster position="top-center" />
 <MetaTags {...metaTags} />
 
-<slot />
+{@render children?.()}

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { run } from 'svelte/legacy';
+
 	import ArrowLeftIcon from 'lucide-svelte/icons/arrow-left';
 
 	import { historyBack } from '@/components/actions';
@@ -8,9 +10,15 @@
 
 	import AuthForm from '../auth/auth-form.svelte';
 
-	export let data;
-	let { method, emailAuthForm } = data;
-	$: ({ method, emailAuthForm } = data);
+	interface Props {
+		data: any;
+	}
+
+	let { data }: Props = $props();
+	let { method, emailAuthForm } = $state(data);
+	run(() => {
+		({ method, emailAuthForm } = data);
+	});
 </script>
 
 <div class="absolute left-3 top-3 z-50">

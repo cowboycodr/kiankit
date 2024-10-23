@@ -8,10 +8,14 @@
 	import * as Card from '@/components/ui/card';
 	import { Separator } from '@/components/ui/separator';
 
-	export let form: SuperValidated<EmailAuthSchema>;
-	export let method: string;
+	interface Props {
+		form: SuperValidated<EmailAuthSchema>;
+		method: string;
+	}
 
-	$: methodString = method === 'login' ? 'Log in' : 'Sign up';
+	let { form, method }: Props = $props();
+
+	let methodString = $derived(method === 'login' ? 'Log in' : 'Sign up');
 </script>
 
 <Card.Root>

@@ -19,9 +19,12 @@
 		}
 	});
 
-	let className: string | undefined = '';
-	export { className as class };
-	export let size: VariantProps<typeof variants>['size'] = 'md';
+	interface Props {
+		class?: string | undefined;
+		size?: VariantProps<typeof variants>['size'];
+	}
+
+	let { class: className = '', size = 'md' }: Props = $props();
 </script>
 
 <Logo class={cn(variants({ size }), className)} />

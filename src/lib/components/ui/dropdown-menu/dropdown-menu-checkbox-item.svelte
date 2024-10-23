@@ -6,9 +6,19 @@
 	type $$Props = DropdownMenuPrimitive.CheckboxItemProps;
 	type $$Events = DropdownMenuPrimitive.CheckboxItemEvents;
 
-	let className: $$Props['class'] = undefined;
-	export let checked: $$Props['checked'] = undefined;
-	export { className as class };
+	interface Props {
+		class?: $$Props['class'];
+		checked?: $$Props['checked'];
+		children?: import('svelte').Snippet;
+		[key: string]: any;
+	}
+
+	let {
+		class: className = undefined,
+		checked = $bindable(undefined),
+		children,
+		...rest
+	}: Props = $props();
 </script>
 
 <DropdownMenuPrimitive.CheckboxItem
@@ -17,7 +27,7 @@
 		'relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-accent data-[highlighted]:text-accent-foreground data-[disabled]:opacity-50',
 		className
 	)}
-	{...$$restProps}
+	{...rest}
 	on:click
 	on:keydown
 	on:focusin
@@ -31,5 +41,5 @@
 			<Check class="h-4 w-4" />
 		</DropdownMenuPrimitive.CheckboxIndicator>
 	</span>
-	<slot />
+	{@render children?.()}
 </DropdownMenuPrimitive.CheckboxItem>

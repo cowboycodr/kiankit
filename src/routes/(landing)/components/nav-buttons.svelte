@@ -7,7 +7,7 @@
 	import { Button } from '@/components/ui/button';
 	import * as Dropdown from '@/components/ui/dropdown-menu';
 
-	$: ({ session } = $page.data);
+	let { session } = $derived($page.data);
 </script>
 
 <div class="hidden h-9 w-full justify-between md:flex">
@@ -25,10 +25,12 @@
 	<div class="flex items-center">
 		{#if session}
 			<Dropdown.Root>
-				<Dropdown.Trigger asChild let:builder>
-					<Button builders={[builder]} size="icon" variant="ghost">
-						<CircleUserIcon />
-					</Button>
+				<Dropdown.Trigger asChild>
+					{#snippet children({ builder })}
+						<Button builders={[builder]} size="icon" variant="ghost">
+							<CircleUserIcon />
+						</Button>
+					{/snippet}
 				</Dropdown.Trigger>
 				<Dropdown.Content>
 					<Dropdown.Group>

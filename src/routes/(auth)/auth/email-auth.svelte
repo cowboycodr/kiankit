@@ -10,11 +10,13 @@
 	import { Input } from '@/components/ui/input';
 	import { type EmailAuthSchema, emailAuthSchema } from '@/schemas';
 
-	let formValidator: SuperValidated<EmailAuthSchema>;
+	interface Props {
+		form: SuperValidated<EmailAuthSchema>;
+	}
 
-	export { formValidator as form };
+	let { form: formValidator }: Props = $props();
 
-	let loading = false;
+	let loading = $state(false);
 
 	const form = superForm(formValidator, {
 		validators: zodClient(emailAuthSchema),
@@ -31,9 +33,11 @@
 
 <form method="POST" action="/auth?/email" class="space-y-2" use:enhance>
 	<Form.Field {form} name="email">
-		<Form.Control let:attrs>
-			<Form.Label>Email</Form.Label>
-			<Input {...attrs} placeholder="Email address" bind:value={$formData.email} />
+		<Form.Control>
+			{#snippet children({ attrs })}
+				<Form.Label>Email</Form.Label>
+				<Input {...attrs} placeholder="Email address" bind:value={$formData.email} />
+			{/snippet}
 		</Form.Control>
 		<Form.FieldErrors />
 	</Form.Field>

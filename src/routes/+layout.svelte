@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.pcss';
+	import type { LayoutData } from './$types';
 
 	import { invalidate } from '$app/navigation';
 	import { onMount } from 'svelte';
@@ -7,12 +8,11 @@
 
 	import { ModeWatcher } from 'mode-watcher';
 	import { Toaster } from 'svelte-sonner';
-	import { MetaTags } from 'svelte-meta-tags';
-	import extend from 'just-extend';
+	import { MetaTags, deepMerge } from 'svelte-meta-tags';
 
 	interface Props {
-		data: any;
-		children?: import('svelte').Snippet;
+		data: LayoutData;
+		children: import('svelte').Snippet;
 	}
 
 	let { data, children }: Props = $props();
@@ -28,11 +28,11 @@
 		return () => data.subscription.unsubscribe();
 	});
 
-	let metaTags = $derived(extend(true, {}, data.baseMetaTags, $page.data.pageMetaTags));
+	let metaTags = $derived(deepMerge(data.baseMetaTags, $page.data.pageMetaTags));
 </script>
 
 <ModeWatcher defaultMode="system" />
 <Toaster position="top-center" />
 <MetaTags {...metaTags} />
 
-{@render children?.()}
+{@render children()}

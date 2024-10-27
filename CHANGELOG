@@ -1,6 +1,7 @@
 # 2.1 (2024-10-23)
 
 - Migrate to Svelte 5
+- Update `package.json` project information
 - Update `svelte-meta-tags`
 
 # 2.0 (2024-10-07)

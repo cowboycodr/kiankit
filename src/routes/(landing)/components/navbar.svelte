@@ -3,7 +3,7 @@
 	import NavButtons from './nav-buttons.svelte';
 	import MobileMenu from './mobile-menu.svelte';
 
-	let scrollY: number = $state();
+	let scrollY: number = $state(0);
 </script>
 
 <svelte:window bind:scrollY />

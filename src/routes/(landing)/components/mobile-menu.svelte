@@ -4,18 +4,18 @@
 	import MenuIcon from 'lucide-svelte/icons/menu';
 
 	import { ThemeToggle } from '@/components/theme-controller';
+	import { buttonVariants } from '@/components/ui/button';
 	import { Button } from '@/components/ui/button';
 	import * as Sheet from '@/components/ui/sheet';
 
-	let open: boolean;
+	let { session } = $derived($page.data);
+	let open: boolean = $state(false);
 </script>
 
 <div class="md:hidden">
-	<Sheet.Root bind:open>
-		<Sheet.Trigger asChild let:builder>
-			<Button builders={[builder]} variant="ghost" size="sm">
-				<MenuIcon />
-			</Button>
+	<Sheet.Root>
+		<Sheet.Trigger class={buttonVariants({ variant: 'ghost', size: 'sm' })}>
+			<MenuIcon />
 		</Sheet.Trigger>
 		<Sheet.Content class="flex flex-col">
 			<Sheet.Header>
@@ -35,7 +35,7 @@
 						class="w-full justify-between text-base"
 						variant="ghost"
 						href="/#articles"
-						on:click={() => {
+						onclick={() => {
 							open = false;
 						}}
 					>

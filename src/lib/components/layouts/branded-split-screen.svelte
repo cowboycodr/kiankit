@@ -1,20 +1,26 @@
 <script lang="ts">
 	import { Logo } from '@/components/logo';
 	import { SplitScreen } from '.';
+
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 </script>
 
 <SplitScreen>
-	<svelte:fragment slot="left">
+	{#snippet left()}
 		<div class="w-full max-w-96 space-y-3">
 			<div class="flex w-full justify-center lg:hidden">
 				<Logo size="lg" />
 			</div>
-			<slot />
+			{@render children?.()}
 		</div>
-	</svelte:fragment>
-	<svelte:fragment slot="right">
+	{/snippet}
+	{#snippet right()}
 		<div class="flex items-center justify-center">
 			<Logo size="xl" />
 		</div>
-	</svelte:fragment>
+	{/snippet}
 </SplitScreen>

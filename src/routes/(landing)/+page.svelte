@@ -91,11 +91,11 @@
 			<Table.Body>
 				{#each posts as post}
 					<Table.Row>
-						<a href={`/article/${post.slug}`}>
-							<Table.Cell class="font-medium">
+						<Table.Cell class="font-medium">
+							<a href={`/article/${post.slug}`}>
 								{post.title}
-							</Table.Cell>
-						</a>
+							</a>
+						</Table.Cell>
 						<Table.Cell class="text-nowrap">
 							{moment(post.date).format('MMM D, YYYY')}
 						</Table.Cell>

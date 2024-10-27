@@ -15,7 +15,7 @@
 	}
 
 	let { data }: Props = $props();
-	let { method, emailAuthForm } = $state(data);
+	let { method, emailAuthForm } = $derived(data);
 </script>
 
 <div class="absolute left-3 top-3 z-50">

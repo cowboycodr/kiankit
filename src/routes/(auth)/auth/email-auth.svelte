@@ -34,9 +34,9 @@
 <form method="POST" action="/auth?/email" class="space-y-2" use:enhance>
 	<Form.Field {form} name="email">
 		<Form.Control>
-			{#snippet children({ attrs })}
+			{#snippet children({ props })}
 				<Form.Label>Email</Form.Label>
-				<Input {...attrs} placeholder="Email address" bind:value={$formData.email} />
+				<Input {...props} placeholder="Email address" bind:value={$formData.email} />
 			{/snippet}
 		</Form.Control>
 		<Form.FieldErrors />

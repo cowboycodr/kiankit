@@ -1,27 +1,21 @@
 <script lang="ts" module>
-	import type { FormPath, SuperForm } from 'sveltekit-superforms';
+	import type { FormPath as _FormPath } from 'sveltekit-superforms';
 	type T = Record<string, unknown>;
-	type U = FormPath<T>;
+	type U = _FormPath<T>;
 </script>
 
-<script lang="ts" generics="T extends Record<string, unknown>, U extends FormPath<T>">
+<script lang="ts" generics="T extends Record<string, unknown>, U extends _FormPath<T>">
 	import * as FormPrimitive from 'formsnap';
+	import type { WithoutChild } from 'bits-ui';
 	import { cn } from '@/utils.js';
 
-	type $$Props = FormPrimitive.FieldsetProps<T, U>;
-
-	interface Props {
-		form: SuperForm<T>;
-		name: U;
-		class?: $$Props['class'];
-		children?: import('svelte').Snippet<[any]>;
-	}
-
-	let { form, name, class: className = undefined, children }: Props = $props();
+	let {
+		ref = $bindable(null),
+		class: className,
+		form,
+		name,
+		...restProps
+	}: WithoutChild<FormPrimitive.FieldsetProps<T, U>> = $props();
 </script>
 
-<FormPrimitive.Fieldset {form} {name} class={cn('space-y-2', className)}>
-	{#snippet children({ constraints, errors, tainted, value })}
-		{@render children?.({ constraints, errors, tainted, value })}
-	{/snippet}
-</FormPrimitive.Fieldset>
+<FormPrimitive.Fieldset bind:ref {form} {name} class={cn('space-y-2', className)} {...restProps} />

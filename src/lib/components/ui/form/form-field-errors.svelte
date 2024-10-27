@@ -1,31 +1,30 @@
 <script lang="ts">
 	import * as FormPrimitive from 'formsnap';
+	import type { WithoutChild } from 'bits-ui';
 	import { cn } from '@/utils.js';
 
-	type $$Props = FormPrimitive.FieldErrorsProps & {
-		errorClasses?: string | undefined | null;
-	};
-
-	interface Props {
-		class?: $$Props['class'];
-		errorClasses?: $$Props['class'];
-		children?: import('svelte').Snippet<[any]>;
-		[key: string]: any;
-	}
-
 	let {
-		class: className = undefined,
-		errorClasses = undefined,
-		children,
-		...rest
-	}: Props = $props();
+		ref = $bindable(null),
+		class: className,
+		errorClasses,
+		children: childrenProp,
+		...restProps
+	}: WithoutChild<FormPrimitive.FieldErrorsProps> & {
+		errorClasses?: string | undefined | null;
+	} = $props();
 </script>
 
-<FormPrimitive.FieldErrors class={cn('text-sm font-medium text-destructive', className)} {...rest}>
-	{#snippet children({ errors, fieldErrorsAttrs, errorAttrs })}
-		{#if children}{@render children({ errors, fieldErrorsAttrs, errorAttrs })}{:else}
+<FormPrimitive.FieldErrors
+	bind:ref
+	class={cn('text-sm font-medium text-destructive', className)}
+	{...restProps}
+>
+	{#snippet children({ errors, errorProps })}
+		{#if childrenProp}
+			{@render childrenProp({ errors, errorProps })}
+		{:else}
 			{#each errors as error}
-				<div {...errorAttrs} class={cn(errorClasses)}>{error}</div>
+				<div {...errorProps} class={cn(errorClasses)}>{error}</div>
 			{/each}
 		{/if}
 	{/snippet}

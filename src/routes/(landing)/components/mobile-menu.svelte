@@ -7,18 +7,17 @@
 	import ChevronDownIcon from 'lucide-svelte/icons/chevron-down';
 
 	import { ThemeToggle } from '@/components/theme-controller';
+	import { buttonVariants } from '@/components/ui/button';
 	import { Button } from '@/components/ui/button';
 	import * as Sheet from '@/components/ui/sheet';
 
-	$: ({ session } = $page.data);
+	let { session } = $derived($page.data);
 </script>
 
 <div class="md:hidden">
 	<Sheet.Root>
-		<Sheet.Trigger asChild let:builder>
-			<Button builders={[builder]} variant="ghost" size="sm">
-				<MenuIcon />
-			</Button>
+		<Sheet.Trigger class={buttonVariants({ variant: 'ghost', size: 'sm' })}>
+			<MenuIcon />
 		</Sheet.Trigger>
 		<Sheet.Content class="flex flex-col">
 			<Sheet.Header>

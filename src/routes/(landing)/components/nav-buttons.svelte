@@ -4,7 +4,7 @@
 
 	import CircleUserIcon from 'lucide-svelte/icons/circle-user';
 
-	import { Button } from '@/components/ui/button';
+	import { Button, buttonVariants } from '@/components/ui/button';
 	import * as Dropdown from '@/components/ui/dropdown-menu';
 
 	let { session } = $derived($page.data);
@@ -25,12 +25,8 @@
 	<div class="flex items-center">
 		{#if session}
 			<Dropdown.Root>
-				<Dropdown.Trigger asChild>
-					{#snippet children({ builder })}
-						<Button builders={[builder]} size="icon" variant="ghost">
-							<CircleUserIcon />
-						</Button>
-					{/snippet}
+				<Dropdown.Trigger class={buttonVariants({ variant: 'ghost', size: 'sm' })}>
+					<CircleUserIcon />
 				</Dropdown.Trigger>
 				<Dropdown.Content>
 					<Dropdown.Group>

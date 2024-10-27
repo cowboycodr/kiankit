@@ -68,7 +68,7 @@ export const load: LayoutLoad = async ({ data, url, depends, fetch }) => {
 			]
 		},
 		twitter: {
-			handle: `@example`,
+			creator: `@example`,
 			site: `@example`,
 			cardType: 'summary_large_image',
 			description,

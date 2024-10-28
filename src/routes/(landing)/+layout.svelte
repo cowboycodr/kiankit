@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { type Snippet } from 'svelte';
+
 	import Navbar from './components/navbar.svelte';
 	import Footer from './components/footer.svelte';
 
 	interface Props {
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 	}
 
 	let { children }: Props = $props();

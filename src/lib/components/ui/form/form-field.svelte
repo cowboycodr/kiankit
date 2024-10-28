@@ -7,7 +7,7 @@
 <script lang="ts" generics="T extends Record<string, unknown>, U extends _FormPath<T>">
 	import * as FormPrimitive from 'formsnap';
 	import type { WithoutChildren } from 'bits-ui';
-	import { type PrimitiveDivAttributes, cn } from '@/utils.js';
+	import { type PrimitiveDivAttributes, cn } from '@/utils';
 
 	let {
 		ref = $bindable(null),

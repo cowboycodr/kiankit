@@ -1,9 +1,11 @@
 <script lang="ts">
+	import { type Snippet } from 'svelte';
+
 	interface Props {
-		children?: import('Svelte').Snippet;
+		children?: Snippet;
 	}
 
-	let { children } = $props();
+	let { children }: Props = $props();
 </script>
 
 <div class="flex min-h-dvh w-full items-center justify-center bg-secondary px-3">

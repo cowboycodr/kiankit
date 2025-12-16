@@ -2,7 +2,7 @@
 	import { cn } from '@/utils';
 
 	import { tv, type VariantProps } from 'tailwind-variants';
-	import Logo from 'lucide-svelte/icons/hexagon';
+	import Hexagon from '@lucide/svelte/icons/hexagon';
 
 	export const variants = tv({
 		base: 'fill-primary text-primary',
@@ -27,4 +27,4 @@
 	let { class: className = '', size = 'md' }: Props = $props();
 </script>
 
-<Logo class={cn(variants({ size }), className)} />
+<Hexagon class={cn(variants({ size }), className)} />

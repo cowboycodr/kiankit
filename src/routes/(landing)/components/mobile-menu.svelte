@@ -2,9 +2,9 @@
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 
-	import MenuIcon from 'lucide-svelte/icons/menu';
-	import LogOutIcon from 'lucide-svelte/icons/log-out';
-	import ChevronDownIcon from 'lucide-svelte/icons/chevron-down';
+	import Menu from '@lucide/svelte/icons/menu';
+	import LogOut from '@lucide/svelte/icons/log-out';
+	import ChevronDown from '@lucide/svelte/icons/chevron-down';
 
 	import { ThemeToggle } from '@/components/theme-controller';
 	import { buttonVariants } from '@/components/ui/button';
@@ -17,7 +17,7 @@
 <div class="md:hidden">
 	<Sheet.Root>
 		<Sheet.Trigger class={buttonVariants({ variant: 'ghost', size: 'sm' })}>
-			<MenuIcon />
+			<Menu />
 		</Sheet.Trigger>
 		<Sheet.Content class="flex flex-col">
 			<Sheet.Header>
@@ -28,7 +28,7 @@
 					{#if session}
 						<form action="/auth?/logout" method="POST" class="contents" use:enhance>
 							<Button class="w-full space-x-1" variant="outline" type="submit">
-								<LogOutIcon size="16" />
+								<LogOut size="16" />
 								<span> Log out </span>
 							</Button>
 						</form>
@@ -40,7 +40,7 @@
 				<div class="text-muted-foreground">
 					<Button class="w-full justify-between text-base" variant="ghost">
 						<span> Product </span>
-						<ChevronDownIcon class="h-[1.2rem] w-[1.2rem]" />
+						<ChevronDown class="h-[1.2rem] w-[1.2rem]" />
 					</Button>
 					<Button class="w-full justify-between text-base" variant="ghost">
 						<span> Pricing </span>

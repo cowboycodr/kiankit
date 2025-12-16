@@ -13,6 +13,7 @@
 		"prepare": "husky"
 	},
 	"devDependencies": {
+		"@lucide/svelte": "^0.561.0",
 		"@sveltejs/adapter-auto": "^3.2.0",
 		"@sveltejs/adapter-node": "^5.2.5",
 		"@sveltejs/kit": "^2.49.2",
@@ -29,10 +30,9 @@
 		"formsnap": "^2.0.0-next.0",
 		"globals": "^15.0.0",
 		"husky": "^9.1.6",
-		"@lucide/svelte": "^0.561.0",
 		"prettier": "3.2.5",
 		"prettier-plugin-svelte": "^3.2.6",
-		"prettier-plugin-tailwindcss": "^0.6.11",
+		"prettier-plugin-tailwindcss": "^0.7.2",
 		"super-sitemap": "^0.15.1",
 		"svelte": "^5.38.2",
 		"svelte-check": "^4.3.1",
@@ -40,7 +40,7 @@
 		"sveltekit-superforms": "^2.20.0",
 		"tailwind-merge": "^3.3.1",
 		"tailwind-variants": "^3.1.1",
-		"tailwindcss": "^4.1.16",
+		"tailwindcss": "^4.1.18",
 		"tailwindcss-animate": "^1.0.7",
 		"typescript": "^5.5.0",
 		"typescript-eslint": "^8.0.0",
@@ -56,10 +56,13 @@
 		"@fortawesome/free-brands-svg-icons": "^6.6.0",
 		"@supabase/ssr": "^0.5.2",
 		"@supabase/supabase-js": "^2.46.1",
+		"@tailwindcss/postcss": "^4.1.18",
+		"@tailwindcss/vite": "^4.1.18",
 		"dotenv": "^16.4.5",
 		"just-extend": "^6.2.0",
 		"mode-watcher": "^1.1.0",
 		"svelte-fa": "^4.0.3",
-		"svelte-sonner": "^1.0.7"
+		"svelte-sonner": "^1.0.7",
+		"vite-plugin-mkcert": "^1.17.9"
 	}
 }

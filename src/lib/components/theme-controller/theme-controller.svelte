@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { setMode, mode, userPrefersMode } from 'mode-watcher';
 
-	import HardDrive from 'lucide-svelte/icons/hard-drive';
-	import MoonIcon from 'lucide-svelte/icons/moon';
-	import SunIcon from 'lucide-svelte/icons/sun';
+	import HardDrive from '@lucide/svelte/icons/hard-drive';
+	import Moon from '@lucide/svelte/icons/moon';
+	import Sun from '@lucide/svelte/icons/sun';
 
 	let activeTheme = $derived($userPrefersMode ?? $mode ?? 'light');
 
@@ -28,7 +28,7 @@
 		onclick={() => handleThemeClick('dark')}
 		aria-label="dark theme icon"
 	>
-		<MoonIcon class="h-[1.2rem] w-[1.2rem]" />
+		<Moon class="h-[1.2rem] w-[1.2rem]" />
 	</button>
 
 	<button
@@ -37,6 +37,6 @@
 		onclick={() => handleThemeClick('light')}
 		aria-label="light theme icon"
 	>
-		<SunIcon class="h-[1.2rem] w-[1.2rem]" />
+		<Sun class="h-[1.2rem] w-[1.2rem]" />
 	</button>
 </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 
-	import ArrowRightIcon from 'lucide-svelte/icons/arrow-right';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	import { Button } from '@/components/ui/button';
 	import * as Card from '@/components/ui/card';
@@ -58,7 +58,7 @@
 					type="submit"
 				>
 					<span>Get notified</span>
-					<ArrowRightIcon size={18} class="ml-2" />
+					<ArrowRight size={18} class="ml-2" />
 				</Button>
 			</form>
 		</div>

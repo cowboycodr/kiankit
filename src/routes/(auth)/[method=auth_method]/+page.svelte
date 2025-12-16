@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageServerData } from './$types';
 
-	import ArrowLeftIcon from 'lucide-svelte/icons/arrow-left';
+  import ArrowLeft from '@lucide/svelte/icons/arrow-left';
 
 	import { historyBack } from '@/components/actions';
 	import { BrandedSplitScreen } from '@/components/layouts';
@@ -26,7 +26,7 @@
 		)}
 		use:historyBack
 	>
-		<ArrowLeftIcon />
+		<ArrowLeft />
 	</button>
 </div>
 

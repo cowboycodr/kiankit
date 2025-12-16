@@ -2,7 +2,7 @@
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 
-	import CircleUserIcon from 'lucide-svelte/icons/circle-user';
+	import CircleUser from '@lucide/svelte/icons/circle-user';
 
 	import { Button, buttonVariants } from '@/components/ui/button';
 	import * as Dropdown from '@/components/ui/dropdown-menu';
@@ -26,7 +26,7 @@
 		{#if session}
 			<Dropdown.Root>
 				<Dropdown.Trigger class={buttonVariants({ variant: 'ghost', size: 'sm' })}>
-					<CircleUserIcon />
+					<CircleUser />
 				</Dropdown.Trigger>
 				<Dropdown.Content>
 					<Dropdown.Group>

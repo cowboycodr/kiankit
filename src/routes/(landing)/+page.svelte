@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 
-	import ArrowRightIcon from 'lucide-svelte/icons/arrow-right';
+	import ArrowRight from '@lucide/svelte/icons/arrow-right';
 
 	import { Button } from '@/components/ui/button';
 	import * as Card from '@/components/ui/card';
@@ -43,22 +43,22 @@
 		</p>
 		<div class="flex space-x-3 pt-1">
 			<form
-				class="flex w-full items-center rounded-full border border-foreground/10 bg-gradient-to-t from-muted to-muted/60 p-1 pl-4 shadow-sm md:max-w-sm"
+				class="flex w-full items-center rounded-full border border-foreground/10 bg-gradient-to-t from-muted to-muted/60 p-1 pl-4 shadow-xs md:max-w-sm"
 			>
 				<input
 					name="email"
 					type="email"
 					placeholder="Email address"
-					class="w-full bg-transparent placeholder-muted-foreground outline-none"
+					class="w-full bg-transparent placeholder-muted-foreground outline-hidden"
 				/>
 				<Button
 					variant="none"
 					size="sm"
-					class="h-8 rounded-full border border-foreground/10 bg-gradient-to-t from-primary to-primary/70 text-primary-foreground shadow-md transition-all duration-200 hover:bg-primary/90 dark:bg-gradient-to-b"
+					class="h-8 rounded-full border border-foreground/10 bg-gradient-to-t from-primary to-primary/70 text-primary-foreground shadow-sm transition-all duration-200 hover:bg-primary/90 dark:bg-gradient-to-b"
 					type="submit"
 				>
 					<span>Get notified</span>
-					<ArrowRightIcon size={18} class="ml-2" />
+					<ArrowRight size={18} class="ml-2" />
 				</Button>
 			</form>
 		</div>

@@ -3,8 +3,8 @@
 	import { zodClient } from 'sveltekit-superforms/adapters';
 
 	import { toast } from 'svelte-sonner';
-	import LoaderCircleIcon from 'lucide-svelte/icons/loader-circle';
-	import EmailIcon from 'lucide-svelte/icons/mail';
+	import LoaderCircle from '@lucide/svelte/icons/loader-circle';
+	import Mail from '@lucide/svelte/icons/mail';
 
 	import * as Form from '@/components/ui/form';
 	import { Input } from '@/components/ui/input';
@@ -43,9 +43,9 @@
 	</Form.Field>
 	<Form.Button class="w-full items-center space-x-1" type="submit" disabled={loading}>
 		{#if loading}
-			<LoaderCircleIcon class="animate-spin" size="16" />
+			<LoaderCircle class="animate-spin" size="16" />
 		{:else}
-			<EmailIcon size="16" />
+			<Mail size="16" />
 		{/if}
 		<span>Continue with Email</span>
 	</Form.Button>
